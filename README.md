@@ -9,7 +9,7 @@ cho phép người dùng xem lại lịch sử đặt lịch khám của mình. 
 có thể giúp cho người dùng tiết kiệm thời gian, công sức và đảm bảo được chất lượng dịch 
 vụ y tế. Ứng dụng sử dụng cơ sở dữ liệu Firebase để lưu trữ thông tin bác sĩ, thông tin lịch 
 khám,… Ứng dụng được thiết kế trên nền tảng Android và có thể chạy tốt trên các phiên bản 
-android từ 6.0 trở lên
+android từ 6.0 trở lên.
 ## Chức năng cơ bản
 - Phân quyền Admin
 - Thêm, xóa, sửa
