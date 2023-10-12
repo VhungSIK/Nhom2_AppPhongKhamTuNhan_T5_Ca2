@@ -11,19 +11,19 @@ vụ y tế. Ứng dụng sử dụng cơ sở dữ liệu Firebase để lưu t
 khám,… Ứng dụng được thiết kế trên nền tảng Android và có thể chạy tốt trên các phiên bản 
 android từ 6.0 trở lên
 ## Chức năng cơ bản
-Phân quyền Admin
-Thêm, xóa, sửa
-Đặt lịch
-Gọi cho phòng khám
-Tính toán các chi phí
+- Phân quyền Admin
+- Thêm, xóa, sửa
+- Đặt lịch
+- Gọi cho phòng khám
+- Tính toán các chi phí
 ## Chức năng nâng cao
 Call API login
 ## Thành viên
--Phạm Văn Hùng
--Phạm Thành Danh
--Trần Thanh Sỹ
--Trần Quốc Thiện
-## Công nghệ
+- Phạm Văn Hùng
+- Phạm Thành Danh
+- Trần Thanh Sỹ
+- Trần Quốc Thiện
+## Công nghệơ
 AndroiStudio
 Firebase
 ## Ngày bắt đầu 
