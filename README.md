@@ -23,7 +23,7 @@ Call API login
 - Phạm Thành Danh
 - Trần Thanh Sỹ
 - Trần Quốc Thiện
-## Công nghệơ
+## Công nghệ
 - https://developer.android.com/studio
 - https://console.firebase.google.com/u/0/
 ## Ngày bắt đầu 
