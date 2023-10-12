@@ -85,4 +85,5 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/etEmail"
         app:layout_constraintTop_toBottomOf="@+id/etEmail" />
+    //Hello thầy và các bạn
 </androidx.constraintlayout.widget.ConstraintLayout>
