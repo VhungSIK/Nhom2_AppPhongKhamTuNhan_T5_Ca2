@@ -19,10 +19,10 @@ Tính toán các chi phí
 ## Chức năng nâng cao
 Call API login
 ## Thành viên
-Phạm Văn Hùng
-Phạm Thành Danh
-Trần Thanh Sỹ
-Trần Quốc Thiện
+-Phạm Văn Hùng
+-Phạm Thành Danh
+-Trần Thanh Sỹ
+-Trần Quốc Thiện
 ## Công nghệ
 AndroiStudio
 Firebase
