@@ -24,7 +24,7 @@ Call API login
 - Trần Thanh Sỹ
 - Trần Quốc Thiện
 ## Công nghệơ
-AndroiStudio
-Firebase
+- https://developer.android.com/studio
+- https://console.firebase.google.com/u/0/
 ## Ngày bắt đầu 
 09/09/2023
