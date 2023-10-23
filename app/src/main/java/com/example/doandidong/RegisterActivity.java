@@ -28,11 +28,12 @@ import java.util.Map;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    EditText etRName,etRPhone,etREmail, etRPassword, etVPassword;
+    EditText etRName, etRPhone, etREmail, etRPassword, etVPassword;
     Button btnRegister;
     FirebaseAuth auth;
     FirebaseFirestore fb;
     String userID;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,23 +41,23 @@ public class RegisterActivity extends AppCompatActivity {
 
         getSupportActionBar().setTitle("Đăng Ký");
 
-        etRName=findViewById(R.id.etRName);
-        etRPhone=findViewById(R.id.etRPhone);
-        etREmail=findViewById(R.id.etREmail);
-        etRPassword=findViewById(R.id.etRPassword);
-        etVPassword=findViewById(R.id.etVPassword);
-        btnRegister=findViewById(R.id.btnRegister);
-        auth=FirebaseAuth.getInstance();
-        fb=FirebaseFirestore.getInstance();
+        etRName = findViewById(R.id.etRName);
+        etRPhone = findViewById(R.id.etRPhone);
+        etREmail = findViewById(R.id.etREmail);
+        etRPassword = findViewById(R.id.etRPassword);
+        etVPassword = findViewById(R.id.etVPassword);
+        btnRegister = findViewById(R.id.btnRegister);
+        auth = FirebaseAuth.getInstance();
+        fb = FirebaseFirestore.getInstance();
 
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String name=etRName.getText().toString().trim();
-                String phone=etRPhone.getText().toString().trim();
+                String name = etRName.getText().toString().trim();
+                String phone = etRPhone.getText().toString().trim();
                 String email = etREmail.getText().toString().trim();
                 String password = etRPassword.getText().toString().trim();
-                String vpassword=etVPassword.getText().toString().trim();
+                String vpassword = etVPassword.getText().toString().trim();
 
                 if (TextUtils.isEmpty(name)) {
                     Toast.makeText(getApplicationContext(), "Họ tên không được bỏ trống!", Toast.LENGTH_LONG).show();
@@ -83,42 +84,44 @@ public class RegisterActivity extends AppCompatActivity {
                     return;
                 }
 
-                if(!password.equals(vpassword)){
-                    Toast.makeText(getApplicationContext(), "Mật khẩu xác nhận không đúng!",Toast.LENGTH_LONG).show();
+                if (!password.equals(vpassword)) {
+                    Toast.makeText(getApplicationContext(), "Mật khẩu xác nhận không đúng!", Toast.LENGTH_LONG).show();
                     return;
                 }
+
                 auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        userID=auth.getCurrentUser().getUid();
-                        DocumentReference doc=fb.collection("User").document(userID);
-                        Map<String,Object> user =new HashMap<>();
-                        user.put("Name",etRName.getText().toString());
-                        user.put("Email",etREmail.getText().toString());
-                        user.put("Phone",etRPhone.getText().toString());
-                        doc.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
-                            @Override
-                            public void onSuccess(Void unused) {
-                                Log.d(TAG,"Them thanh cong");
-                            }
-                        }).addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                Log.d(TAG,"Loi");
-                            }
-                        });
-                        Intent intent=new Intent(RegisterActivity.this,LoginActivity.class);
-                        startActivity(intent);
-                        finish();
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(RegisterActivity.this,e.getMessage(),Toast.LENGTH_SHORT).show();
+                        if (task.isSuccessful()) {
+                            userID = auth.getCurrentUser().getUid();
+                            DocumentReference doc = fb.collection("User").document(userID);
+                            Map<String, Object> user = new HashMap<>();
+                            user.put("Name", etRName.getText().toString());
+                            user.put("Email", etREmail.getText().toString());
+                            user.put("Phone", etRPhone.getText().toString());
+                            user.put("userType", "user");  // Đây là người dùng thông thường
+                            doc.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void unused) {
+                                    // Đăng ký người dùng thành công
+                                    Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                                    startActivity(intent);
+                                    finish();
+                                }
+                            }).addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Toast.makeText(RegisterActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                                }
+                            });
+                        } else {
+                            Toast.makeText(RegisterActivity.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        }
                     }
                 });
             }
         });
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
