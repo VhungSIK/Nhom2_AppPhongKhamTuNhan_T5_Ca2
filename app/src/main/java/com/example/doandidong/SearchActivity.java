@@ -86,7 +86,8 @@ public class SearchActivity extends AppCompatActivity implements DoctorAdapter.L
                                     String Address = document.get("Address").toString();
                                     String Sex = document.get("Sex").toString();
                                     String Major = document.get("Major").toString();
-                                    Doctor doctor = new Doctor(Id, FName, LName, Birthday, Phone, Email, Address, Sex, Major);
+                                    String userType=document.get("userType").toString();
+                                    Doctor doctor = new Doctor(Id, FName, LName, Birthday, Phone, Email, Address, Sex, Major,userType);
                                     doctors.add(doctor);
                                 }
                                 doctorAdapter.notifyDataSetChanged();
