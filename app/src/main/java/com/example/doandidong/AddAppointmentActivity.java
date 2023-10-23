@@ -48,6 +48,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class AddAppointmentActivity extends AppCompatActivity implements TimeSlotAdapter.Listener{
+    String tsId = null;
 
     TextInputLayout tilDate,tilTime;
     TextInputEditText edDate,edTime;
@@ -60,7 +61,7 @@ public class AddAppointmentActivity extends AppCompatActivity implements TimeSlo
     RecyclerView rvTimeSlot;
     ArrayList<TimeSlot> timeSlots;
     TimeSlotAdapter timeSlotAdapter;
-    String userId,tsId;
+    String userId;
     private static final int REQUEST_PHONE_CALL = 1;
     private static final String phoneNumber = "0365231564";
     final int startHour = 7;
@@ -182,48 +183,55 @@ public class AddAppointmentActivity extends AppCompatActivity implements TimeSlo
         txDoctorName.setText(doctor.getFName()+" "+doctor.getLName());
         txType.setText(doctor.getMajor());
 
+// Cập nhật mã onClick cho button btnAdd
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(edTime.getText().toString().isEmpty()
-                        ||edDate.getText().toString().isEmpty()){
+                if (edTime.getText().toString().isEmpty() || edDate.getText().toString().isEmpty()) {
                     tilDate.setError("Not null");
                     tilTime.setError("Not null");
-                return;}
-                Map<String,Object> map=new HashMap<>();
-                map.put("DoctorName",txDoctorName.getText().toString());
-                map.put("Type",txType.getText().toString());
-                map.put("Date",edDate.getText().toString());
-                map.put("Time",edTime.getText().toString());
-                map.put("UserId",userId);
-                db=FirebaseFirestore.getInstance();
+                    return;
+                }
+
+                Map<String, Object> map = new HashMap<>();
+                map.put("DoctorName", txDoctorName.getText().toString());
+                map.put("Type", txType.getText().toString());
+                map.put("Date", edDate.getText().toString());
+                map.put("Time", edTime.getText().toString());
+                map.put("UserId", userId);
+
+                // Thêm document mới vào collection "Appointment"
                 db.collection("Appointment").add(map)
                         .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                             @Override
                             public void onSuccess(DocumentReference documentReference) {
-                                Log.d(TAG,"Them thanh cong"+documentReference.getId());
+                                Log.d(TAG, "Thêm thành công " + documentReference.getId());
+
+                                // Sau khi thêm thành công, cập nhật TimeSlot (nếu tsId đã được gán giá trị)
+                                if (tsId != null) {
+                                    db.collection("TimeSlot").document(tsId).update("Status", "Đã Đặt")
+                                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                @Override
+                                                public void onSuccess(Void avoid) {
+                                                    Log.d(TAG, "Cập nhật thành công");
+                                                }
+                                            })
+                                            .addOnFailureListener(new OnFailureListener() {
+                                                @Override
+                                                public void onFailure(@NonNull Exception e) {
+                                                    Log.w(TAG, "Lỗi", e);
+                                                }
+                                            });
+                                }
                             }
                         })
                         .addOnFailureListener(new OnFailureListener() {
                             @Override
                             public void onFailure(@NonNull Exception e) {
-                                Log.w(TAG,"Loi",e);
+                                Log.w(TAG, "Lỗi", e);
                             }
                         });
 
-                db.collection("TimeSlot").document(tsId).update("Status","Đã Đặt")
-                        .addOnSuccessListener(new OnSuccessListener<Void>() {
-                            @Override
-                            public void onSuccess(Void Avoid) {
-                                Log.d(TAG, "Cap nhat thanh cong");
-                            }
-                        })
-                        .addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                Log.w(TAG, "Loi", e);
-                            }
-                        });
                 finish();
             }
         });
