@@ -1,12 +1,13 @@
-package com.example.doandidong;
+package com.example.doandidong.medical_appointment;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.doandidong.R;
+import com.example.doandidong.medical_appointment.Appointment;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;

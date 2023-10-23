@@ -1,4 +1,4 @@
-package com.example.doandidong;
+package com.example.doandidong.medical_appointment;
 
 import static android.service.controls.ControlsProviderService.TAG;
 
@@ -6,9 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.DatePickerDialog;
@@ -19,14 +17,16 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.DatePicker;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.example.doandidong.doctor.Doctor;
+import com.example.doandidong.R;
+import com.example.doandidong.TimeSlot;
+import com.example.doandidong.TimeSlotAdapter;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -39,15 +39,12 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-public class AddAppointmentActivity extends AppCompatActivity implements TimeSlotAdapter.Listener{
+public class AddAppointmentActivity extends AppCompatActivity implements TimeSlotAdapter.Listener {
     String tsId = null;
 
     TextInputLayout tilDate,tilTime;

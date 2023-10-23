@@ -1,4 +1,4 @@
-package com.example.doandidong;
+package com.example.doandidong.additional_functions;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,15 +11,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
-import android.view.View;
-import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.doandidong.R;
+import com.example.doandidong.doctor.Doctor;
+import com.example.doandidong.doctor.DoctorAdapter;
+import com.example.doandidong.doctor.DoctorInfoActivity;
+import com.example.doandidong.medical_appointment.AddAppointmentActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.Filter;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -108,7 +109,7 @@ public class SearchActivity extends AppCompatActivity implements DoctorAdapter.L
 
     @Override
     public void setOnItemClickListener(Doctor doctor) {
-        Intent intent=new Intent(SearchActivity.this,DoctorInfoActivity.class);
+        Intent intent=new Intent(SearchActivity.this, DoctorInfoActivity.class);
         intent.putExtra("doctorID",doctor.getId());
         startActivity(intent);
     }

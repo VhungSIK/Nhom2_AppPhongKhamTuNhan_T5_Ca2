@@ -66,7 +66,7 @@ public class TimeSlotAdapter extends RecyclerView.Adapter<TimeSlotAdapter.TimeSl
             txStatus=itemView.findViewById(R.id.txStatus);
         }
     }
-    interface Listener{
+    public interface Listener{
         void setOnItemClickListener(TimeSlot timeSlot);
     }
 }

@@ -1,4 +1,4 @@
-package com.example.doandidong;
+package com.example.doandidong.user;
 
 import static android.service.controls.ControlsProviderService.TAG;
 
@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.doandidong.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputEditText;

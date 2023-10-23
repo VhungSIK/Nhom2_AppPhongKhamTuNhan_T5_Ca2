@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".DoctorInfoActivity">
+    tools:context=".doctor.DoctorInfoActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
