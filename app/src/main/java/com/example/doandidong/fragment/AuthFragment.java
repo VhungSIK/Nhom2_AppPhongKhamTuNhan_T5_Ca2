@@ -1,4 +1,4 @@
-package com.example.doandidong;
+package com.example.doandidong.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,18 +11,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.doandidong.R;
+import com.example.doandidong.user.LoginActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
-
-import java.io.Serializable;
-import java.util.concurrent.Executor;
 
 /**
  * A simple {@link Fragment} subclass.

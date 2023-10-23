@@ -1,18 +1,18 @@
-package com.example.doandidong;
+package com.example.doandidong.user;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.doandidong.MainActivity;
+import com.example.doandidong.R;
 import com.example.doandidong.doctor.DoctorActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -104,7 +104,7 @@ public class LoginActivity extends AppCompatActivity {
                                                     public void onSuccess(DocumentSnapshot doctorSnapshot) {
                                                         if (doctorSnapshot.exists()) {
                                                             // Người dùng là bác sĩ
-                                                            Toast.makeText(LoginActivity.this, "Bạn là bác sĩ", Toast.LENGTH_LONG).show();
+                                                                Toast.makeText(LoginActivity.this, "Bạn là bác sĩ", Toast.LENGTH_LONG).show();
                                                             Intent intent = new Intent(LoginActivity.this, DoctorActivity.class);
                                                             startActivity(intent);
                                                             finish();

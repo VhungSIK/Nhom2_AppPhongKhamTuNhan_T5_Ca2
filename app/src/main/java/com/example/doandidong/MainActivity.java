@@ -8,6 +8,10 @@ import androidx.fragment.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.doandidong.fragment.AppointmentFragment;
+import com.example.doandidong.fragment.AuthFragment;
+import com.example.doandidong.fragment.HomeFragment;
+import com.example.doandidong.fragment.SettingFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 

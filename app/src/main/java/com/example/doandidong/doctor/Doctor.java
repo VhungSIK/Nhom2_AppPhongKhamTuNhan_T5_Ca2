@@ -1,4 +1,4 @@
-package com.example.doandidong;
+package com.example.doandidong.doctor;
 
 import java.io.Serializable;
 

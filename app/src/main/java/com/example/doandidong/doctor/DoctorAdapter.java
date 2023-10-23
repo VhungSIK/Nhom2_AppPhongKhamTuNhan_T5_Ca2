@@ -1,21 +1,17 @@
-package com.example.doandidong;
+package com.example.doandidong.doctor;
 
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Filter;
-import android.widget.Filterable;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.firebase.firestore.DocumentSnapshot;
+import com.example.doandidong.R;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -76,7 +72,7 @@ public class DoctorAdapter extends RecyclerView.Adapter<DoctorAdapter.DoctorVH> 
             btnAdd=itemView.findViewById(R.id.btnAdd);
         }
     }
-    interface Listener{
+    public interface Listener{
         void setOnItemClickListener(Doctor doctor);
         void setOnButtonAdd(int pos, Doctor doctor);
     }

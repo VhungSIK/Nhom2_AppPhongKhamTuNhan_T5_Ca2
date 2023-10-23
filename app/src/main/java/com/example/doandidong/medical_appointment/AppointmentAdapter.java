@@ -1,19 +1,16 @@
-package com.example.doandidong;
+package com.example.doandidong.medical_appointment;
 
-import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Filter;
-import android.widget.Filterable;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.doandidong.R;
+
 import java.util.ArrayList;
-import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -63,7 +60,7 @@ public class AppointmentAdapter extends RecyclerView.Adapter<AppointmentAdapter.
             txType=itemView.findViewById(R.id.txType);
         }
     }
-    interface Listener{
+    public interface Listener{
         void onClickItemListener(Appointment appointment);
     }
 }

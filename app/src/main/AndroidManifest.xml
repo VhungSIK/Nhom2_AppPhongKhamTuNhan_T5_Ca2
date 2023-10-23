@@ -19,13 +19,13 @@
             android:name=".doctor.DoctorActivity"
             android:exported="false" />
         <activity
-            android:name=".EditProfileActivity"
+            android:name=".user.EditProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".SearchActivity"
+            android:name=".additional_functions.SearchActivity"
             android:exported="false" />
         <activity
-            android:name=".WelcomeActivity"
+            android:name=".additional_functions.WelcomeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -34,22 +34,22 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".AppointmentInfoActivity"
+            android:name=".medical_appointment.AppointmentInfoActivity"
             android:exported="false" />
         <activity
-            android:name=".AddAppointmentActivity"
+            android:name=".medical_appointment.AddAppointmentActivity"
             android:exported="false" />
         <activity
-            android:name=".DoctorInfoActivity"
+            android:name=".doctor.DoctorInfoActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".RegisterActivity"
+            android:name=".user.RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".user.LoginActivity"
             android:exported="false" />
     </application>
 
