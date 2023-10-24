@@ -35,8 +35,8 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
@@ -46,10 +46,11 @@ import java.util.Map;
 
 public class AddAppointmentActivity extends AppCompatActivity implements TimeSlotAdapter.Listener {
     String tsId = null;
+    String doctorId;
 
-    TextInputLayout tilDate,tilTime;
-    TextInputEditText edDate,edTime;
-    TextView txDoctorName,txType;
+    TextInputLayout tilDate, tilTime;
+    TextInputEditText edDate, edTime;
+    TextView txDoctorName, txType;
     int mYear, mMonth, mDay;
     Doctor doctor;
     Button btnAdd;
@@ -64,7 +65,6 @@ public class AddAppointmentActivity extends AppCompatActivity implements TimeSlo
     final int startHour = 7;
     final int endHour = 20;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,17 +72,18 @@ public class AddAppointmentActivity extends AppCompatActivity implements TimeSlo
 
         getSupportActionBar().setTitle("Đặt Lịch Khám");
 
-        Intent intent=getIntent();
-        doctor= (Doctor) intent.getSerializableExtra("doctors");
-        txDoctorName=findViewById(R.id.txDoctorName);
-        txType=findViewById(R.id.txType);
+        Intent intent = getIntent();
+        doctor = (Doctor) intent.getSerializableExtra("doctors");
+        doctorId = doctor.getId();
+        txDoctorName = findViewById(R.id.txDoctorName);
+        txType = findViewById(R.id.txType);
         tilDate = findViewById(R.id.tilDate);
-        tilTime=findViewById(R.id.tilTime);
-        edTime=findViewById(R.id.edTime);
+        tilTime = findViewById(R.id.tilTime);
+        edTime = findViewById(R.id.edTime);
         edDate = findViewById(R.id.edDate);
-        btnAdd=findViewById(R.id.btnAdd);
+        btnAdd = findViewById(R.id.btnAdd);
 
-        rvTimeSlot=findViewById(R.id.rvTimeSlot);
+        rvTimeSlot = findViewById(R.id.rvTimeSlot);
         edTime.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -113,10 +114,10 @@ public class AddAppointmentActivity extends AppCompatActivity implements TimeSlo
             }
         });
 
-        auth=FirebaseAuth.getInstance();
-        userId=auth.getCurrentUser().getUid();
-        db=FirebaseFirestore.getInstance();
-        timeSlots=new ArrayList<>();
+        auth = FirebaseAuth.getInstance();
+        userId = auth.getCurrentUser().getUid();
+        db = FirebaseFirestore.getInstance();
+        timeSlots = new ArrayList<>();
         Button callButton = findViewById(R.id.callButton);
         callButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -128,59 +129,76 @@ public class AddAppointmentActivity extends AppCompatActivity implements TimeSlo
                 }
             }
         });
-        timeSlotAdapter=new TimeSlotAdapter(AddAppointmentActivity.this,timeSlots);
+        timeSlotAdapter = new TimeSlotAdapter(AddAppointmentActivity.this, timeSlots);
         rvTimeSlot.setAdapter(timeSlotAdapter);
-        rvTimeSlot.setLayoutManager(new GridLayoutManager(AddAppointmentActivity.this,2));
+        rvTimeSlot.setLayoutManager(new GridLayoutManager(AddAppointmentActivity.this, 2));
 
         edDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final Calendar calendar = Calendar.getInstance ();
-                mYear = calendar.get ( Calendar.YEAR );
-                mMonth = calendar.get ( Calendar.MONTH );
-                mDay = calendar.get ( Calendar.DAY_OF_MONTH );
+                final Calendar calendar = Calendar.getInstance();
+                mYear = calendar.get(Calendar.YEAR);
+                mMonth = calendar.get(Calendar.MONTH);
+                mDay = calendar.get(Calendar.DAY_OF_MONTH);
 
-                DatePickerDialog datePickerDialog = new DatePickerDialog ( AddAppointmentActivity.this, new DatePickerDialog.OnDateSetListener () {
+                DatePickerDialog datePickerDialog = new DatePickerDialog(AddAppointmentActivity.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                        Calendar selectedDate = Calendar.getInstance();
+                        selectedDate.set(Calendar.YEAR, year);
+                        selectedDate.set(Calendar.MONTH, month);
+                        selectedDate.set(Calendar.DAY_OF_MONTH, dayOfMonth);
 
-                        edDate.setText ( dayOfMonth + "/" + String.format("%02d",month+1) + "/" + year );
-                        db.collection("TimeSlot")
-                                .whereEqualTo("DoctorId",doctor.getId())
-                                .whereEqualTo("Date",edDate.getText().toString())
-                                .get()
-                                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                                    @Override
-                                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                                        timeSlots.clear();
-                                        for (QueryDocumentSnapshot document: task.getResult()) {
-                                            String Id=document.getId();
-                                            String Date=document.get("Date").toString();
-                                            String Time = document.get("Time").toString();
-                                            String Status=document.get("Status").toString();
-                                            String DoctorId =document.get("DoctorId").toString();
-                                            TimeSlot timeSlot=new TimeSlot(Id,Date,Time,Status,DoctorId);
-                                            timeSlots.add(timeSlot);
+                        // Kiểm tra ngày đã qua
+                        Calendar currentDate = Calendar.getInstance();
+                        if (selectedDate.before(currentDate)) {
+                            Toast.makeText(AddAppointmentActivity.this, "Không thể đặt lịch vào ngày đã qua.", Toast.LENGTH_SHORT).show();
+                        } else if (selectedDate.get(Calendar.DAY_OF_WEEK) == Calendar.SATURDAY ||
+                                selectedDate.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY) {
+                            Toast.makeText(AddAppointmentActivity.this, "Không thể đặt lịch vào ngày thứ 7 hoặc chủ nhật.", Toast.LENGTH_SHORT).show();
+                        } else {
+                            // Ngày hợp lệ, cập nhật
+                            edDate.setText(dayOfMonth + "/" + String.format("%02d", month + 1) + "/" + year);
+
+                            // Thực hiện truy vấn TimeSlot và cập nhật danh sách time slot dựa trên ngày đã chọn
+                            db.collection("TimeSlot")
+                                    .whereEqualTo("DoctorId", doctor.getId())
+                                    .whereEqualTo("Date", edDate.getText().toString())
+                                    .get()
+                                    .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                            timeSlots.clear();
+                                            for (DocumentSnapshot document : task.getResult()) {
+                                                String Id = document.getId();
+                                                String Date = document.getString("Date");
+                                                String Time = document.getString("Time");
+                                                String Status = document.getString("Status");
+                                                String DoctorId = document.getString("DoctorId");
+                                                TimeSlot timeSlot = new TimeSlot(Id, Date, Time, Status, DoctorId);
+                                                timeSlots.add(timeSlot);
+                                            }
+                                            timeSlotAdapter.notifyDataSetChanged();
                                         }
-                                        timeSlotAdapter.notifyDataSetChanged();
-                                    }
-                                })
-                                .addOnFailureListener(new OnFailureListener() {
-                                    @Override
-                                    public void onFailure(@NonNull Exception e) {
-                                        Toast.makeText(AddAppointmentActivity.this,e.getMessage(),Toast.LENGTH_SHORT).show();
-                                    }
-                                });
+                                    })
+                                    .addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+                                            Toast.makeText(AddAppointmentActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                                        }
+                                    });
+                        }
                     }
-                }, mYear, mMonth, mDay );
-                datePickerDialog.show ();
+                }, mYear, mMonth, mDay);
+                datePickerDialog.show();
             }
-        } );
+        });
 
-        txDoctorName.setText(doctor.getFName()+" "+doctor.getLName());
+
+        txDoctorName.setText(doctor.getFName() + " " + doctor.getLName());
         txType.setText(doctor.getMajor());
 
-// Cập nhật mã onClick cho button btnAdd
+        // Cập nhật mã onClick cho button btnAdd
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -190,62 +208,83 @@ public class AddAppointmentActivity extends AppCompatActivity implements TimeSlo
                     return;
                 }
 
-                Map<String, Object> map = new HashMap<>();
-                map.put("DoctorName", txDoctorName.getText().toString());
-                map.put("Type", txType.getText().toString());
-                map.put("Date", edDate.getText().toString());
-                map.put("Time", edTime.getText().toString());
-                map.put("UserId", userId);
+                // Lấy UID của người dùng đang đăng nhập
+                String currentUserUID = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
-                // Thêm document mới vào collection "Appointment"
-                db.collection("Appointment").add(map)
-                        .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                            @Override
-                            public void onSuccess(DocumentReference documentReference) {
-                                Log.d(TAG, "Thêm thành công " + documentReference.getId());
+                // Tạo một truy vấn để lấy thông tin người dùng từ Firestore dựa trên UID
+                FirebaseFirestore db = FirebaseFirestore.getInstance();
+                DocumentReference userRef = db.collection("User").document(currentUserUID);
 
-                                // Sau khi thêm thành công, cập nhật TimeSlot (nếu tsId đã được gán giá trị)
-                                if (tsId != null) {
-                                    db.collection("TimeSlot").document(tsId).update("Status", "Đã Đặt")
-                                            .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                                @Override
-                                                public void onSuccess(Void avoid) {
-                                                    Log.d(TAG, "Cập nhật thành công");
-                                                }
-                                            })
-                                            .addOnFailureListener(new OnFailureListener() {
-                                                @Override
-                                                public void onFailure(@NonNull Exception e) {
-                                                    Log.w(TAG, "Lỗi", e);
-                                                }
-                                            });
-                                }
-                            }
-                        })
-                        .addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                Log.w(TAG, "Lỗi", e);
-                            }
-                        });
+                // Lấy thông tin người dùng
+                userRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    @Override
+                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+                        if (documentSnapshot.exists()) {
+                            // Lấy tên của người dùng
+                            String userName = documentSnapshot.getString("Name");
+                            String userPhone = documentSnapshot.getString("Phone");
+                            String userEmail = documentSnapshot.getString("Email");
 
-                finish();
+                            // Bây giờ bạn có thể thêm tên người dùng, số điện thoại và email vào thông tin đặt lịch và lưu nó vào Firestore
+                            Map<String, Object> map = new HashMap<>();
+                            map.put("DoctorName", txDoctorName.getText().toString());
+                            map.put("Type", txType.getText().toString());
+                            map.put("Date", edDate.getText().toString());
+                            map.put("Time", edTime.getText().toString());
+                            map.put("UserId", userId);
+                            map.put("DoctorId", doctorId);
+                            map.put("UserName", userName); // Thêm tên người dùng vào thông tin đặt lịch
+                            map.put("UserPhone", userPhone); // Thêm số điện thoại người dùng vào thông tin đặt lịch
+                            map.put("UserEmail", userEmail); // Thêm email người dùng vào thông tin đặt lịch
+
+                            // Thêm document mới vào collection "Appointment"
+                            db.collection("Appointment").add(map)
+                                    .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                                        @Override
+                                        public void onSuccess(DocumentReference documentReference) {
+                                            Log.d(TAG, "Thêm thành công " + documentReference.getId());
+
+                                            // Sau khi thêm thành công, cập nhật TimeSlot (nếu tsId đã được gán giá trị)
+                                            if (tsId != null) {
+                                                db.collection("TimeSlot").document(tsId).update("Status", "Đã Đặt")
+                                                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                            @Override
+                                                            public void onSuccess(Void avoid) {
+                                                                Log.d(TAG, "Cập nhật thành công");
+                                                            }
+                                                        })
+                                                        .addOnFailureListener(new OnFailureListener() {
+                                                            @Override
+                                                            public void onFailure(@NonNull Exception e) {
+                                                                Log.w(TAG, "Lỗi", e);
+                                                            }
+                                                        });
+                                            }
+                                        }
+                                    })
+                                    .addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+                                            Log.w(TAG, "Lỗi", e);
+                                        }
+                                    });
+
+                            finish();
+                        }
+                    }
+                });
             }
         });
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-    }
 
-    @Override
-    public boolean onSupportNavigateUp() {
-        onBackPressed();
-        return super.onSupportNavigateUp();
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     @Override
     public void setOnItemClickListener(TimeSlot timeSlot) {
         edTime.setText(timeSlot.getTime());
-        tsId=timeSlot.getIdT();
+        tsId = timeSlot.getIdT();
     }
+
     private void makePhoneCall() {
         Intent callIntent = new Intent(Intent.ACTION_CALL);
         callIntent.setData(Uri.parse("tel:" + phoneNumber));
