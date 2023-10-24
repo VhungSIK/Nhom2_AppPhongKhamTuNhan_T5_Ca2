@@ -14,6 +14,8 @@ import android.widget.Toast;
 import com.example.doandidong.MainActivity;
 import com.example.doandidong.R;
 import com.example.doandidong.doctor.DoctorActivity;
+import com.example.doandidong.employee.accountant.AccountantActivity;
+import com.example.doandidong.employee.technicians.TechniciansActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -83,6 +85,8 @@ public class LoginActivity extends AppCompatActivity {
                                     FirebaseFirestore db = FirebaseFirestore.getInstance();
                                     DocumentReference userRef = db.collection("User").document(currentUserUID);
                                     DocumentReference doctorRef = db.collection("Doctor").document(currentUserUID);
+                                    DocumentReference accountant = db.collection("Accountant").document(currentUserUID);
+                                    DocumentReference technicians = db.collection("Technicians").document(currentUserUID);
 
                                     userRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                                         @Override
@@ -99,17 +103,53 @@ public class LoginActivity extends AppCompatActivity {
                                                     Toast.makeText(LoginActivity.this, "Loại người dùng không hợp lệ", Toast.LENGTH_LONG).show();
                                                 }
                                             } else {
-                                                doctorRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                                                technicians.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                                                     @Override
-                                                    public void onSuccess(DocumentSnapshot doctorSnapshot) {
-                                                        if (doctorSnapshot.exists()) {
-                                                            // Người dùng là bác sĩ
-                                                                Toast.makeText(LoginActivity.this, "Bạn là bác sĩ", Toast.LENGTH_LONG).show();
-                                                            Intent intent = new Intent(LoginActivity.this, DoctorActivity.class);
-                                                            startActivity(intent);
-                                                            finish();
+                                                    public void onSuccess(DocumentSnapshot userSnapshot) {
+                                                        if (userSnapshot.exists()) {
+                                                            String userType = userSnapshot.getString("userType");
+
+                                                            if ("technicians".equals(userType)) {
+                                                                Toast.makeText(LoginActivity.this, "Bạn là nhân viên xét nghiệm", Toast.LENGTH_LONG).show();
+                                                                Intent intent = new Intent(LoginActivity.this, TechniciansActivity.class);
+                                                                startActivity(intent);
+                                                                finish();
+                                                            } else {
+                                                                Toast.makeText(LoginActivity.this, "Loại người dùng không hợp lệ", Toast.LENGTH_LONG).show();
+                                                            }
                                                         } else {
-                                                            Toast.makeText(LoginActivity.this, "Không tìm thấy thông tin người dùng", Toast.LENGTH_LONG).show();
+                                                            accountant.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                                                                @Override
+                                                                public void onSuccess(DocumentSnapshot userSnapshot) {
+                                                                    if (userSnapshot.exists()) {
+                                                                        String userType = userSnapshot.getString("userType");
+
+                                                                        if ("accountant".equals(userType)) {
+                                                                            Toast.makeText(LoginActivity.this, "Bạn là nhân viên kế toán", Toast.LENGTH_LONG).show();
+                                                                            Intent intent = new Intent(LoginActivity.this, AccountantActivity.class);
+                                                                            startActivity(intent);
+                                                                            finish();
+                                                                        } else {
+                                                                            Toast.makeText(LoginActivity.this, "Loại người dùng không hợp lệ", Toast.LENGTH_LONG).show();
+                                                                        }
+                                                                    } else {
+                                                                        doctorRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                                                                            @Override
+                                                                            public void onSuccess(DocumentSnapshot doctorSnapshot) {
+                                                                                if (doctorSnapshot.exists()) {
+                                                                                    // Người dùng là bác sĩ
+                                                                                    Toast.makeText(LoginActivity.this, "Bạn là bác sĩ", Toast.LENGTH_LONG).show();
+                                                                                    Intent intent = new Intent(LoginActivity.this, DoctorActivity.class);
+                                                                                    startActivity(intent);
+                                                                                    finish();
+                                                                                } else {
+                                                                                    Toast.makeText(LoginActivity.this, "Không tìm thấy thông tin người dùng", Toast.LENGTH_LONG).show();
+                                                                                }
+                                                                            }
+                                                                        });
+                                                                    }
+                                                                }
+                                                            });
                                                         }
                                                     }
                                                 });
