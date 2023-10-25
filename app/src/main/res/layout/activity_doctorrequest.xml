@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".doctor.doctor_appointment.doctor_request.DoctorrequestActivity">
+  <TextView
+      android:id="@+id/tvDoctorName"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Tên bác sĩ:"
+      android:textSize="18sp"
+      android:textStyle="bold"
+      android:layout_marginBottom="8dp"/>
+
+  <TextView
+      android:id="@+id/tvAppointmentType"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Loại cuộc hẹn:"
+      android:textSize="16sp"
+      android:layout_marginBottom="8dp"/>
+
+  <TextView
+      android:id="@+id/tvAppointmentDate"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Ngày cuộc hẹn:"
+      android:textSize="16sp"
+      android:layout_marginBottom="8dp"/>
+
+  <TextView
+      android:id="@+id/tvUserName"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Tên người dùng:"
+      android:textSize="16sp"
+      android:layout_marginBottom="8dp"/>
+
+  <TextView
+      android:id="@+id/tvUserPhone"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Số điện thoại:"
+      android:textSize="16sp"
+      android:layout_marginBottom="8dp"/>
+
+  <TextView
+      android:id="@+id/tvUserEmail"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Email:"
+      android:textSize="16sp"
+      android:layout_marginBottom="8dp"/>
+  <TextView
+      android:id="@+id/tvCurrentTime"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Giờ hiện tại:"
+      android:textSize="16sp"
+      android:layout_marginBottom="8dp" />
+  <EditText
+      android:id="@+id/etNote"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:hint="Ghi chú"
+      android:layout_marginTop="16dp"
+      android:inputType="textMultiLine"
+      android:lines="4" />
+  <Button
+      android:id="@+id/btnSavere"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Lưu"
+      android:layout_marginTop="16dp" />
+
+</LinearLayout>

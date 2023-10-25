@@ -1,0 +1,65 @@
+<!-- activity_receive.xml -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".employee.technicians.ReceiveActivity">
+
+    <TextView
+        android:id="@+id/tvDoctorName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Tên bác sĩ:" />
+
+    <TextView
+        android:id="@+id/tvAppointmentType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvDoctorName"
+        android:layout_marginTop="8dp"
+        android:text="Loại cuộc hẹn:" />
+
+    <TextView
+        android:id="@+id/tvAppointmentDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvAppointmentType"
+        android:layout_marginTop="8dp"
+        android:text="Ngày cuộc hẹn:" />
+
+    <TextView
+        android:id="@+id/tvUserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvAppointmentDate"
+        android:layout_marginTop="8dp"
+        android:text="Tên người dùng:" />
+
+    <TextView
+        android:id="@+id/tvUserPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvUserName"
+        android:layout_marginTop="8dp"
+        android:text="Số điện thoại:" />
+
+    <TextView
+        android:id="@+id/tvUserEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvUserPhone"
+        android:layout_marginTop="8dp"
+        android:text="Email:" />
+
+    <TextView
+        android:id="@+id/tvNote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvUserEmail"
+        android:layout_marginTop="8dp"
+        android:text="Ghi chú:" />
+
+</RelativeLayout>
