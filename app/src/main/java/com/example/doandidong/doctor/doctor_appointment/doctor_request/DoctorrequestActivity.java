@@ -24,6 +24,7 @@ public class DoctorrequestActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doctorrequest);
+
         // Nhận thông tin từ Intent
         Intent intent = getIntent();
         String doctorappointmentId = intent.getStringExtra("doctorappointmentId");
@@ -32,14 +33,13 @@ public class DoctorrequestActivity extends AppCompatActivity {
         String appointmentDate = intent.getStringExtra("appointmentDate");
         String userName = intent.getStringExtra("userName");
         String userPhone = intent.getStringExtra("userPhone");
-        String userEmail = intent.getStringExtra("userEmail");
         TextView tvCurrentTime = findViewById(R.id.tvCurrentTime);
         SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
         String currentTime = sdf.format(new Date());
         EditText etNote = findViewById(R.id.etNote);
         String note = etNote.getText().toString();
 
-        tvCurrentTime.setText("Giờ hiện tại: " + currentTime);
+        tvCurrentTime.setText(currentTime);
 
         // Hiển thị thông tin trên giao diện
         TextView tvDoctorName = findViewById(R.id.tvDoctorName);
@@ -56,9 +56,6 @@ public class DoctorrequestActivity extends AppCompatActivity {
 
         TextView tvUserPhone = findViewById(R.id.tvUserPhone);
         tvUserPhone.setText(userPhone);
-
-        TextView tvUserEmail = findViewById(R.id.tvUserEmail);
-        tvUserEmail.setText(userEmail);
         Button btnSave = findViewById(R.id.btnSavere);
 
         // Set a click listener for the "Save" button
@@ -72,9 +69,8 @@ public class DoctorrequestActivity extends AppCompatActivity {
                 String appointmentDate = tvAppointmentDate.getText().toString();
                 String userName = tvUserName.getText().toString();
                 String userPhone = tvUserPhone.getText().toString();
-                String userEmail = tvUserEmail.getText().toString();
 
-                // Get the note text from the EditText (if you have one)
+
                 EditText etNote = findViewById(R.id.etNote);
                 String note = etNote.getText().toString();
 
@@ -88,7 +84,6 @@ public class DoctorrequestActivity extends AppCompatActivity {
                 requestData.put("appointmentDate", appointmentDate);
                 requestData.put("userName", userName);
                 requestData.put("userPhone", userPhone);
-                requestData.put("userEmail", userEmail);
                 requestData.put("note", note);
 
                 // Add the request to Firebase
