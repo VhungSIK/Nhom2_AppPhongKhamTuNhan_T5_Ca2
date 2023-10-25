@@ -2,11 +2,14 @@ package com.example.doandidong.doctor.doctor_appointment;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.doandidong.R;
+import com.example.doandidong.doctor.doctor_appointment.doctor_request.DoctorrequestActivity;
 import com.example.doandidong.medical_appointment.Appointment;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentReference;
@@ -15,7 +18,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 public class DetailApointmentDTActivity extends AppCompatActivity {
     ImageView ivApp1;
-    TextView tvIdA1, tvDoctorName1, tvType1, tvDate1, tvTime1, tvUserName1, tvUserPhone1, tvUserEmail1 ;
+    TextView tvIdA1, tvDoctorName1, tvType1, tvDate1, tvTime1, tvUserName1, tvUserPhone1, tvUserEmail1, btn_request ;
     String doctorappointmentId;
     FirebaseFirestore db;
     @Override
@@ -34,6 +37,25 @@ public class DetailApointmentDTActivity extends AppCompatActivity {
         tvUserName1=findViewById(R.id.tvUserName1);
         tvUserPhone1=findViewById(R.id.tvUserPhone1);
         tvUserEmail1=findViewById(R.id.tvUserEmail1);
+        btn_request=findViewById(R.id.btn_request);
+        btn_request.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(DetailApointmentDTActivity.this, DoctorrequestActivity.class);
+
+                // Truyền thông tin cuộc hẹn qua Intent
+                intent.putExtra("doctorappointmentId", doctorappointmentId);
+                intent.putExtra("doctorName", tvDoctorName1.getText().toString());
+                intent.putExtra("appointmentType", tvType1.getText().toString());
+                intent.putExtra("appointmentDate", tvDate1.getText().toString());
+                intent.putExtra("userName", tvUserName1.getText().toString());
+                intent.putExtra("userPhone", tvUserPhone1.getText().toString());
+                intent.putExtra("userEmail", tvUserEmail1.getText().toString());
+
+                startActivity(intent);
+            }
+        });
+
 
         db=FirebaseFirestore.getInstance();
         DocumentReference docRef=db.collection("Appointment").document(doctorappointmentId);

@@ -16,6 +16,12 @@
         android:theme="@style/Theme.DoAnDiDong"
         tools:targetApi="31">
         <activity
+            android:name=".employee.technicians.ReceiveActivity"
+            android:exported="false" />
+        <activity
+            android:name=".doctor.doctor_appointment.doctor_request.DoctorrequestActivity"
+            android:exported="false" />
+        <activity
             android:name=".employee.accountant.AccountantActivity"
             android:exported="false" />
         <activity
