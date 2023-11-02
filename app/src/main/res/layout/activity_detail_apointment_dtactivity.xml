@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".medical_appointment.AppointmentInfoActivity">
+    tools:context=".doctor.doctor_appointment.DetailApointmentDTActivity">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -18,7 +18,7 @@
 
 
         <LinearLayout
-            android:id="@+id/profileLayout"
+            android:id="@+id/profileLayout1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
@@ -26,7 +26,7 @@
 
 
             <ImageView
-                android:id="@+id/ivApp"
+                android:id="@+id/ivApp1"
                 android:layout_width="?attr/actionBarSize"
                 android:layout_height="?attr/actionBarSize"
                 android:src="@drawable/appointment" />
@@ -51,7 +51,7 @@
 
 
                         <TextView
-                            android:id="@+id/tvIdA"
+                            android:id="@+id/tvIdA1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="ID"
@@ -121,14 +121,14 @@
 
 
                         <TextView
-                            android:id="@+id/tvDoctorName"
+                            android:id="@+id/tvDoctorName1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="DoctorName"
                             android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
 
                         <TextView
-                            android:id="@+id/typeOfName1"
+                            android:id="@+id/typeOfName11"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Bác sĩ"
@@ -186,14 +186,14 @@
 
 
                     <TextView
-                        android:id="@+id/tvType"
+                        android:id="@+id/tvType1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Khám răng"
                         android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
 
                     <TextView
-                        android:id="@+id/Type1"
+                        android:id="@+id/Type11"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Loại khám"
@@ -249,7 +249,7 @@
 
 
                     <TextView
-                        android:id="@+id/tvDate"
+                        android:id="@+id/tvDate1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="18/01/2024"
@@ -310,7 +310,7 @@
 
 
                     <TextView
-                        android:id="@+id/tvTime"
+                        android:id="@+id/tvTime1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="13:00 - 14:00"
@@ -327,12 +327,192 @@
             </LinearLayout>
 
         </LinearLayout>
-        <Button
-            android:id="@+id/btnEditAppointment"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Chỉnh sửa cuộc hẹn" />
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#e6e6e6" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:layout_width="?attr/actionBarSize"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/baseline_person_24"
+                />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:layout_marginStart="10dp"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:id="@+id/tvUserName1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="13:00 - 14:00"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Giờ khám"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout><LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#e6e6e6" />
+    </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:layout_width="?attr/actionBarSize"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/baseline_phone_24"
+                />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:layout_marginStart="10dp"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:id="@+id/tvUserPhone1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="13:00 - 14:00"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Giờ khám"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#e6e6e6" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:layout_width="?attr/actionBarSize"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/baseline_email_24"
+                />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:layout_marginStart="10dp"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:id="@+id/tvUserEmail1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="13:00 - 14:00"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Giờ khám"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
 
 
     </LinearLayout>
+    <TextView
+        android:id="@+id/btn_request"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:text="Yêu cầu xét nghiệm/siêu âm"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:background="@drawable/btn_click_detail"
+        android:layout_gravity="center"
+      />
+
+
 </LinearLayout>

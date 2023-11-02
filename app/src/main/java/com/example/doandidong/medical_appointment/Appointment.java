@@ -1,4 +1,4 @@
-package com.example.doandidong;
+package com.example.doandidong.medical_appointment;
 
 import java.io.Serializable;
 

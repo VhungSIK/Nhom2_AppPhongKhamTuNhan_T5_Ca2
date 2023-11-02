@@ -1,4 +1,4 @@
-package com.example.doandidong;
+package com.example.doandidong.doctor;
 
 import java.io.Serializable;
 
@@ -13,8 +13,9 @@ public class Doctor implements Serializable{
     String Address;
     String Sex;
     String Major;
+    String userType;
 
-    public Doctor(String Id, String FName, String LName, String Birthday, String Phone, String Email, String Address, String Sex, String Major) {
+    public Doctor(String Id, String FName, String LName, String Birthday, String Phone, String Email, String Address, String Sex, String Major, String userType) {
         this.Id = Id;
         this.FName = FName;
         this.LName=LName;
@@ -25,9 +26,20 @@ public class Doctor implements Serializable{
         this.Address = Address;
         this.Sex = Sex;
         this.Major = Major;
+        this.userType = userType;
     }
+
     public Doctor() {
     }
+
+    public String getUserType() {
+        return userType;
+    }
+
+    public void setUserType(String userType) {
+        this.userType = userType;
+    }
+
     public String getId() {
         return Id;
     }

@@ -1,14 +1,8 @@
-package com.example.doandidong;
-
-import static android.app.appsearch.AppSearchResult.RESULT_OK;
+package com.example.doandidong.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
 
-import androidx.activity.result.ActivityResult;
-import androidx.activity.result.ActivityResultCallback;
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -24,24 +18,27 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.example.doandidong.doctor.Doctor;
+import com.example.doandidong.doctor.DoctorAdapter;
+import com.example.doandidong.doctor.DoctorInfoActivity;
+import com.example.doandidong.R;
+import com.example.doandidong.additional_functions.SearchActivity;
+import com.example.doandidong.medical_appointment.AddAppointmentActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link HomeFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class HomeFragment extends Fragment implements DoctorAdapter.Listener{
+public class HomeFragment extends Fragment implements DoctorAdapter.Listener {
 
     RecyclerView rvDoctors;
     ArrayList<Doctor> doctors;
@@ -124,7 +121,8 @@ public class HomeFragment extends Fragment implements DoctorAdapter.Listener{
                             String Address=document.get("Address").toString();
                             String Sex=document.get("Sex").toString();
                             String Major=document.get("Major").toString();
-                            Doctor doctor=new Doctor(Id,FName,LName,Birthday,Phone,Email,Address,Sex,Major);
+                            String userType=document.get("userType").toString();
+                            Doctor doctor=new Doctor(Id,FName,LName,Birthday,Phone,Email,Address,Sex,Major,userType);
                             doctors.add(doctor);
                         }
                         doctorAdapter.notifyDataSetChanged();
@@ -139,7 +137,7 @@ public class HomeFragment extends Fragment implements DoctorAdapter.Listener{
     }
     @Override
     public void setOnItemClickListener(Doctor doctor) {
-        Intent intent=new Intent(getActivity(),DoctorInfoActivity.class);
+        Intent intent=new Intent(getActivity(), DoctorInfoActivity.class);
         intent.putExtra("doctorID",doctor.getId());
         startActivity(intent);
     }
@@ -176,7 +174,8 @@ public class HomeFragment extends Fragment implements DoctorAdapter.Listener{
                                 String Address=document.get("Address").toString();
                                 String Sex=document.get("Sex").toString();
                                 String Major=document.get("Major").toString();
-                                Doctor doctor=new Doctor(Id,FName,LName,Birthday,Phone,Email,Address,Sex,Major);
+                                String userType=document.get("userType").toString();
+                                Doctor doctor=new Doctor(Id,FName,LName,Birthday,Phone,Email,Address,Sex,Major,userType);
                                 doctors.add(doctor);
                             }
                             doctorAdapter.notifyDataSetChanged();
@@ -191,7 +190,7 @@ public class HomeFragment extends Fragment implements DoctorAdapter.Listener{
             doctorAdapter.notifyDataSetChanged();
         }
         if (item.getItemId()==R.id.mnuSearch){
-            Intent intent=new Intent(getActivity(),SearchActivity.class);
+            Intent intent=new Intent(getActivity(), SearchActivity.class);
             startActivity(intent);
         }
         return super.onOptionsItemSelected(item);

@@ -5,24 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".user.EditProfileActivity">
-
-    <TextView
-        android:id="@+id/tv"
-        android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:textStyle="bold"
-        android:text="Cập Nhật Hồ Sơ"
-        android:textSize="25dp"/>
-
-    <ImageView
-        android:layout_gravity="center"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:src="@drawable/ic_baseline_person_24"/>
-
+    tools:context=".medical_appointment.AppointmentInfoActivity">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -36,14 +19,29 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="0dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginBottom="10dp"
             android:orientation="horizontal">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#e6e6e6" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
+
 
             <ImageButton
                 android:layout_width="?attr/actionBarSize"
                 android:layout_height="?attr/actionBarSize"
                 android:background="?attr/selectableItemBackgroundBorderless"
-                android:src="@drawable/baseline_email_24" />
+                android:src="@drawable/ic_baseline_person_24" />
 
 
             <LinearLayout
@@ -65,19 +63,20 @@
                         android:layout_weight="1"
                         android:orientation="vertical">
 
+
+                        <TextView
+                            android:id="@+id/tvDoctorName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="DoctorName"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
+
                         <TextView
                             android:id="@+id/typeOfName1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Email"
+                            android:text="Bác sĩ"
                             android:textAppearance="@style/TextAppearance.AppCompat.Small" />
-
-                        <TextView
-                            android:id="@+id/txEmail"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="abc@gmail.com"
-                            android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
 
                     </LinearLayout>
 
@@ -104,6 +103,7 @@
                 android:background="#e6e6e6" />
         </LinearLayout>
 
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -120,6 +120,67 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:id="@+id/tvType"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Khám răng"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
+
+                    <TextView
+                        android:id="@+id/Type1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Loại khám"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#e6e6e6" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:layout_width="?attr/actionBarSize"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/baseline_date_range_24"
+                />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:orientation="vertical">
 
@@ -130,21 +191,19 @@
                     android:layout_marginStart="10dp"
                     android:orientation="vertical">
 
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/tilName"
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                        android:layout_width="match_parent"
+
+                    <TextView
+                        android:id="@+id/editTextNewDate"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="Họ tên">
+                        android:text="18/01/2024"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
 
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:inputType="textPersonName"
-                            android:id="@+id/edName"/>
-
-                    </com.google.android.material.textfield.TextInputLayout>
-
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ngày khám"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
                 </LinearLayout>
 
@@ -176,7 +235,7 @@
                 android:layout_width="?attr/actionBarSize"
                 android:layout_height="?attr/actionBarSize"
                 android:background="?attr/selectableItemBackgroundBorderless"
-                android:src="@drawable/baseline_phone_24"
+                android:src="@drawable/baseline_access_time_24"
                 />
 
 
@@ -193,39 +252,33 @@
                     android:layout_marginStart="10dp"
                     android:orientation="vertical">
 
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/tilPhone"
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                        android:layout_width="match_parent"
+
+                    <TextView
+                        android:id="@+id/editTextNewTime"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="Số điện thoại">
+                        android:text="13:00 - 14:00"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
 
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-
-                            android:inputType="number"
-                            android:id="@+id/edPhone"/>
-
-                    </com.google.android.material.textfield.TextInputLayout>
-
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Giờ khám"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
                 </LinearLayout>
 
             </LinearLayout>
 
         </LinearLayout>
-
         <Button
             android:id="@+id/btnSave"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
             android:layout_gravity="center"
-            android:textSize="15sp"
-            android:padding="15sp"
-            android:text="LƯU"/>
+            android:layout_marginTop="50dp"
+            android:text="Lưu" />
+
 
     </LinearLayout>
-
 </LinearLayout>

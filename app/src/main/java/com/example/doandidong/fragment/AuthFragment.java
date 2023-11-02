@@ -1,4 +1,4 @@
-package com.example.doandidong;
+package com.example.doandidong.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,18 +11,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.doandidong.R;
+import com.example.doandidong.user.EditProfileActivity;
+import com.example.doandidong.user.LoginActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
-
-import java.io.Serializable;
-import java.util.concurrent.Executor;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -89,7 +88,7 @@ public class AuthFragment extends Fragment{
         auth=FirebaseAuth.getInstance();
         firestore=FirebaseFirestore.getInstance();
         btnSignout=view.findViewById(R.id.btnSignout);
-//        btnChangePro=view.findViewById(R.id.btnChangePro);
+        btnChangePro=view.findViewById(R.id.btnChangePro);
         proEmail=view.findViewById(R.id.proEmail);
         proName=view.findViewById(R.id.proName);
         proPhone=view.findViewById(R.id.proPhone);
@@ -114,16 +113,16 @@ public class AuthFragment extends Fragment{
             }
         });
 
-//        btnChangePro.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent=new Intent(getActivity(),EditProfileActivity.class);
-//                intent.putExtra("userId",userId);
-//                intent.putExtra("email", proEmail.getText().toString());
-//                intent.putExtra("name", proName.getText().toString());
-//                intent.putExtra("phone", proPhone.getText().toString());
-//                startActivity(intent);
-//            }
-//        });
+        btnChangePro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getActivity(), EditProfileActivity.class);
+                intent.putExtra("userId",userId);
+                intent.putExtra("email", proEmail.getText().toString());
+                intent.putExtra("name", proName.getText().toString());
+                intent.putExtra("phone", proPhone.getText().toString());
+                startActivity(intent);
+            }
+        });
     }
 }

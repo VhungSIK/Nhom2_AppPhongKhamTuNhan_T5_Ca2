@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools" >
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
-
-
 
     <application
         android:name=".App"
@@ -16,16 +14,40 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.DoAnDiDong"
-        tools:targetApi="31">
+        tools:targetApi="31" >
         <activity
-            android:name=".EditProfileActivity"
+            android:name=".medical_appointment.EditAppointmentActivity"
             android:exported="false" />
         <activity
-            android:name=".SearchActivity"
+            android:name=".employee.technicians.ReceiveActivity"
             android:exported="false" />
         <activity
-            android:name=".WelcomeActivity"
-            android:exported="true">
+            android:name=".doctor.doctor_appointment.doctor_request.DoctorrequestActivity"
+            android:exported="false" />
+        <activity
+            android:name=".employee.accountant.AccountantActivity"
+            android:exported="false" />
+        <activity
+            android:name=".employee.technicians.TechniciansActivity"
+            android:exported="false" />
+        <activity
+            android:name=".doctor.doctor_appointment.DetailApointmentDTActivity"
+            android:exported="false" />
+        <activity
+            android:name=".doctor.doctor_appointment.DoctorListAppointmentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".doctor.DoctorActivity"
+            android:exported="false" />
+        <activity
+            android:name=".user.EditProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".additional_functions.SearchActivity"
+            android:exported="false" />
+        <activity
+            android:name=".additional_functions.WelcomeActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -33,22 +55,22 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".AppointmentInfoActivity"
+            android:name=".medical_appointment.AppointmentInfoActivity"
             android:exported="false" />
         <activity
-            android:name=".AddAppointmentActivity"
+            android:name=".medical_appointment.AddAppointmentActivity"
             android:exported="false" />
         <activity
-            android:name=".DoctorInfoActivity"
+            android:name=".doctor.DoctorInfoActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".RegisterActivity"
+            android:name=".user.RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".user.LoginActivity"
             android:exported="false" />
     </application>
 

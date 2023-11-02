@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".AuthFragment">
+    tools:context=".fragment.AuthFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
@@ -210,14 +210,14 @@
 
     </LinearLayout>
 
-<!--    <Button-->
-<!--        android:id="@+id/btnChangePro"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_gravity="center"-->
-<!--        android:padding="15dp"-->
-<!--        android:textSize="15sp"-->
-<!--        android:text="CẬP NHẬT HỒ SƠ"/>-->
+    <Button
+        android:id="@+id/btnChangePro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="15dp"
+        android:textSize="15sp"
+        android:text="CẬP NHẬT HỒ SƠ"/>
     <Button
         android:id="@+id/btnSignout"
         android:layout_width="wrap_content"
