@@ -43,4 +43,4 @@ android từ 6.0 trở lên.
 - Call API login
 ## Thời gian thực hiện dự án
 - Ngày bắt đầu: 09/09/2023
-- Ngày kết thúc (dự kiến): 16/09/2023
+- Ngày kết thúc (dự kiến): 16/11/2023
