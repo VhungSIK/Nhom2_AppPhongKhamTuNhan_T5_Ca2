@@ -27,8 +27,6 @@ android từ 6.0 trở lên.
 - Đặt lịch
 - Gọi cho phòng khám
 - Tính toán các chi phí
-## Chức năng nâng cao
-Call API login
 ## Thành viên
 - Phạm Văn Hùng
 - Phạm Thành Danh
@@ -42,6 +40,7 @@ Call API login
 ## Hướng phát triển trong tương lai
 - Cho phép đăng nhập bằng google
 - Thêm vào CH Play
+- Call API login
 ## Thời gian thực hiện dự án
 - Ngày bắt đầu: 09/09/2023
 - Ngày kết thúc(dự kiến): 16/09/2023
