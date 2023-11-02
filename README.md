@@ -23,7 +23,7 @@ khám,… Ứng dụng được thiết kế trên nền tảng Android và có 
 android từ 6.0 trở lên.
 ## Chức năng cơ bản
 - Phân quyền Admin
-- Thêm, xóa, sửa
+- Thêm, xóa, sửa lịch khám
 - Đặt lịch
 - Gọi cho phòng khám
 - Tính toán các chi phí
@@ -39,5 +39,9 @@ Call API login
 - ![download](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/5a2de244-06e6-43b3-bda7-3fdf91fc0f9d)
 - https://console.firebase.google.com/u/0/
 - ![logo-standard](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/d379871c-7ae1-4a46-9b73-ef265d5ecc96)
-## Ngày bắt đầu 
-09/09/2023
+## Hướng phát triển trong tương lai
+- Cho phép đăng nhập bằng google
+- Thêm vào CH Play
+## Thời gian thực hiện dự án
+- Ngày bắt đầu: 09/09/2023
+- Ngày kết thúc(dự kiến): 16/09/2023
