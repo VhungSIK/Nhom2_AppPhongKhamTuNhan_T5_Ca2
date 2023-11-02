@@ -38,6 +38,6 @@ Call API login
 - https://developer.android.com/studio
 - ![tải xuống](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/f4b260e6-7217-4c7e-a709-50c8b246d4e6)
 - https://console.firebase.google.com/u/0/
-- ![logo-standard](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/78d0e057-1849-4b79-96c2-66d363abcc85)
+- ![logo-standard](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/eceba7a0-16e1-4241-9957-cfed06ae90bf)
 ## Ngày bắt đầu 
 09/09/2023
