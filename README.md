@@ -1,4 +1,5 @@
 # App_CNPMNC_PhongKham
+![bacsi](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/8e5e486c-6281-4c62-b991-600c632e7d16)
 ## Giới thiệu
 Ứng dụng phòng khám tư nhân là một ứng dụng di động được phát triển để giúp người dùng có thể
 dễ dàng đặt lịch khám với bác sĩ. Ứng dụng cung cấp một giao diện thân thiện, dễ sử dụng 
