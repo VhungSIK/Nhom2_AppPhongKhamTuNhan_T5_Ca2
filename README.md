@@ -34,8 +34,10 @@ Call API login
 - Phạm Thành Danh
 - Trần Thanh Sỹ
 - Trần Quốc Thiện
-## Công nghệơ
+## Công nghệ
 - https://developer.android.com/studio
+- ![FwMqYA-WIA0E6Rw](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/3a8e076e-bc78-4de4-aeb4-3630ba4b0ef6)
 - https://console.firebase.google.com/u/0/
+- ![logo-standard](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/e01d16f4-8750-4b7c-8d59-90bf82368f2b)
 ## Ngày bắt đầu 
 09/09/2023
