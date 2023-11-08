@@ -26,16 +26,12 @@ giúp người dùng giải đáp thắc mắc, trao đổi tình trạng sức 
 - Cho phép đăng nhập bằng google
 - Thêm vào CH Play
 ## Thành viên/ vai trò
-| Cột 1 | Cột 2 | Cột 3 |
-|-------|-------|-------|
+| Họ và tên | Avatar | Vai trò |
+|------------|------------|------------|
 | Phạm Thành Danh |![td](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/6df07f3b-1508-4279-8718-0e4d2f2d86b8) | Product Owner |
-| Dữ liệu 2.1 | Dữ liệu 2.2 | Dữ liệu 2.3 |
-| Dữ liệu 2.1 | Dữ liệu 2.2 | Dữ liệu 2.3 |
-| Dữ liệu 2.1 | Dữ liệu 2.2 | Dữ liệu 2.3 |
-- Phạm Thành Danh/ Product Owner/
-- Trần Thanh Sỹ/ Scrum Master
-- Phạm Văn Hùng/ Leader-Dev
-- Trần Quốc Thiện/ Dev
+| Trần Thanh Sỹ | ![ts](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/96c2a769-5cfe-447b-badd-e9b596b1aa05) | Scrum Master |
+| Phạm Văn Hùng | ![vh](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/2e0df92b-632c-4caa-bc79-da6ecc78e7e2) | Leader/Dev |
+| Trần Quốc Thiện | ![qt](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/7c34f2c3-49f8-4c3d-87ef-715dd63e5adf) | Dev |
 ## Thời gian thực hiện dự án
 - Ngày bắt đầu: 09/09/2023
 - Ngày kết thúc (dự kiến): 16/11/2023
