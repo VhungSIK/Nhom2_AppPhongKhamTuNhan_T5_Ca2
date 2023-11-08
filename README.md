@@ -26,7 +26,13 @@ giúp người dùng giải đáp thắc mắc, trao đổi tình trạng sức 
 - Cho phép đăng nhập bằng google
 - Thêm vào CH Play
 ## Thành viên/ vai trò
-- Phạm Thành Danh/ Product Owner/<img src="![td](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/b7a69ee7-0842-42e3-8cb8-da476ea5c8ef)" width="40" height="40"/>
+| Cột 1 | Cột 2 | Cột 3 |
+|-------|-------|-------|
+| Phạm Thành Danh |![td](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/6df07f3b-1508-4279-8718-0e4d2f2d86b8) | Product Owner |
+| Dữ liệu 2.1 | Dữ liệu 2.2 | Dữ liệu 2.3 |
+| Dữ liệu 2.1 | Dữ liệu 2.2 | Dữ liệu 2.3 |
+| Dữ liệu 2.1 | Dữ liệu 2.2 | Dữ liệu 2.3 |
+- Phạm Thành Danh/ Product Owner/
 - Trần Thanh Sỹ/ Scrum Master
 - Phạm Văn Hùng/ Leader-Dev
 - Trần Quốc Thiện/ Dev
