@@ -497,6 +497,15 @@
 
                 </LinearLayout>
 
+                <Button
+                android:id="@+id/btnXacNhan"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Xác nhận lịch khám"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/btn_click_detail"
+                android:layout_marginLeft="40dp"/>
+
             </LinearLayout>
 
         </LinearLayout>
@@ -511,8 +520,18 @@
         android:gravity="center"
         android:textStyle="bold"
         android:background="@drawable/btn_click_detail"
-        android:layout_gravity="center"
+        android:layout_marginLeft="150"
       />
+
+    <Button
+        android:id="@+id/btnConfirmAppointment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Xác nhận lịch khám"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/btn_click_detail"
+        android:layout_marginLeft="50dp"/>
+
 
 
 </LinearLayout>
