@@ -2,20 +2,19 @@
 ![bacsi](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/8e5e486c-6281-4c62-b991-600c632e7d16)
 ## Giới thiệu
 ### Ứng dụng phòng khám tư nhân:
-- Được phát triển để giúp người dùng có thể dễ dàng đặt lịch khám với bác sĩ.
-- Cung cấp một giao diện thân thiện, dễ sử dụng cho người dùng.
-- Lựa chọn chuyên khoa cần khám, bác sĩ và thời gian khám mong muốn và đặt lịch ngay trên ứng dụng.
-- Cung cấp thông tin chi tiết về bác sĩ, bao gồm thông tin liên lạc, địa chỉ, giờ làm việc và chuyên môn.
-- Cho phép người dùng xem lại lịch sử đặt lịch khám của mình.
-- Giúp cho người dùng tiết kiệm thời gian, công sức và đảm bảo được chất lượng dịch vụ y tế.
-- Sử dụng cơ sở dữ liệu Firebase để lưu trữ thông tin bác sĩ, thông tin lịch khám,…
-- Được thiết kế trên nền tảng Android và có thể chạy tốt trên các phiên bản android từ 6.0 trở lên.
-## Chức năng cơ bản
-- Phân quyền Admin
-- Thêm, xóa, sửa lịch khám
-- Đặt lịch
-- Gọi cho phòng khám
-- Tính toán các chi phí
+Trong bối cảnh cuộc sống hiện đại, con người ngày càng quan tâm đến vấn đề sức khỏe. Tuy nhiên, với nhịp sống bận rộn, việc 
+sắp xếp thời gian đi khám bệnh tại các phòng khám truyền thống đôi khi là một thách thức. Hiểu được nhu cầu đó, chúng tôi 
+đã phát triển dự án ứng dụng phòng khám, mang đến cho người dùng những trải nghiệm chăm sóc sức khỏe toàn diện, tiện lợi và hiệu quả.
+### Ứng dụng phòng khám mang đến cho người dùng nhiều lợi ích thiết thực, bao gồm:
+Tiết kiệm thời gian và công sức: Người dùng có thể đặt lịch khám, thanh toán viện phí, xem lịch sử khám chữa bệnh,... 
+ngay trên ứng dụng, không cần phải đến trực tiếp phòng khám.
+Tăng cường tương tác giữa bệnh nhân và bác sĩ: Ứng dụng cung cấp các kênh liên lạc trực tiếp giữa bệnh nhân và bác sĩ, 
+giúp người dùng giải đáp thắc mắc, trao đổi tình trạng sức khỏe,... một cách nhanh chóng và thuận tiện.
+## Các tính năng nổi bật
+- Đặt lịch khám: Người dùng có thể đặt lịch khám với bác sĩ theo yêu cầu về thời gian, chuyên khoa.
+- Tìm kiếm bác sĩ: Ứng dụng cung cấp danh sách, thông tin chi tiết của bác sĩ
+- Thanh toán viện phí: Người dùng có thể thanh toán viện phí trực tuyến qua ứng dụng, giúp tiết kiệm thời gian và công sức.
+- Xem lịch sử đặt khám: Người dùng có thể xem lịch sử khám chữa bệnh của bản thân để theo dõi tình trạng sức khỏe.
 ## Công nghệ sử dụng
 - https://developer.android.com/studio
 - ![download](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/5a2de244-06e6-43b3-bda7-3fdf91fc0f9d)
@@ -23,7 +22,7 @@
 - ![logo-standard](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/d379871c-7ae1-4a46-9b73-ef265d5ecc96)
 ## Hướng phát triển trong tương lai
 - Cho phép đăng nhập bằng google
-  Thêm vào CH Play
+- Thêm vào CH Play
 ## Thành viên/ vai trò
 - Phạm Thành Danh/ Product Owner
 - Trần Thanh Sỹ/ Scrum Master
