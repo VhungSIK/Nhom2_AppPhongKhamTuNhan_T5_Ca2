@@ -55,10 +55,10 @@ public class SendRequireActivity extends AppCompatActivity {
         currentTimeTextView.setText("Current Time: " + currentTime);
 
 // Trong các dòng sau, sử dụng các biến đã khai báo từ trước
-        doctorNameTextView.setText("Doctor Name: " + doctorName);
-        appointmentTypeTextView.setText("Appointment Type: " + appointmentType);
-        appointmentDateTextView.setText("Appointment Date: " + appointmentDate);
-        userNameTextView.setText("User Name: " + userName);
+        doctorNameTextView.setText(doctorName);
+        appointmentTypeTextView.setText(appointmentType);
+        appointmentDateTextView.setText(appointmentDate);
+        userNameTextView.setText(userName);
 
         // Bắt sự kiện khi nhấn nút "Lưu"
         saveButton.setOnClickListener(new View.OnClickListener() {

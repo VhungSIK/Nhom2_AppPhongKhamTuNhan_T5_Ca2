@@ -1,5 +1,6 @@
 package com.example.doandidong.doctor.doctor_appointment.doctor_result;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -68,19 +69,39 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.ResultView
             quantificationTextView = itemView.findViewById(R.id.quantificationTextView);
             indexTextView = itemView.findViewById(R.id.indexTextView);
             totalAnalysisTextView = itemView.findViewById(R.id.totalAnalysisTextView);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (results != null) {
+                        ResultModel result = results.get(getAdapterPosition());
+                        // Chuyển sang trang DoctorDetailResultActivity và truyền thông tin chi tiết
+                        Intent intent = new Intent(context, DoctorDetailResultActivity.class);
+                        intent.putExtra("doctorName", result.getDoctorName());
+                        intent.putExtra("userName", result.getUserName());
+                        intent.putExtra("appointmentDate", result.getAppointmentDate());
+                        intent.putExtra("appointmentType", result.getAppointmentType());
+                        intent.putExtra("currentTime", result.getCurrentTime());
+                        intent.putExtra("bloodGroup", result.getBloodGroup());
+                        intent.putExtra("quantification", result.getQuantification());
+                        intent.putExtra("index", result.getIndex());
+                        intent.putExtra("totalAnalysis", result.getTotalAnalysis());
+                        context.startActivity(intent);
+                    }
+                }
+            });
         }
 
         public void bind(ResultModel result) {
-            doctorNameTextView.setText("Doctor Name: " + result.getDoctorName());
-            userNameTextView.setText("User Name: " + result.getUserName());
-            appointmentDateTextView.setText("Appointment Date: " + result.getAppointmentDate());
-            appointmentTypeTextView.setText("Appointment Type: " + result.getAppointmentType());
-            currentTimeTextView.setText("Current Time: " + result.getCurrentTime());
-            bloodGroupTextView.setText("Blood Group: " + result.getBloodGroup());
-            quantificationTextView.setText("Quantification: " + result.getQuantification());
-            indexTextView.setText("Index: " + result.getIndex());
-            totalAnalysisTextView.setText("Total Analysis: " + result.getTotalAnalysis());
+            doctorNameTextView.setText(result.getDoctorName());
+            userNameTextView.setText(result.getUserName());
+            appointmentDateTextView.setText(result.getAppointmentDate());
+            appointmentTypeTextView.setText(result.getAppointmentType());
+            currentTimeTextView.setText(result.getCurrentTime());
+            bloodGroupTextView.setText(result.getBloodGroup());
+            quantificationTextView.setText(result.getQuantification());
+            indexTextView.setText(result.getIndex());
+            totalAnalysisTextView.setText(result.getTotalAnalysis());
         }
     }
 }
-

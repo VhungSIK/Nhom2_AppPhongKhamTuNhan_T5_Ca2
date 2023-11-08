@@ -16,6 +16,9 @@
         android:theme="@style/Theme.DoAnDiDong"
         tools:targetApi="31">
         <activity
+            android:name=".doctor.doctor_appointment.doctor_result.DoctorDetailResultActivity"
+            android:exported="false" />
+        <activity
             android:name=".doctor.doctor_appointment.doctor_result.DoctorListResultActivity"
             android:exported="false" />
         <activity
