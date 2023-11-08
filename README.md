@@ -2,15 +2,11 @@
 ![anhnen](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/9ba94b4d-4745-4bd1-954c-4649d81ee08b)
 ## Giới thiệu
 ### Ứng dụng phòng khám - giải pháp chăm sóc sức khỏe toàn diện:
-Trong bối cảnh cuộc sống hiện đại, con người ngày càng quan tâm đến vấn đề sức khỏe. Tuy nhiên, với nhịp sống bận rộn, việc 
-sắp xếp thời gian đi khám bệnh tại các phòng khám truyền thống đôi khi là một thách thức. Hiểu được nhu cầu đó, chúng tôi 
-đã phát triển dự án ứng dụng phòng khám, mang đến cho người dùng những trải nghiệm chăm sóc sức khỏe toàn diện, tiện lợi và hiệu quả.
+![ic5 (1)](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/78628dde-664f-4cb4-9820-9d05bbcf779f) Trong bối cảnh cuộc sống hiện đại, con người ngày càng quan tâm đến vấn đề sức khỏe. Tuy nhiên, với nhịp sống bận rộn, việc sắp xếp thời gian đi khám bệnh tại các phòng khám truyền thống đôi khi là một thách thức. Hiểu được nhu cầu đó, chúng tôi đã phát triển dự án ứng dụng phòng khám, mang đến cho người dùng những trải nghiệm chăm sóc sức khỏe toàn diện, tiện lợi và hiệu quả.
 ![bacsi](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/8e5e486c-6281-4c62-b991-600c632e7d16)
-### Ứng dụng phòng khám mang đến cho người dùng nhiều lợi ích thiết thực, bao gồm:
-Tiết kiệm thời gian và công sức: Người dùng có thể đặt lịch khám, thanh toán viện phí, xem lịch sử khám chữa bệnh,... 
-ngay trên ứng dụng, không cần phải đến trực tiếp phòng khám.  
-Tăng cường tương tác giữa bệnh nhân và bác sĩ: Ứng dụng cung cấp các kênh liên lạc trực tiếp giữa bệnh nhân và bác sĩ, 
-giúp người dùng giải đáp thắc mắc, trao đổi tình trạng sức khỏe,... một cách nhanh chóng và thuận tiện.
+### Ứng dụng phòng khám mang đến cho người dùng nhiều lợi ích thiết thực:
+![ic5 (1)](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/78628dde-664f-4cb4-9820-9d05bbcf779f) Tiết kiệm thời gian và công sức: Người dùng có thể đặt lịch khám, thanh toán viện phí, xem lịch sử khám chữa bệnh,... ngay trên ứng dụng, không cần phải đến trực tiếp phòng khám.  
+![ic5 (1)](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/78628dde-664f-4cb4-9820-9d05bbcf779f)Tăng cường tương tác giữa bệnh nhân và bác sĩ: Ứng dụng cung cấp các kênh liên lạc trực tiếp giữa bệnh nhân và bác sĩ, giúp người dùng giải đáp thắc mắc, trao đổi tình trạng sức khỏe,... một cách nhanh chóng và thuận tiện.
 ![pk](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/dfb70f11-ca6c-4865-8b8c-36898e305f32)
 ## Các tính năng nổi bật
 ![ic](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/42d7a1d7-0040-4eff-943b-276c606d1d40) Đặt lịch khám: Người dùng có thể đặt lịch khám với bác sĩ theo yêu cầu về thời gian, chuyên khoa.  
