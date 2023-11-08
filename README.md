@@ -18,10 +18,10 @@ giúp người dùng giải đáp thắc mắc, trao đổi tình trạng sức 
 - Thanh toán viện phí: Người dùng có thể thanh toán viện phí trực tuyến qua ứng dụng, giúp tiết kiệm thời gian và công sức.
 - Xem lịch sử đặt khám: Người dùng có thể xem lịch sử khám chữa bệnh của bản thân để theo dõi tình trạng sức khỏe.
 ## Công nghệ sử dụng
-- https://developer.android.com/studio
-- ![download](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/5a2de244-06e6-43b3-bda7-3fdf91fc0f9d)
-- https://console.firebase.google.com/u/0/
-- ![logo-standard](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/d379871c-7ae1-4a46-9b73-ef265d5ecc96)
+- https://developer.android.com/studio  
+![download](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/5a2de244-06e6-43b3-bda7-3fdf91fc0f9d)
+- https://console.firebase.google.com/u/0/  
+![logo-standard](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/d379871c-7ae1-4a46-9b73-ef265d5ecc96)
 ## Hướng phát triển trong tương lai
 - Cho phép đăng nhập bằng google
 - Thêm vào CH Play
