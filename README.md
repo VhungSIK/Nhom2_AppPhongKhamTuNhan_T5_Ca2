@@ -21,7 +21,7 @@
 - Trần Thanh Sỹ/ Scrum Master
 - Phạm Văn Hùng/ Leader-Dev
 - Trần Quốc Thiện/ Dev
-## Công nghệ
+## Công nghệ sử dụng
 - https://developer.android.com/studio
 - ![download](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/5a2de244-06e6-43b3-bda7-3fdf91fc0f9d)
 - https://console.firebase.google.com/u/0/
