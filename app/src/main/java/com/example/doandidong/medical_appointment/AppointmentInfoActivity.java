@@ -38,7 +38,7 @@ public class AppointmentInfoActivity extends AppCompatActivity {
         tvType=findViewById(R.id.tvType);
         tvDate=findViewById(R.id.tvDate);
         tvTime=findViewById(R.id.tvTime);
-        Button btnEditAppointment = findViewById(R.id.btnEditAppointment);
+        TextView btnEditAppointment = findViewById(R.id.btnEditAppointment);
         btnEditAppointment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

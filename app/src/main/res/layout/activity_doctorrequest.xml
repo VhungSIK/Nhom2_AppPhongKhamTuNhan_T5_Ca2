@@ -407,31 +407,17 @@
               android:layout_height="wrap_content"
               android:text="0912345678"
               android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-
               />
-
           <TextView
               android:id="@+id/typeOfUserPhone"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:text="Số điện thoại người dùng"
               android:textAppearance="@style/TextAppearance.AppCompat.Small" />
-
         </LinearLayout>
-
-
       </LinearLayout>
-
-
     </LinearLayout>
-
-
-
-
-
-
   </LinearLayout>
-
   <EditText
       android:id="@+id/etNote"
       android:layout_width="350dp"
@@ -439,17 +425,20 @@
       android:layout_gravity="center"
       android:paddingStart="10dp"
       android:background="@drawable/btn_click_detail"
-      android:text="Ghi chú"
+      android:hint="Ghi chú"
       />
-  <Button
-      android:id="@+id/btnSavere"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="5dp"
-      android:layout_gravity="center"
-      android:textSize="15sp"
-      android:padding="15sp"
-      android:text="Lưu"/>
+  <TextView
+    android:id="@+id/btnSavere"
+    android:layout_width="150dp"
+    android:layout_height="40dp"
+    android:textSize="16dp"
+    android:textStyle="bold"
+    android:textColor="@color/black"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:background="@drawable/tv_dotor"
+    android:layout_marginTop="10dp"
+    android:text="Lưu thay đổi" />
 </LinearLayout>
 
 

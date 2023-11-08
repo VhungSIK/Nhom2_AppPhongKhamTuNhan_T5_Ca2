@@ -224,6 +224,8 @@ public class AddAppointmentActivity extends AppCompatActivity implements TimeSlo
                             String userName = documentSnapshot.getString("Name");
                             String userPhone = documentSnapshot.getString("Phone");
                             String userEmail = documentSnapshot.getString("Email");
+                            String request = "wait";
+
 
                             // Bây giờ bạn có thể thêm tên người dùng, số điện thoại và email vào thông tin đặt lịch và lưu nó vào Firestore
                             Map<String, Object> map = new HashMap<>();
@@ -236,7 +238,7 @@ public class AddAppointmentActivity extends AppCompatActivity implements TimeSlo
                             map.put("UserName", userName); // Thêm tên người dùng vào thông tin đặt lịch
                             map.put("UserPhone", userPhone); // Thêm số điện thoại người dùng vào thông tin đặt lịch
                             map.put("UserEmail", userEmail); // Thêm email người dùng vào thông tin đặt lịch
-
+                            map.put("Request", request);
                             // Thêm document mới vào collection "Appointment"
                             db.collection("Appointment").add(map)
                                     .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {

@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.doandidong.R;
 import com.google.firebase.firestore.CollectionReference;
@@ -24,6 +25,7 @@ public class DoctorrequestActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doctorrequest);
+        getSupportActionBar().setTitle("Phiếu yêu cầu xét nghiệm");
 
         // Nhận thông tin từ Intent
         Intent intent = getIntent();
@@ -56,7 +58,7 @@ public class DoctorrequestActivity extends AppCompatActivity {
 
         TextView tvUserPhone = findViewById(R.id.tvUserPhone);
         tvUserPhone.setText(userPhone);
-        Button btnSave = findViewById(R.id.btnSavere);
+        TextView btnSave = findViewById(R.id.btnSavere);
 
         // Set a click listener for the "Save" button
         btnSave.setOnClickListener(new View.OnClickListener() {
@@ -74,7 +76,6 @@ public class DoctorrequestActivity extends AppCompatActivity {
                 EditText etNote = findViewById(R.id.etNote);
                 String note = etNote.getText().toString();
 
-                // Save the information to Firebase
                 FirebaseFirestore db = FirebaseFirestore.getInstance();
                 CollectionReference requestCollection = db.collection("Request");
 
@@ -86,11 +87,23 @@ public class DoctorrequestActivity extends AppCompatActivity {
                 requestData.put("userPhone", userPhone);
                 requestData.put("note", note);
 
-                // Add the request to Firebase
                 requestCollection.add(requestData);
+// Thêm yêu cầu xét nghiệm vào Firebase
+                requestCollection.add(requestData).addOnSuccessListener(documentReference -> {
+                    // Yêu cầu xét nghiệm đã được lưu thành công
+                    Toast.makeText(DoctorrequestActivity.this, "Yêu cầu xét nghiệm đã được gửi đến kĩ thuật viên.", Toast.LENGTH_SHORT).show();
+                    db.collection("Appointment")
+                            .document(doctorappointmentId)
+                            .update("Request", "complete")
+                            .addOnSuccessListener(aVoid -> {
+                    finish();
+                }).addOnFailureListener(e -> {
+                    // Xảy ra lỗi khi lưu yêu cầu xét nghiệm
+                    Toast.makeText(DoctorrequestActivity.this, "Lỗi khi lưu yêu cầu xét nghiệm: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                });
 
-                // Finish the activity and return to the previous screen
                 finish();
+                });
             }
         });
     }

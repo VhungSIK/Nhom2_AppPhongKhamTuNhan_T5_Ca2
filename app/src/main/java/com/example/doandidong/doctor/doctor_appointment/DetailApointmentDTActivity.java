@@ -18,7 +18,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 public class DetailApointmentDTActivity extends AppCompatActivity {
     ImageView ivApp1;
-    TextView tvIdA1, tvDoctorName1, tvType1, tvDate1, tvTime1, tvUserName1, tvUserPhone1, tvUserEmail1, btn_request ;
+    TextView tvIdA1, tvDoctorName1, tvType1, tvDate1, tvUserName1, tvUserPhone1, tvUserEmail1, btn_request ;
     String doctorappointmentId;
     FirebaseFirestore db;
     @Override
@@ -33,7 +33,6 @@ public class DetailApointmentDTActivity extends AppCompatActivity {
         tvDoctorName1=findViewById(R.id.tvDoctorName1);
         tvType1=findViewById(R.id.tvType1);
         tvDate1=findViewById(R.id.tvDate1);
-        tvTime1=findViewById(R.id.tvTime1);
         tvUserName1=findViewById(R.id.tvUserName1);
         tvUserPhone1=findViewById(R.id.tvUserPhone1);
         tvUserEmail1=findViewById(R.id.tvUserEmail1);

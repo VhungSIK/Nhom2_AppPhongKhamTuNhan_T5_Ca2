@@ -6,9 +6,26 @@
     android:layout_height="match_parent"
     android:padding="16dp"
     tools:context=".doctor.DoctorActivity">
-    <Button
+    <TextView
         android:id="@+id/btn_list_appointment"
         android:layout_width="match_parent"
-        android:layout_height="50dp"/>
-
+        android:layout_height="50dp"
+        android:background="@drawable/tv_dotor"
+        android:text="Danh sách lịch khám"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:gravity="center"/>
+    <TextView
+        android:id="@+id/btn_list_result"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/tv_dotor"
+        android:text="Danh sách kết quả"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_marginTop="150dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

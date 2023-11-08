@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/doctorNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Doctor Name: John Doe"
+        android:textSize="18sp"
+        android:layout_alignParentTop="true" />
+
+    <TextView
+        android:id="@+id/userNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="User Name: Jane Smith"
+        android:textSize="16sp"
+        android:layout_below="@id/doctorNameTextView" />
+
+    <TextView
+        android:id="@+id/appointmentDateTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Appointment Date: 2023-01-15"
+        android:textSize="16sp"
+        android:layout_below="@id/userNameTextView" />
+
+    <TextView
+        android:id="@+id/appointmentTypeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Appointment Type: Checkup"
+        android:textSize="16sp"
+        android:layout_below="@id/appointmentDateTextView" />
+
+    <TextView
+        android:id="@+id/currentTimeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Current Time: 12:30 PM"
+        android:textSize="16sp"
+        android:layout_below="@id/appointmentTypeTextView" />
+
+    <TextView
+        android:id="@+id/bloodGroupTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Blood Group: AB+"
+        android:textSize="16sp"
+        android:layout_below="@id/currentTimeTextView" />
+
+    <TextView
+        android:id="@+id/quantificationTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quantification: Normal"
+        android:textSize="16sp"
+        android:layout_below="@id/bloodGroupTextView" />
+
+    <TextView
+        android:id="@+id/indexTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Index: 0.85"
+        android:textSize="16sp"
+        android:layout_below="@id/quantificationTextView" />
+
+    <TextView
+        android:id="@+id/totalAnalysisTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total Analysis: Passed"
+        android:textSize="16sp"
+        android:layout_below="@id/indexTextView" />
+</RelativeLayout>
