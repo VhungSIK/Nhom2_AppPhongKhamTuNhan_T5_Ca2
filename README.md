@@ -33,5 +33,5 @@ Cho phép đăng nhập bằng google
 | Phạm Văn Hùng | ![vh](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/2e0df92b-632c-4caa-bc79-da6ecc78e7e2) | Leader/Dev |
 | Trần Quốc Thiện | ![qt](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/7c34f2c3-49f8-4c3d-87ef-715dd63e5adf) | Dev |
 ## Thời gian thực hiện dự án
-![ic1](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/1622b95c-a885-449f-bcc2-64e2595f90f3) Ngày bắt đầu: 09/09/2023
-![ic1](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/1622b95c-a885-449f-bcc2-64e2595f90f3) Ngày kết thúc (dự kiến): 16/11/2023
+![ic1](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/1622b95c-a885-449f-bcc2-64e2595f90f3)Ngày bắt đầu: 09/09/2023
+![ic1](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/1622b95c-a885-449f-bcc2-64e2595f90f3)Ngày kết thúc (dự kiến): 16/11/2023
