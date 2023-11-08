@@ -112,6 +112,230 @@
                 <!-- Nút lưu -->
 
             </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- STT -->
+                <EditText
+                    android:id="@+id/sttEditText2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="STT" />
+
+                <!-- Tên thuốc -->
+                <EditText
+                    android:id="@+id/medicineNameEditText2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:hint="Tên thuốc" />
+
+                <!-- Hàm lượng -->
+                <EditText
+                    android:id="@+id/dosageEditText2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Hàm lượng" />
+
+                <!-- Liều dùng -->
+                <EditText
+                    android:id="@+id/usageEditText2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:hint="Liều dùng" />
+
+                <!-- Đường dùng -->
+                <EditText
+                    android:id="@+id/routeEditText2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:hint="Đường dùng" />
+
+                <!-- Số ngày -->
+                <EditText
+                    android:id="@+id/daysEditText2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Số ngày" />
+
+                <!-- Nút lưu -->
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- STT -->
+                <EditText
+                    android:id="@+id/sttEditText3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="STT" />
+
+                <!-- Tên thuốc -->
+                <EditText
+                    android:id="@+id/medicineNameEditText3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:hint="Tên thuốc" />
+
+                <!-- Hàm lượng -->
+                <EditText
+                    android:id="@+id/dosageEditText3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Hàm lượng" />
+
+                <!-- Liều dùng -->
+                <EditText
+                    android:id="@+id/usageEditText3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:hint="Liều dùng" />
+
+                <!-- Đường dùng -->
+                <EditText
+                    android:id="@+id/routeEditText3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:hint="Đường dùng" />
+
+                <!-- Số ngày -->
+                <EditText
+                    android:id="@+id/daysEditText3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Số ngày" />
+
+                <!-- Nút lưu -->
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- STT -->
+                <EditText
+                    android:id="@+id/sttEditText4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="STT" />
+
+                <!-- Tên thuốc -->
+                <EditText
+                    android:id="@+id/medicineNameEditText4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:hint="Tên thuốc" />
+
+                <!-- Hàm lượng -->
+                <EditText
+                    android:id="@+id/dosageEditText4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Hàm lượng" />
+
+                <!-- Liều dùng -->
+                <EditText
+                    android:id="@+id/usageEditText4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:hint="Liều dùng" />
+
+                <!-- Đường dùng -->
+                <EditText
+                    android:id="@+id/routeEditText4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:hint="Đường dùng" />
+
+                <!-- Số ngày -->
+                <EditText
+                    android:id="@+id/daysEditText4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Số ngày" />
+
+                <!-- Nút lưu -->
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- STT -->
+                <EditText
+                    android:id="@+id/sttEditText5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="STT" />
+
+                <!-- Tên thuốc -->
+                <EditText
+                    android:id="@+id/medicineNameEditText5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:hint="Tên thuốc" />
+
+                <!-- Hàm lượng -->
+                <EditText
+                    android:id="@+id/dosageEditText5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Hàm lượng" />
+
+                <!-- Liều dùng -->
+                <EditText
+                    android:id="@+id/usageEditText5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:hint="Liều dùng" />
+
+                <!-- Đường dùng -->
+                <EditText
+                    android:id="@+id/routeEditText5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:hint="Đường dùng" />
+
+                <!-- Số ngày -->
+                <EditText
+                    android:id="@+id/daysEditText5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Số ngày" />
+
+                <!-- Nút lưu -->
+
+            </LinearLayout>
 
             <!-- Lặp lại cho 6 hàng còn lại, thay đổi ID cho từng trường tương ứng -->
 
