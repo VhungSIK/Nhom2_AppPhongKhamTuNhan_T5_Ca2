@@ -8,7 +8,7 @@ sắp xếp thời gian đi khám bệnh tại các phòng khám truyền thốn
 ![THU-TUC-MO-PHONG-KHAM-TU-NHAN](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/dbdfbc5e-c1b6-452b-9607-be6370afd7fc)
 ### Ứng dụng phòng khám mang đến cho người dùng nhiều lợi ích thiết thực, bao gồm:
 Tiết kiệm thời gian và công sức: Người dùng có thể đặt lịch khám, thanh toán viện phí, xem lịch sử khám chữa bệnh,... 
-ngay trên ứng dụng, không cần phải đến trực tiếp phòng khám.<space></space>
+ngay trên ứng dụng, không cần phải đến trực tiếp phòng khám.  
 Tăng cường tương tác giữa bệnh nhân và bác sĩ: Ứng dụng cung cấp các kênh liên lạc trực tiếp giữa bệnh nhân và bác sĩ, 
 giúp người dùng giải đáp thắc mắc, trao đổi tình trạng sức khỏe,... một cách nhanh chóng và thuận tiện.
 ![pk](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/dfb70f11-ca6c-4865-8b8c-36898e305f32)
