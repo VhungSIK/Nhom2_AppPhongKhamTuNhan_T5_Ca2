@@ -13,6 +13,7 @@
 ![ic](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/42d7a1d7-0040-4eff-943b-276c606d1d40) **Tìm kiếm bác sĩ:** Ứng dụng cung cấp danh sách, thông tin chi tiết của bác sĩ.  
 ![ic](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/42d7a1d7-0040-4eff-943b-276c606d1d40) **Thanh toán viện phí:** Người dùng có thể thanh toán viện phí trực tuyến qua ứng dụng, giúp tiết kiệm thời gian và công sức.  
 ![ic](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/42d7a1d7-0040-4eff-943b-276c606d1d40) **Xem lịch sử đặt khám:** Người dùng có thể xem lịch sử khám chữa bệnh của bản thân để theo dõi tình trạng sức khỏe.  
+![ic](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/42d7a1d7-0040-4eff-943b-276c606d1d40) **Trao đổi với bác sĩ:** Người dùng trao đổi với bác sĩ các vấn đề như: đặt câu hỏi, nhận lời khuyên, và chia sẻ thông tin y tế một cách tiện lợi.
 ## Công nghệ sử dụng
 ![ic4 (1)](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/6b2c871f-fb40-4cb9-ab3e-4acceceb8686) https://developer.android.com/studio  
 ![download](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/5a2de244-06e6-43b3-bda7-3fdf91fc0f9d)  
@@ -31,3 +32,8 @@
 ## Thời gian thực hiện dự án
 ![ic1](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/1622b95c-a885-449f-bcc2-64e2595f90f3)Ngày bắt đầu: 09/09/2023  
 ![ic1](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/1622b95c-a885-449f-bcc2-64e2595f90f3)Ngày kết thúc (dự kiến): 16/11/2023  
+## Ngoài lề:
+- [Project của nhóm](https://github.com/users/VhungSIK/projects/4)
+- [Issues của nhóm](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/issues)
+- [Milestone của nhóm](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/milestones)
+- [Label của nhóm](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/labels)
