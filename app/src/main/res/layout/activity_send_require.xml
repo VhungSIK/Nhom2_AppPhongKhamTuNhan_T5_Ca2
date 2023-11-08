@@ -5,67 +5,125 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".employee.technicians.SendRequireActivity">
+    <TextView
+        android:id="@+id/tv"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textStyle="bold"
+        android:text="Yêu cầu xét nghiệm"
+        android:textSize="25dp"
+        android:layout_centerHorizontal="true"/>
+    <TextView
 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Doctor Name: "
+        android:layout_marginTop="70dp"
+        android:textStyle="bold"
+        android:layout_marginStart="16dp"
+        android:textSize="20sp" />
     <TextView
         android:id="@+id/doctorNameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Doctor Name: "
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"
-        android:textSize="16sp" />
+        android:text="Doctor Name"
+        android:layout_marginTop="70dp"
+        android:layout_marginStart="150dp"
+        android:textSize="20dp" />
 
     <TextView
-        android:id="@+id/userNameTextView"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="User Name: "
         android:layout_below="@+id/doctorNameTextView"
         android:layout_marginStart="16dp"
-        android:textSize="16sp" />
+        android:textStyle="bold"
+        android:textSize="18sp" />
+    <TextView
+        android:id="@+id/userNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="User Name "
+        android:layout_below="@+id/doctorNameTextView"
+        android:layout_marginStart="120dp"
+        android:textSize="18sp" />
 
     <TextView
-        android:id="@+id/appointmentDateTextView"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Appointment Date: "
         android:layout_below="@+id/userNameTextView"
+        android:textStyle="bold"
         android:layout_marginStart="16dp"
-        android:textSize="16sp" />
+        android:textSize="18sp" />
+    <TextView
+        android:id="@+id/appointmentDateTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Appointment Date"
+        android:layout_below="@+id/userNameTextView"
+        android:layout_marginStart="170dp"
+        android:textSize="18sp" />
+
 
     <TextView
-        android:id="@+id/appointmentTypeTextView"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Appointment Type: "
         android:layout_below="@+id/appointmentDateTextView"
+        android:textStyle="bold"
         android:layout_marginStart="16dp"
-        android:textSize="16sp" />
+        android:textSize="18sp" />
+    <TextView
+        android:id="@+id/appointmentTypeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Appointment Type"
+        android:layout_below="@+id/appointmentDateTextView"
+        android:layout_marginStart="170dp"
+        android:textSize="18sp" />
 
     <TextView
-        android:id="@+id/currentTimeTextView"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Current Time: "
         android:layout_below="@+id/appointmentTypeTextView"
         android:layout_marginStart="16dp"
-        android:textSize="16sp" />
+        android:textSize="18sp"
+        android:textStyle="bold"/>
+    <TextView
+        android:id="@+id/currentTimeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Current Time"
+        android:layout_below="@+id/appointmentTypeTextView"
+        android:layout_marginStart="130dp"
+        android:textSize="18sp" />
 
     <EditText
         android:id="@+id/bloodGroupEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="2000dp"
+        android:layout_height="50dp"
         android:hint="Blood Group"
         android:layout_below="@+id/currentTimeTextView"
+        android:background="@drawable/btn_click_detail"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:paddingStart="20dp"
         android:layout_marginEnd="16dp" />
 
     <EditText
         android:id="@+id/quantificationEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Quantification"
+        android:layout_width="2000dp"
+        android:layout_height="50dp"
+        android:hint="Quantification" android:background="@drawable/btn_click_detail"
+        android:paddingStart="20dp"
         android:layout_below="@+id/bloodGroupEditText"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
@@ -73,29 +131,31 @@
 
     <EditText
         android:id="@+id/indexEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="2000dp"
+        android:layout_height="50dp"
         android:hint="Index"
+        android:paddingStart="20dp"
         android:layout_below="@+id/quantificationEditText"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="16dp" android:background="@drawable/btn_click_detail"
         android:layout_marginEnd="16dp" />
 
     <EditText
         android:id="@+id/totalAnalysisEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="2000dp"
+        android:layout_height="50dp"
+        android:paddingStart="20dp"
         android:hint="Total Analysis"
         android:layout_below="@+id/indexEditText"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="16dp" android:background="@drawable/btn_click_detail"
         android:layout_marginEnd="16dp" />
 
     <Button
         android:id="@+id/saveButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Lưu"
+        android:text="Gửi yêu cầu xét nghiệm"
         android:layout_below="@+id/totalAnalysisEditText"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
