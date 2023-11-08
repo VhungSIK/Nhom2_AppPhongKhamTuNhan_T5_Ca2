@@ -87,23 +87,31 @@ public class DoctorrequestActivity extends AppCompatActivity {
                 requestData.put("userPhone", userPhone);
                 requestData.put("note", note);
 
-                requestCollection.add(requestData);
-// Thêm yêu cầu xét nghiệm vào Firebase
-                requestCollection.add(requestData).addOnSuccessListener(documentReference -> {
-                    // Yêu cầu xét nghiệm đã được lưu thành công
-                    Toast.makeText(DoctorrequestActivity.this, "Yêu cầu xét nghiệm đã được gửi đến kĩ thuật viên.", Toast.LENGTH_SHORT).show();
-                    db.collection("Appointment")
-                            .document(doctorappointmentId)
-                            .update("Request", "complete")
-                            .addOnSuccessListener(aVoid -> {
-                    finish();
-                }).addOnFailureListener(e -> {
-                    // Xảy ra lỗi khi lưu yêu cầu xét nghiệm
-                    Toast.makeText(DoctorrequestActivity.this, "Lỗi khi lưu yêu cầu xét nghiệm: " + e.getMessage(), Toast.LENGTH_SHORT).show();
-                });
+                requestCollection.add(requestData)
+                        .addOnSuccessListener(documentReference -> {
+                            // Yêu cầu xét nghiệm đã được lưu thành công
+                            Toast.makeText(DoctorrequestActivity.this, "Yêu cầu xét nghiệm đã được gửi đến kĩ thuật viên.", Toast.LENGTH_SHORT).show();
 
-                finish();
-                });
+                            // Sau khi lưu yêu cầu xét nghiệm thành công, bạn có thể cập nhật bất kỳ thông tin nào khác tại đây.
+
+                            db.collection("Appointment")
+                                    .document(doctorappointmentId)
+                                    .update("Request", "complete")
+                                    .addOnSuccessListener(aVoid -> {
+                                        // Xử lý thành công khi cập nhật thông tin trong "Appointment"
+                                    })
+                                    .addOnFailureListener(e -> {
+                                        // Xảy ra lỗi khi cập nhật thông tin trong "Appointment"
+                                        Toast.makeText(DoctorrequestActivity.this, "Lỗi khi cập nhật thông tin trong Appointment: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                                    });
+
+                            // Cuối cùng, khi bạn đã hoàn thành tất cả công việc, bạn có thể kết thúc Activity.
+                            finish();
+                        })
+                        .addOnFailureListener(e -> {
+                            // Xảy ra lỗi khi lưu yêu cầu xét nghiệm
+                            Toast.makeText(DoctorrequestActivity.this, "Lỗi khi lưu yêu cầu xét nghiệm: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                        });
             }
         });
     }

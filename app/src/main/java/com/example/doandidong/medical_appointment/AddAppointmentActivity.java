@@ -292,7 +292,6 @@ public class AddAppointmentActivity extends AppCompatActivity implements TimeSlo
         callIntent.setData(Uri.parse("tel:" + phoneNumber));
         startActivity(callIntent);
     }
-
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
