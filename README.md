@@ -13,10 +13,10 @@ Tăng cường tương tác giữa bệnh nhân và bác sĩ: Ứng dụng cung 
 giúp người dùng giải đáp thắc mắc, trao đổi tình trạng sức khỏe,... một cách nhanh chóng và thuận tiện.
 ![pk](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/dfb70f11-ca6c-4865-8b8c-36898e305f32)
 ## Các tính năng nổi bật
-- Đặt lịch khám: Người dùng có thể đặt lịch khám với bác sĩ theo yêu cầu về thời gian, chuyên khoa.
-- Tìm kiếm bác sĩ: Ứng dụng cung cấp danh sách, thông tin chi tiết của bác sĩ
-- Thanh toán viện phí: Người dùng có thể thanh toán viện phí trực tuyến qua ứng dụng, giúp tiết kiệm thời gian và công sức.
-- Xem lịch sử đặt khám: Người dùng có thể xem lịch sử khám chữa bệnh của bản thân để theo dõi tình trạng sức khỏe.
+![ic](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/42d7a1d7-0040-4eff-943b-276c606d1d40) Đặt lịch khám: Người dùng có thể đặt lịch khám với bác sĩ theo yêu cầu về thời gian, chuyên khoa.  
+![ic](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/42d7a1d7-0040-4eff-943b-276c606d1d40) Tìm kiếm bác sĩ: Ứng dụng cung cấp danh sách, thông tin chi tiết của bác sĩ.  
+![ic](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/42d7a1d7-0040-4eff-943b-276c606d1d40) Thanh toán viện phí: Người dùng có thể thanh toán viện phí trực tuyến qua ứng dụng, giúp tiết kiệm thời gian và công sức.  
+![ic](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/42d7a1d7-0040-4eff-943b-276c606d1d40) Xem lịch sử đặt khám: Người dùng có thể xem lịch sử khám chữa bệnh của bản thân để theo dõi tình trạng sức khỏe.  
 ## Công nghệ sử dụng
 - https://developer.android.com/studio  
 ![download](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/5a2de244-06e6-43b3-bda7-3fdf91fc0f9d)
