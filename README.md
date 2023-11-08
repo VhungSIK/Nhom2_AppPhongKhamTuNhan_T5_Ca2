@@ -18,12 +18,12 @@
 - Tính toán các chi phí
 ## Công nghệ sử dụng
 - https://developer.android.com/studio
-- ![download](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/5a2de244-06e6-43b3-bda7-3fdf91fc0f9d) 4yruiuireierioui
+- ![download](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/5a2de244-06e6-43b3-bda7-3fdf91fc0f9d)
 - https://console.firebase.google.com/u/0/
 - ![logo-standard](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/d379871c-7ae1-4a46-9b73-ef265d5ecc96)
 ## Hướng phát triển trong tương lai
 - Cho phép đăng nhập bằng google
-- Thêm vào CH Play
+  Thêm vào CH Play
 ## Thành viên/ vai trò
 - Phạm Thành Danh/ Product Owner
 - Trần Thanh Sỹ/ Scrum Master
