@@ -4,9 +4,16 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.doandidong.R;
+import com.example.doandidong.doctor.doctor_appointment.doctor_request.PrescriptionsActivity;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Locale;
 
 public class DoctorDetailResultActivity extends AppCompatActivity {
 
@@ -47,5 +54,23 @@ public class DoctorDetailResultActivity extends AppCompatActivity {
         quantificationTextView.setText("Quantification: " + quantification);
         indexTextView.setText("Index: " + index);
         totalAnalysisTextView.setText("Total Analysis: " + totalAnalysis);
+        Button viewPrescriptionsButton = findViewById(R.id.viewPrescriptionsButton);
+        viewPrescriptionsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Calendar calendar = Calendar.getInstance();
+                SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss yyyy-MM-dd", Locale.getDefault());
+                String currentTime = sdf.format(calendar.getTime());
+
+                // Chuyển sang trang PrescriptionsActivity và truyền dữ liệu
+                Intent intent = new Intent(DoctorDetailResultActivity.this, PrescriptionsActivity.class);
+                intent.putExtra("doctorName", doctorName);
+                intent.putExtra("userName", userName);
+                intent.putExtra("appointmentDate", appointmentDate);
+                intent.putExtra("appointmentType", appointmentType);
+                intent.putExtra("currentTime", currentTime);
+                startActivity(intent);
+            }
+        });
     }
 }
