@@ -37,6 +37,7 @@ public class DoctorListAppointmentActivity extends AppCompatActivity implements 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doctor_list_appointment);
+        getSupportActionBar().setTitle("Lịch Khám");
         rvAppointments1 = findViewById(R.id.rvAppointments1);
         db=FirebaseFirestore.getInstance();
         auth=FirebaseAuth.getInstance();
@@ -49,21 +50,25 @@ public class DoctorListAppointmentActivity extends AppCompatActivity implements 
 
         db.collection("Appointment")
                 .whereEqualTo("DoctorId",doctorId)
+                .whereEqualTo("Request", "wait")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         for (QueryDocumentSnapshot document: task.getResult()) {
-                            String Id=document.getId();
+                            String Id = document.getId();
                             String DoctorName = document.get("DoctorName").toString();
-                            String Type=document.get("Type").toString();
-                            String Date =document.get("Date").toString();
-                            String Time=document.get("Time").toString();
-                            String UserName=document.get("UserName").toString();
-                            String UserPhone=document.get("UserPhone").toString();
-                            String UserEmail=document.get("UserEmail").toString();
-                            DoctorAppointment doctorAppointment=new DoctorAppointment(Id,DoctorName,Type,Date,Time,UserName,UserPhone,UserEmail);
-                            doctorAppointments.add(doctorAppointment);
+                            String Type = document.get("Type").toString();
+                            String Date = document.get("Date").toString();
+                            String Time = document.get("Time").toString();
+                            String UserName = document.get("UserName").toString();
+                            String UserPhone = document.get("UserPhone").toString();
+                            String UserEmail = document.get("UserEmail").toString();
+                            String Request = document.get("Request").toString();
+                            if ("wait".equals(Request)) {
+                                DoctorAppointment doctorAppointment = new DoctorAppointment(Id, DoctorName, Type, Date, Time, UserName, UserPhone, UserEmail);
+                                doctorAppointments.add(doctorAppointment);
+                            }
                         }
                         doctorAppointmentAdapter.notifyDataSetChanged();
                     }

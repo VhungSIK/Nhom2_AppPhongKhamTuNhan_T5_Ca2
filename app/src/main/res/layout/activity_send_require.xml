@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".employee.technicians.SendRequireActivity">
+
+    <TextView
+        android:id="@+id/doctorNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Doctor Name: "
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/userNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="User Name: "
+        android:layout_below="@+id/doctorNameTextView"
+        android:layout_marginStart="16dp"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/appointmentDateTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Appointment Date: "
+        android:layout_below="@+id/userNameTextView"
+        android:layout_marginStart="16dp"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/appointmentTypeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Appointment Type: "
+        android:layout_below="@+id/appointmentDateTextView"
+        android:layout_marginStart="16dp"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/currentTimeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Current Time: "
+        android:layout_below="@+id/appointmentTypeTextView"
+        android:layout_marginStart="16dp"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/bloodGroupEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Blood Group"
+        android:layout_below="@+id/currentTimeTextView"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp" />
+
+    <EditText
+        android:id="@+id/quantificationEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Quantification"
+        android:layout_below="@+id/bloodGroupEditText"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp" />
+
+    <EditText
+        android:id="@+id/indexEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Index"
+        android:layout_below="@+id/quantificationEditText"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp" />
+
+    <EditText
+        android:id="@+id/totalAnalysisEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Total Analysis"
+        android:layout_below="@+id/indexEditText"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp" />
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Lưu"
+        android:layout_below="@+id/totalAnalysisEditText"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp" />
+</RelativeLayout>

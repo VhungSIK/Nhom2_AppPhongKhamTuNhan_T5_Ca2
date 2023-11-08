@@ -22,7 +22,7 @@ import com.example.doandidong.doctor.Doctor;
 import com.example.doandidong.doctor.DoctorAdapter;
 import com.example.doandidong.doctor.DoctorInfoActivity;
 import com.example.doandidong.R;
-import com.example.doandidong.additional_functions.SearchActivity;
+//import com.example.doandidong.additional_functions.SearchActivity;
 import com.example.doandidong.medical_appointment.AddAppointmentActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -189,10 +189,10 @@ public class HomeFragment extends Fragment implements DoctorAdapter.Listener {
                     });
             doctorAdapter.notifyDataSetChanged();
         }
-        if (item.getItemId()==R.id.mnuSearch){
-            Intent intent=new Intent(getActivity(), SearchActivity.class);
-            startActivity(intent);
-        }
+//        if (item.getItemId()==R.id.mnuSearch){
+//            Intent intent=new Intent(getActivity(), SearchActivity.class);
+//            startActivity(intent);
+//        }
         return super.onOptionsItemSelected(item);
     }
 }
