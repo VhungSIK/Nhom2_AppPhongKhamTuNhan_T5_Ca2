@@ -6,7 +6,7 @@
 ![bacsi](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/8e5e486c-6281-4c62-b991-600c632e7d16)
 ### Ứng dụng phòng khám mang đến cho người dùng nhiều lợi ích thiết thực:
 ![ic5 (1)](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/78628dde-664f-4cb4-9820-9d05bbcf779f) **Tiết kiệm thời gian và công sức:** Người dùng có thể đặt lịch khám, thanh toán viện phí, xem lịch sử khám chữa bệnh,... ngay trên ứng dụng, không cần phải đến trực tiếp phòng khám.  
-![ic5 (1)](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/78628dde-664f-4cb4-9820-9d05bbcf779f) **Tăng cường tương tác giữa bệnh nhân và bác sĩ:** Ứng dụng cung cấp các kênh liên lạc trực tiếp giữa bệnh nhân và bác sĩ, giúp người dùng giải đáp thắc mắc, trao đổi tình trạng sức khỏe,... một cách nhanh chóng và thuận tiện.
+![ic5 (1)](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/78628dde-664f-4cb4-9820-9d05bbcf779f) **Tăng tính tương tác giữa bệnh nhân và bác sĩ:** Ứng dụng có thể giúp liên lạc trực tiếp giữa bệnh nhân và bác sĩ, giúp người dùng giải đáp thắc mắc, trao đổi tình trạng sức khỏe,... một cách nhanh chóng và thuận tiện.
 ![anhnen3 (1)](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/7cf23b58-6059-43ba-aeb9-84a74c0529a1)
 ## Các tính năng nổi bật
 ![ic](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/42d7a1d7-0040-4eff-943b-276c606d1d40) **Đặt lịch khám:** Người dùng có thể đặt lịch khám với bác sĩ theo yêu cầu về thời gian, chuyên khoa.  
