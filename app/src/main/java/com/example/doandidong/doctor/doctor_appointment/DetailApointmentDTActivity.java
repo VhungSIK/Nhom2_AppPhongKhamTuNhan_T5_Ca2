@@ -20,6 +20,8 @@ public class DetailApointmentDTActivity extends AppCompatActivity {
     ImageView ivApp1;
     TextView tvIdA1, tvDoctorName1, tvType1, tvDate1, tvUserName1, tvUserPhone1, tvUserEmail1, btn_request ;
     String doctorappointmentId;
+    String userId ;
+
     FirebaseFirestore db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +52,6 @@ public class DetailApointmentDTActivity extends AppCompatActivity {
                 intent.putExtra("userName", tvUserName1.getText().toString());
                 intent.putExtra("userPhone", tvUserPhone1.getText().toString());
                 intent.putExtra("userEmail", tvUserEmail1.getText().toString());
-
                 startActivity(intent);
             }
         });

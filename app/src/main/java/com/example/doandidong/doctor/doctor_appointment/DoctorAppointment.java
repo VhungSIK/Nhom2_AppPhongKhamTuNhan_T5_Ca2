@@ -11,10 +11,24 @@ public class DoctorAppointment implements Serializable {
         String UserName;
         String UserPhone;
         String UserEmail;
-        public DoctorAppointment(){
+    String UserId;
+    public DoctorAppointment(){
 
         }
-        public DoctorAppointment(String idA, String doctorName, String type, String date, String time, String userName, String userPhone, String userEmail) {
+
+    public DoctorAppointment(String idA, String doctorName, String type, String date, String time, String userName, String userPhone, String userEmail, String userId) {
+        this.idA = idA;
+        DoctorName = doctorName;
+        Type = type;
+        Date = date;
+        Time = time;
+        UserName = userName;
+        UserPhone = userPhone;
+        UserEmail = userEmail;
+        UserId = userId;
+    }
+
+    public DoctorAppointment(String idA, String doctorName, String type, String date, String time, String userName, String userPhone, String userEmail) {
             this.idA = idA;
             this.DoctorName = doctorName;
             this.Type = type;
@@ -25,7 +39,15 @@ public class DoctorAppointment implements Serializable {
             this.UserEmail = userEmail;
         }
 
-        public String getUserName() {
+    public String getUserId() {
+        return UserId;
+    }
+
+    public void setUserId(String userId) {
+        UserId = userId;
+    }
+
+    public String getUserName() {
             return UserName;
         }
 

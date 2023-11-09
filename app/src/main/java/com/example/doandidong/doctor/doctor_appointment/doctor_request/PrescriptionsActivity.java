@@ -11,6 +11,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.doandidong.R;
+import com.example.doandidong.doctor.doctor_appointment.doctor_result.DoctorListResultActivity;
+import com.example.doandidong.employee.technicians.ReceiveActivity;
+import com.example.doandidong.employee.technicians.SendRequireActivity;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -165,19 +168,13 @@ public class PrescriptionsActivity extends AppCompatActivity {
                         .addOnSuccessListener(documentReference -> {
                             // Đã lưu đơn thuốc thành công
                             Toast.makeText(PrescriptionsActivity.this, "Đơn thuốc đã được lưu thành công.", Toast.LENGTH_SHORT).show();
-                            // Tiếp theo, bạn có thể thực hiện công việc khác nếu cần.
+                            Intent receiveIntent = new Intent(PrescriptionsActivity.this, DoctorListResultActivity.class);
+                            startActivity(receiveIntent);
                         })
                         .addOnFailureListener(e -> {
                             // Xảy ra lỗi khi lưu đơn thuốc
                             Toast.makeText(PrescriptionsActivity.this, "Lỗi khi lưu đơn thuốc: " + e.getMessage(), Toast.LENGTH_SHORT).show();
                         });
-
-                sttEditText1.setText("");
-                medicineNameEditText1.setText("");
-                dosageEditText1.setText("");
-                usageEditText1.setText("");
-                routeEditText1.setText("");
-                daysEditText1.setText("");
             }
         });
 

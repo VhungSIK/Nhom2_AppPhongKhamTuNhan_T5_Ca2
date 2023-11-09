@@ -31,7 +31,6 @@ public class DoctorListAppointmentActivity extends AppCompatActivity implements 
     DoctorAppointmentAdapter doctorAppointmentAdapter;
     FirebaseFirestore db;
     FirebaseAuth auth;
-    String userId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,8 +64,10 @@ public class DoctorListAppointmentActivity extends AppCompatActivity implements 
                             String UserPhone = document.get("UserPhone").toString();
                             String UserEmail = document.get("UserEmail").toString();
                             String Request = document.get("Request").toString();
+
                             if ("wait".equals(Request)) {
-                                DoctorAppointment doctorAppointment = new DoctorAppointment(Id, DoctorName, Type, Date, Time, UserName, UserPhone, UserEmail);
+                                String userId = document.get("UserId").toString();
+                                DoctorAppointment doctorAppointment = new DoctorAppointment(Id, DoctorName, Type, Date, Time, UserName, UserPhone, UserEmail, userId);
                                 doctorAppointments.add(doctorAppointment);
                             }
                         }
@@ -85,6 +86,7 @@ public class DoctorListAppointmentActivity extends AppCompatActivity implements 
     public void onClickItemListener(DoctorAppointment doctorAppointment) {
         Intent intent = new Intent(this, DetailApointmentDTActivity.class);
         intent.putExtra("doctorappointmentId", doctorAppointment.getIdA());
+        intent.putExtra("userId", doctorAppointment.getUserId() );
         startActivity(intent);
     }
 }
