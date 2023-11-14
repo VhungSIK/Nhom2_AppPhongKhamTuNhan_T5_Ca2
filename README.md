@@ -31,7 +31,7 @@
 | Trần Quốc Thiện | ![qt](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/7c34f2c3-49f8-4c3d-87ef-715dd63e5adf) | Dev |
 ## Thời gian thực hiện dự án
 📅 Ngày bắt đầu: 09/09/2023  
-📅 Ngày kết thúc (dự kiến): 16/11/2023  
+📅 Ngày kết thúc: 16/11/2023  
 ## Ngoài lề:
 📫 [Project của nhóm](https://github.com/users/VhungSIK/projects/4)  
 📫 [Issues của nhóm](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/issues)  
