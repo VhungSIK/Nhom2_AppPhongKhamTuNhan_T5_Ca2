@@ -33,7 +33,7 @@
 ![ic1](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/1622b95c-a885-449f-bcc2-64e2595f90f3)Ngày bắt đầu: 09/09/2023  
 ![ic1](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/1622b95c-a885-449f-bcc2-64e2595f90f3)Ngày kết thúc (dự kiến): 16/11/2023  
 ## Ngoài lề:
-- [Project của nhóm](https://github.com/users/VhungSIK/projects/4)
-- [Issues của nhóm](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/issues)
-- [Milestone của nhóm](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/milestones)
-- [Label của nhóm](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/labels)
+📫 [Project của nhóm](https://github.com/users/VhungSIK/projects/4)  
+📫 [Issues của nhóm](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/issues)  
+📫 [Milestone của nhóm](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/milestones)  
+📫 [Label của nhóm](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/labels)  
