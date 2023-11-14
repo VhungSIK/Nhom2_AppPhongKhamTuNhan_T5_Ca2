@@ -1,5 +1,3 @@
-<!-- activity_prescriptions.xml -->
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,75 +5,165 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    android:gravity="center">
-
+    >
     <TextView
-        android:id="@+id/doctorNameTextView"
+        android:id="@+id/tv"
+        android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Doctor Name: "
+        android:layout_marginTop="14dp"
+        android:textStyle="bold"
+        android:text="Thông tin đơn thuốc"
+        android:textSize="25dp"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+android:id="@+id/doctorNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tên bác sĩ: "
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="120dp"
         android:textSize="18sp"
         android:textColor="#000" />
 
     <TextView
         android:id="@+id/userNameTextView"
+        android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="User Name: "
+        android:layout_marginRight="130dp"
+        android:text="Tên bệnh nhân: "
         android:textSize="18sp"
         android:textColor="#000" />
 
     <TextView
         android:id="@+id/appointmentDateTextView"
+        android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Appointment Date: "
+        android:layout_marginRight="100dp"
+        android:text="Ngày khám: "
         android:textSize="18sp"
         android:textColor="#000" />
 
     <TextView
         android:id="@+id/appointmentTypeTextView"
+        android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
+        android:layout_marginRight="100dp"
         android:layout_height="wrap_content"
-        android:text="Appointment Type: "
+        android:text="Loại khám: "
         android:textSize="18sp"
         android:textColor="#000" />
 
     <TextView
         android:id="@+id/currentTimeTextView"
+        android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Current Time: "
+        android:text="Giờ khám: "
+        android:layout_marginRight="120dp"
         android:textSize="18sp"
         android:textColor="#000" />
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
-        <LinearLayout
+
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TableLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+            android:stretchColumns="0,1,2,3,4,5">
 
+            <TableRow>
+                <!-- STT -->
+                <TextView
+                    android:id="@+id/sttTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:layout_marginTop="10dp"
+                    android:textSize="20dp"
+                    android:layout_weight="1"
+                    android:hint="STT" />
+
+                <!-- Tên thuốc -->
+                <TextView
+                    android:id="@+id/medicineNameTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:hint="Tên thuốc" />
+
+                <!-- Hàm lượng -->
+                <TextView
+                    android:id="@+id/dosageTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    android:hint="Hàm lượng" />
+
+                <!-- Liều dùng -->
+                <TextView
+                    android:id="@+id/usageTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:hint="Liều dùng" />
+
+                <!-- Đường dùng -->
+                <TextView
+                    android:id="@+id/routeTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    android:layout_weight="1"
+                    android:hint="Đường dùng" />
+
+                <!-- Số ngày -->
+                <TextView
+                    android:id="@+id/daysTextView"
+                    android:layout_width="0dp"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Số ngày" />
+            </TableRow>
+        </TableLayout>
+        <TableLayout
+            android:layout_marginTop="20dp"
+            android:background="@drawable/btn_click_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="0,1,2,3,4,5">
+
+            <TableRow>
                 <!-- STT -->
                 <EditText
                     android:id="@+id/sttEditText1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:hint="STT" />
-
+                    />
                 <!-- Tên thuốc -->
                 <EditText
                     android:id="@+id/medicineNameEditText1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:hint="Tên thuốc" />
+                    android:layout_weight="1"
+                    />
 
                 <!-- Hàm lượng -->
                 <EditText
@@ -83,23 +171,23 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:hint="Hàm lượng" />
+                    />
 
                 <!-- Liều dùng -->
                 <EditText
                     android:id="@+id/usageEditText1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:hint="Liều dùng" />
+                    android:layout_weight="1"
+                    />
 
                 <!-- Đường dùng -->
                 <EditText
                     android:id="@+id/routeEditText1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:hint="Đường dùng" />
+                    android:layout_weight="1"
+                    />
 
                 <!-- Số ngày -->
                 <EditText
@@ -107,31 +195,33 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:hint="Số ngày" />
+                    />
+            </TableRow>
+        </TableLayout>
 
-                <!-- Nút lưu -->
+        <TableLayout
+            android:layout_marginTop="10dp"
+            android:background="@drawable/btn_click_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="0,1,2,3,4,5">
 
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
+            <TableRow>
                 <!-- STT -->
                 <EditText
                     android:id="@+id/sttEditText2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:hint="STT" />
+                    />
 
                 <!-- Tên thuốc -->
                 <EditText
                     android:id="@+id/medicineNameEditText2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:hint="Tên thuốc" />
+                    android:layout_weight="1"
+                    />
 
                 <!-- Hàm lượng -->
                 <EditText
@@ -139,23 +229,23 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:hint="Hàm lượng" />
+                    />
 
                 <!-- Liều dùng -->
                 <EditText
                     android:id="@+id/usageEditText2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:hint="Liều dùng" />
+                    android:layout_weight="1"
+                    />
 
                 <!-- Đường dùng -->
                 <EditText
                     android:id="@+id/routeEditText2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:hint="Đường dùng" />
+                    android:layout_weight="1"
+                    />
 
                 <!-- Số ngày -->
                 <EditText
@@ -163,31 +253,33 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:hint="Số ngày" />
+                    />
+            </TableRow>
+        </TableLayout>
 
-                <!-- Nút lưu -->
+        <TableLayout
+            android:layout_marginTop="10dp"
+            android:background="@drawable/btn_click_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="0,1,2,3,4,5">
 
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
+            <TableRow>
                 <!-- STT -->
                 <EditText
                     android:id="@+id/sttEditText3"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:hint="STT" />
+                    />
 
                 <!-- Tên thuốc -->
                 <EditText
                     android:id="@+id/medicineNameEditText3"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:hint="Tên thuốc" />
+                    android:layout_weight="1"
+                    />
 
                 <!-- Hàm lượng -->
                 <EditText
@@ -195,23 +287,23 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:hint="Hàm lượng" />
+                    />
 
                 <!-- Liều dùng -->
                 <EditText
                     android:id="@+id/usageEditText3"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:hint="Liều dùng" />
+                    android:layout_weight="1"
+                    />
 
                 <!-- Đường dùng -->
                 <EditText
                     android:id="@+id/routeEditText3"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:hint="Đường dùng" />
+                    android:layout_weight="1"
+                    />
 
                 <!-- Số ngày -->
                 <EditText
@@ -219,31 +311,33 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:hint="Số ngày" />
+                    />
+            </TableRow>
+        </TableLayout>
 
-                <!-- Nút lưu -->
+        <TableLayout
+            android:layout_marginTop="10dp"
+            android:background="@drawable/btn_click_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="0,1,2,3,4,5">
 
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
+            <TableRow>
                 <!-- STT -->
                 <EditText
                     android:id="@+id/sttEditText4"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:hint="STT" />
+                    />
 
                 <!-- Tên thuốc -->
                 <EditText
                     android:id="@+id/medicineNameEditText4"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:hint="Tên thuốc" />
+                    android:layout_weight="1"
+                    />
 
                 <!-- Hàm lượng -->
                 <EditText
@@ -251,23 +345,23 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:hint="Hàm lượng" />
+                    />
 
                 <!-- Liều dùng -->
                 <EditText
                     android:id="@+id/usageEditText4"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:hint="Liều dùng" />
+                    android:layout_weight="1"
+                    />
 
                 <!-- Đường dùng -->
                 <EditText
                     android:id="@+id/routeEditText4"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:hint="Đường dùng" />
+                    android:layout_weight="1"
+                    />
 
                 <!-- Số ngày -->
                 <EditText
@@ -275,31 +369,33 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:hint="Số ngày" />
+                    />
+            </TableRow>
+        </TableLayout>
 
-                <!-- Nút lưu -->
+        <TableLayout
+            android:layout_marginTop="10dp"
+            android:background="@drawable/btn_click_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="0,1,2,3,4,5">
 
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
+            <TableRow>
                 <!-- STT -->
                 <EditText
                     android:id="@+id/sttEditText5"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:hint="STT" />
+                    />
 
                 <!-- Tên thuốc -->
                 <EditText
                     android:id="@+id/medicineNameEditText5"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:hint="Tên thuốc" />
+                    android:layout_weight="1"
+                    />
 
                 <!-- Hàm lượng -->
                 <EditText
@@ -307,23 +403,23 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:hint="Hàm lượng" />
+                    />
 
                 <!-- Liều dùng -->
                 <EditText
                     android:id="@+id/usageEditText5"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:hint="Liều dùng" />
+                    android:layout_weight="1"
+                    />
 
                 <!-- Đường dùng -->
                 <EditText
                     android:id="@+id/routeEditText5"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:hint="Đường dùng" />
+                    android:layout_weight="1"
+                    />
 
                 <!-- Số ngày -->
                 <EditText
@@ -331,21 +427,25 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:hint="Số ngày" />
+                    />
+            </TableRow>
+        </TableLayout>
 
-                <!-- Nút lưu -->
+        <!-- Nút lưu -->
 
-            </LinearLayout>
 
-            <!-- Lặp lại cho 6 hàng còn lại, thay đổi ID cho từng trường tương ứng -->
 
-        </LinearLayout>
+        <!-- Lặp lại cho 6 hàng còn lại, thay đổi ID cho từng trường tương ứng -->
 
-    </ScrollView>
+    </LinearLayout>
+
+
     <Button
+        android:layout_marginTop="50dp"
         android:id="@+id/saveButton1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="140dp"
         android:text="Lưu" />
 
 </LinearLayout>

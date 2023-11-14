@@ -26,9 +26,8 @@ public class DoctorrequestActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doctorrequest);
         getSupportActionBar().setTitle("Phiếu yêu cầu xét nghiệm");
-
-        // Nhận thông tin từ Intent
         Intent intent = getIntent();
+        String userId = getIntent().getStringExtra("userId");
         String doctorappointmentId = intent.getStringExtra("doctorappointmentId");
         String doctorName = intent.getStringExtra("doctorName");
         String appointmentType = intent.getStringExtra("appointmentType");
@@ -73,6 +72,7 @@ public class DoctorrequestActivity extends AppCompatActivity {
                 String userPhone = tvUserPhone.getText().toString();
 
 
+
                 EditText etNote = findViewById(R.id.etNote);
                 String note = etNote.getText().toString();
 
@@ -86,7 +86,7 @@ public class DoctorrequestActivity extends AppCompatActivity {
                 requestData.put("userName", userName);
                 requestData.put("userPhone", userPhone);
                 requestData.put("note", note);
-
+                requestData.put("userId", userId);
                 requestCollection.add(requestData)
                         .addOnSuccessListener(documentReference -> {
                             // Yêu cầu xét nghiệm đã được lưu thành công

@@ -60,7 +60,6 @@ public class SendRequireActivity extends AppCompatActivity {
         appointmentDateTextView.setText(appointmentDate);
         userNameTextView.setText(userName);
 
-        // Bắt sự kiện khi nhấn nút "Lưu"
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -70,6 +69,7 @@ public class SendRequireActivity extends AppCompatActivity {
                 String index = indexEditText.getText().toString();
                 String totalAnalysis = totalAnalysisEditText.getText().toString();
 
+                // Tạo đối tượng ResultModel và thêm thuộc tính "request"
                 ResultModel result = new ResultModel(doctorNameTextView.getText().toString(), // 1
                         userNameTextView.getText().toString(), // 2
                         appointmentDateTextView.getText().toString(), // 3
@@ -80,12 +80,17 @@ public class SendRequireActivity extends AppCompatActivity {
                         index, // 8
                         totalAnalysis); // 9
 
+
                 // Thêm đối tượng dữ liệu vào Firebase Firestore
                 db.collection("Results")
                         .add(result)
                         .addOnSuccessListener(documentReference -> {
                             // Kết quả xét nghiệm đã được lưu thành công
-                            Toast.makeText(SendRequireActivity.this, "Kết quả xét nghiệm đã được lưu.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(SendRequireActivity.this, "Kết quả xét nghiệm đã gửi thành công.", Toast.LENGTH_SHORT).show();
+
+                            // Chuyển sang trang ReceiveActivity
+                            Intent receiveIntent = new Intent(SendRequireActivity.this, ReceiveActivity.class);
+                            startActivity(receiveIntent);
                         })
                         .addOnFailureListener(e -> {
                             // Xảy ra lỗi khi lưu kết quả xét nghiệm
@@ -93,5 +98,6 @@ public class SendRequireActivity extends AppCompatActivity {
                         });
             }
         });
+
     }
 }
