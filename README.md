@@ -20,8 +20,8 @@
 ![ic4 (1)](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/6b2c871f-fb40-4cb9-ab3e-4acceceb8686) https://console.firebase.google.com/u/0/  
 ![logo-standard](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/d379871c-7ae1-4a46-9b73-ef265d5ecc96)  
 ## Hướng phát triển trong tương lai
-![ic3 (1)](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/47d80083-7431-4747-a0c2-b718b11c7193) Cho phép đăng nhập bằng google    
-![ic3 (1)](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/47d80083-7431-4747-a0c2-b718b11c7193) Thêm vào CH Play  
+🔎 Cho phép đăng nhập bằng google    
+🔎 Thêm vào CH Play  
 ## Thành viên/ vai trò
 | Họ và tên | Avatar | Vai trò |
 |------------|------------|------------|
