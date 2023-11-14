@@ -52,6 +52,7 @@ public class DetailApointmentDTActivity extends AppCompatActivity {
                 intent.putExtra("userName", tvUserName1.getText().toString());
                 intent.putExtra("userPhone", tvUserPhone1.getText().toString());
                 intent.putExtra("userEmail", tvUserEmail1.getText().toString());
+                intent.putExtra("userId", userId);
                 startActivity(intent);
             }
         });

@@ -180,10 +180,10 @@ public class PrescriptionsActivity extends AppCompatActivity {
 
 
         // Đặt thông tin vào TextView
-        doctorNameTextView.setText("Doctor Name: " + doctorName);
-        userNameTextView.setText("User Name: " + userName);
-        appointmentDateTextView.setText("Appointment Date: " + appointmentDate);
-        appointmentTypeTextView.setText("Appointment Type: " + appointmentType);
-        currentTimeTextView.setText("Current Time: " + currentTime);
+        doctorNameTextView.setText(doctorName);
+        userNameTextView.setText(userName);
+        appointmentDateTextView.setText(appointmentDate);
+        appointmentTypeTextView.setText( appointmentType);
+        currentTimeTextView.setText(currentTime);
     }
 }

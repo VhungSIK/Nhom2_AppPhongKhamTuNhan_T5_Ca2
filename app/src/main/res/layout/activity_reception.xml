@@ -5,5 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".employee.reception.ReceptionActivity">
-
+    <TextView
+        android:id="@+id/btn_list_reception"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/tv_dotor"
+        android:text="Danh sách lịch khám"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:gravity="center"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
