@@ -3,11 +3,11 @@
 ## Giới thiệu
 ### Ứng dụng phòng khám - giải pháp chăm sóc sức khỏe toàn diện:
 💡 Trong bối cảnh cuộc sống hiện đại, con người ngày càng quan tâm đến vấn đề sức khỏe. Tuy nhiên, với nhịp sống bận rộn, việc sắp xếp thời gian đi khám bệnh tại các phòng khám truyền thống đôi khi là một thách thức. Hiểu được nhu cầu đó, chúng tôi đã phát triển dự án ứng dụng phòng khám, mang đến cho người dùng những trải nghiệm chăm sóc sức khỏe toàn diện, tiện lợi và hiệu quả.
-![bacsi](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/8e5e486c-6281-4c62-b991-600c632e7d16)
+![light blue creative modern medical clinic presentation-1](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/7bda30de-22bd-4176-94ef-a221ae1630fb)
 ### Ứng dụng phòng khám mang đến cho người dùng nhiều lợi ích thiết thực:
 💡 **Tiết kiệm thời gian và công sức:** Người dùng có thể đặt lịch khám, thanh toán viện phí, xem lịch sử khám chữa bệnh,... ngay trên ứng dụng, không cần phải đến trực tiếp phòng khám.  
 💡 **Tăng tính tương tác giữa bệnh nhân và bác sĩ:** Ứng dụng có thể giúp liên lạc trực tiếp giữa bệnh nhân và bác sĩ, giúp người dùng giải đáp thắc mắc, trao đổi tình trạng sức khỏe,... một cách nhanh chóng và thuận tiện.
-![anhnen3 (1)](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/7cf23b58-6059-43ba-aeb9-84a74c0529a1)
+![light blue creative modern medical clinic presentation-2](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/70b59b51-3513-4e2c-9235-078bfc67b4fc)
 ## Các tính năng nổi bật
 ⚡️ **Đặt lịch khám:** Người dùng có thể đặt lịch khám với bác sĩ theo yêu cầu về thời gian, chuyên khoa.  
 ⚡️ **Tìm kiếm bác sĩ:** Ứng dụng cung cấp danh sách, thông tin chi tiết của bác sĩ.  
