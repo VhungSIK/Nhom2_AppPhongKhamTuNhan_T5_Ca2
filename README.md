@@ -1,5 +1,5 @@
 # App_CNPMNC_PhongKham
-![anhnen](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/9ba94b4d-4745-4bd1-954c-4649d81ee08b)
+![anhnen](https://github.com/VhungSIK/Nhom2_AppPhongKhamTuNhan_T5_Ca2/assets/146317191/42524fab-fbcd-4421-93a5-0d0b5f118bf8)
 ## Giới thiệu
 ### Ứng dụng phòng khám - giải pháp chăm sóc sức khỏe toàn diện:
 💡 Trong bối cảnh cuộc sống hiện đại, con người ngày càng quan tâm đến vấn đề sức khỏe. Tuy nhiên, với nhịp sống bận rộn, việc sắp xếp thời gian đi khám bệnh tại các phòng khám truyền thống đôi khi là một thách thức. Hiểu được nhu cầu đó, chúng tôi đã phát triển dự án ứng dụng phòng khám, mang đến cho người dùng những trải nghiệm chăm sóc sức khỏe toàn diện, tiện lợi và hiệu quả.
