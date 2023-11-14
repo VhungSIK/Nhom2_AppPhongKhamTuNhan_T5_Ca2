@@ -16,6 +16,15 @@
         android:theme="@style/Theme.DoAnDiDong"
         tools:targetApi="31">
         <activity
+            android:name=".employee.reception.details.DetailListUserActivity"
+            android:exported="false" />
+        <activity
+            android:name=".employee.reception.ListReceptionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".reception.ReceptionActivity"
+            android:exported="false" />
+        <activity
             android:name=".employee.reception.ReceptionActivity"
             android:exported="false" />
         <activity

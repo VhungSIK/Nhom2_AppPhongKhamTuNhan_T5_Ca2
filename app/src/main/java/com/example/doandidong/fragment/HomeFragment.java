@@ -18,6 +18,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.example.doandidong.additional_functions.SearchActivity;
 import com.example.doandidong.doctor.Doctor;
 import com.example.doandidong.doctor.DoctorAdapter;
 import com.example.doandidong.doctor.DoctorInfoActivity;
@@ -189,10 +190,10 @@ public class HomeFragment extends Fragment implements DoctorAdapter.Listener {
                     });
             doctorAdapter.notifyDataSetChanged();
         }
-//        if (item.getItemId()==R.id.mnuSearch){
-//            Intent intent=new Intent(getActivity(), SearchActivity.class);
-//            startActivity(intent);
-//        }
+        if (item.getItemId()==R.id.mnuSearch){
+            Intent intent=new Intent(getActivity(), SearchActivity.class);
+            startActivity(intent);
+        }
         return super.onOptionsItemSelected(item);
     }
 }
