@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -12,6 +13,7 @@ import com.example.doandidong.R;
 import com.example.doandidong.doctor.doctor_appointment.doctor_request.DoctorrequestActivity;
 import com.example.doandidong.medical_appointment.Appointment;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -21,6 +23,8 @@ public class DetailApointmentDTActivity extends AppCompatActivity {
     TextView tvIdA1, tvDoctorName1, tvType1, tvDate1, tvUserName1, tvUserPhone1, tvUserEmail1, btn_request ;
     String doctorappointmentId;
     String userId ;
+    String doctorId;
+    FirebaseAuth auth;
 
     FirebaseFirestore db;
     @Override
@@ -28,7 +32,8 @@ public class DetailApointmentDTActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_apointment_dtactivity);
         getSupportActionBar().setTitle("Thông Tin Lịch Khám");
-
+        auth=FirebaseAuth.getInstance();
+        doctorId=auth.getCurrentUser().getUid();
         doctorappointmentId=getIntent().getStringExtra("doctorappointmentId");
         ivApp1=findViewById(R.id.ivApp1);
         tvIdA1=findViewById(R.id.tvIdA1);
@@ -46,13 +51,17 @@ public class DetailApointmentDTActivity extends AppCompatActivity {
 
                 // Truyền thông tin cuộc hẹn qua Intent
                 intent.putExtra("doctorappointmentId", doctorappointmentId);
+                intent.putExtra("doctorId", doctorId);
                 intent.putExtra("doctorName", tvDoctorName1.getText().toString());
                 intent.putExtra("appointmentType", tvType1.getText().toString());
                 intent.putExtra("appointmentDate", tvDate1.getText().toString());
                 intent.putExtra("userName", tvUserName1.getText().toString());
                 intent.putExtra("userPhone", tvUserPhone1.getText().toString());
                 intent.putExtra("userEmail", tvUserEmail1.getText().toString());
-                intent.putExtra("userId", userId);
+                userId = getIntent().getStringExtra("userId");
+                intent.putExtra("userId", userId); // Chắc chắn gán userId trước khi log
+                Log.d("DetailActivity", "User ID: " + userId);Log.d("DetailApointmentDTActivity", "doctorId: " + doctorId);
+
                 startActivity(intent);
             }
         });

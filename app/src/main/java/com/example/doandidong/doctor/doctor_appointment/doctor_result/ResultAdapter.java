@@ -1,6 +1,7 @@
 package com.example.doandidong.doctor.doctor_appointment.doctor_result;
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -57,7 +58,6 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.ResultView
         private final TextView quantificationTextView;
         private final TextView indexTextView;
         private final TextView totalAnalysisTextView;
-
         public ResultViewHolder(@NonNull View itemView) {
             super(itemView);
             doctorNameTextView = itemView.findViewById(R.id.doctorNameTextView);
@@ -86,6 +86,7 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.ResultView
                         intent.putExtra("quantification", result.getQuantification());
                         intent.putExtra("index", result.getIndex());
                         intent.putExtra("totalAnalysis", result.getTotalAnalysis());
+                        intent.putExtra("userId", result.getUserId());
                         context.startActivity(intent);
                     }
                 }
@@ -102,6 +103,8 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.ResultView
             quantificationTextView.setText(result.getQuantification());
             indexTextView.setText(result.getIndex());
             totalAnalysisTextView.setText(result.getTotalAnalysis());
+            Log.d("ResultAdapter", "userId: " + result.getUserId()); // Log userId here
+
         }
     }
 }

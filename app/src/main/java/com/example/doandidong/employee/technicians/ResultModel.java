@@ -4,6 +4,7 @@ import java.util.Date;
 
 public class ResultModel {
     private String doctorName;
+    private String doctorId;
     private String userName;
     private String appointmentDate;
     private String appointmentType;
@@ -12,13 +13,13 @@ public class ResultModel {
     private String quantification;
     private String index;
     private String totalAnalysis;
+    private String userId;
 
     public ResultModel() {
         // Required empty public constructor for Firebase
     }
 
-    public ResultModel(String doctorName, String userName, String appointmentDate, String appointmentType, String currentTime,
-                       String bloodGroup, String quantification, String index, String totalAnalysis) {
+    public ResultModel(String doctorName,String doctorId, String userName, String appointmentDate, String appointmentType, String currentTime, String bloodGroup, String quantification, String index, String totalAnalysis, String userId) {
         this.doctorName = doctorName;
         this.userName = userName;
         this.appointmentDate = appointmentDate;
@@ -28,6 +29,28 @@ public class ResultModel {
         this.quantification = quantification;
         this.index = index;
         this.totalAnalysis = totalAnalysis;
+        this.userId = userId;
+        this.doctorId = doctorId;
+    }
+
+    public void setDoctorName(String doctorName) {
+        this.doctorName = doctorName;
+    }
+
+    public String getDoctorId() {
+        return doctorId;
+    }
+
+    public void setDoctorId(String doctorId) {
+        this.doctorId = doctorId;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     public String getDoctorName() {

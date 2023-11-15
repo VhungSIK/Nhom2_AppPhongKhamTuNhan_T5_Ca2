@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -33,6 +34,8 @@ public class DoctorDetailResultActivity extends AppCompatActivity {
         String quantification = intent.getStringExtra("quantification");
         String index = intent.getStringExtra("index");
         String totalAnalysis = intent.getStringExtra("totalAnalysis");
+        String userId = intent.getStringExtra("userId");
+        Log.d("DoctorDetailResult", "userId: " + userId);
 
         // Hiển thị thông tin trên giao diện của DoctorDetailResultActivity
         TextView doctorNameTextView = findViewById(R.id.doctorNameTextView);
@@ -69,6 +72,9 @@ public class DoctorDetailResultActivity extends AppCompatActivity {
                 intent.putExtra("appointmentDate", appointmentDate);
                 intent.putExtra("appointmentType", appointmentType);
                 intent.putExtra("currentTime", currentTime);
+                intent.putExtra("userId", userId);
+
+
                 startActivity(intent);
             }
         });

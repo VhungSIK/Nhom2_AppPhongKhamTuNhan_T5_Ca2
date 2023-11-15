@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,6 +13,7 @@ import android.widget.Toast;
 
 import com.example.doandidong.R;
 import com.example.doandidong.doctor.doctor_appointment.doctor_result.DoctorListResultActivity;
+import com.example.doandidong.employee.accountant.ListPrescriptionUserActivity;
 import com.example.doandidong.employee.technicians.ReceiveActivity;
 import com.example.doandidong.employee.technicians.SendRequireActivity;
 import com.google.firebase.firestore.CollectionReference;
@@ -26,6 +28,7 @@ public class PrescriptionsActivity extends AppCompatActivity {
     private String appointmentDate;
     private String appointmentType;
     private String currentTime;
+    private String userId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +40,8 @@ public class PrescriptionsActivity extends AppCompatActivity {
         appointmentDate = intent.getStringExtra("appointmentDate");
         appointmentType = intent.getStringExtra("appointmentType");
         currentTime = intent.getStringExtra("currentTime");
+        userId = intent.getStringExtra("userId");
+        Log.d("Pre", "userId: " + userId);
         // Tham chiếu đến các TextView trong layout XML
         TextView doctorNameTextView = findViewById(R.id.doctorNameTextView);
         TextView userNameTextView = findViewById(R.id.userNameTextView);
@@ -84,6 +89,7 @@ public class PrescriptionsActivity extends AppCompatActivity {
         saveButton1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 // Lấy thông tin từ các EditText
                 String stt1 = sttEditText1.getText().toString();
                 String medicineName1 = medicineNameEditText1.getText().toString();
@@ -163,12 +169,21 @@ public class PrescriptionsActivity extends AppCompatActivity {
                 prescriptionData.put("appointmentDate", appointmentDate);
                 prescriptionData.put("appointmentType", appointmentType);
                 prescriptionData.put("currentTime", currentTime);
-
+                prescriptionData.put("userId", userId);
                 prescriptionCollection.add(prescriptionData)
                         .addOnSuccessListener(documentReference -> {
                             // Đã lưu đơn thuốc thành công
                             Toast.makeText(PrescriptionsActivity.this, "Đơn thuốc đã được lưu thành công.", Toast.LENGTH_SHORT).show();
                             Intent receiveIntent = new Intent(PrescriptionsActivity.this, DoctorListResultActivity.class);
+                            receiveIntent.putExtra("userId", userId);
+                            if (intent != null) {
+                                String userId = intent.getStringExtra("userId");
+                                if (userId != null) {
+                                    Intent listPrescriptionIntent = new Intent(PrescriptionsActivity.this, ListPrescriptionUserActivity.class);
+                                    listPrescriptionIntent.putExtra("userId", userId);
+                                    startActivity(listPrescriptionIntent);
+                                }
+                            }
                             startActivity(receiveIntent);
                         })
                         .addOnFailureListener(e -> {
