@@ -8,7 +8,7 @@
     tools:context=".doctor.doctor_appointment.DetailApointmentDTActivity">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="730dp"
         android:orientation="vertical"
         android:padding="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -124,7 +124,7 @@
                             android:id="@+id/tvDoctorName1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="DoctorName"
+                            android:text="Tên bác sĩ"
                             android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
 
                         <TextView
@@ -312,13 +312,13 @@
                         android:id="@+id/tvUserName1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="13:00 - 14:00"
+                        android:text="Tên bệnh nhân"
                         android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Giờ khám"
+                        android:text="Bệnh nhân"
                         android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
                 </LinearLayout>
@@ -369,20 +369,20 @@
                         android:id="@+id/tvUserPhone1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="13:00 - 14:00"
+                        android:text="0123456"
                         android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Giờ khám"
+                        android:text="Số điện thoại"
                         android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
                 </LinearLayout>
 
             </LinearLayout>
-
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -398,7 +398,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:orientation="horizontal">
 
             <ImageButton
@@ -410,6 +410,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+
                 android:layout_gravity="center_vertical"
                 android:orientation="vertical">
 
@@ -420,31 +421,74 @@
                     android:layout_marginStart="10dp"
                     android:orientation="vertical">
                     <TextView
-                        android:id="@+id/tvUserEmail1"
+                        android:id="@+id/tvEmail1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="13:00 - 14:00"
+                        android:text="abc@gmail.com"
                         android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Giờ khám"
+                        android:text="Email"
                         android:textAppearance="@style/TextAppearance.AppCompat.Small" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp">
+
+            <ImageButton
+                android:layout_width="?attr/actionBarSize"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/baseline_access_time_24"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_gravity="center_vertical"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:layout_marginStart="10dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/tvTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="abc@gmail.com"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Time"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+                </LinearLayout>
+            </LinearLayout>
     </LinearLayout>
-    <TextView
-        android:id="@+id/btn_request"
-        android:layout_width="250dp"
-        android:layout_height="45dp"
-        android:textSize="16dp"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:background="@drawable/tv_dotor"
-        android:layout_marginTop="10dp"
-        android:text="Yêu cầu xét nghiệm/siêu âm" />
+
+        <TextView
+            android:id="@+id/btn_request"
+            android:layout_width="250dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/tv_dotor"
+            android:gravity="center"
+            android:text="Yêu cầu xét nghiệm/siêu âm"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
 </LinearLayout>

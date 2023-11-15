@@ -53,7 +53,7 @@ public class SendRequireActivity extends AppCompatActivity {
         // Set current time
         SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
         String currentTime = sdf.format(new Date());
-        currentTimeTextView.setText("Current Time: " + currentTime);
+        currentTimeTextView.setText( currentTime);
 
         doctorNameTextView.setText(doctorName);
         appointmentTypeTextView.setText(appointmentType);
