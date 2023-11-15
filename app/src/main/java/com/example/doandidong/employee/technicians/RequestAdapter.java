@@ -38,12 +38,8 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestViewHolder> {
             RequestModel request = requests.get(position);
             holder.bind(request, UserId, doctorId);
 
-            // Bắt sự kiện nhấp vào một mục
             holder.itemView.setOnClickListener(view -> {
-                // Tạo Intent để chuyển sang trang chi tiết
-                Intent intent = new Intent(view.getContext(), DetailRequestActivity.class);
-
-                // Đính kèm dữ liệu yêu cầu cụ thể
+                Intent intent = new Intent(view.getContext(), SendRequireActivity.class);
                 intent.putExtra("doctorName", request.getDoctorName());
                 intent.putExtra("appointmentType", request.getAppointmentType());
                 intent.putExtra("appointmentDate", request.getAppointmentDate());
@@ -51,31 +47,11 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestViewHolder> {
                 intent.putExtra("userPhone", request.getUserPhone());
                 intent.putExtra("note", request.getNote());
                 intent.putExtra("UserId", request.getUserId());
-                intent.putExtra("doctorId", request.getDoctorId());// Lấy userId từ RequestModel
-                Log.d("DetailRequestActivity", "User ID: " + request.getUserId());
-                Log.d("DetailRequestActivity", "dddID: " + request.getDoctorId());
+                intent.putExtra("doctorId", request.getDoctorId());
+                Log.d("SendRequireActivity", "User ID: " + request.getUserId());
+                Log.d("SendRequireActivity", "Doctor ID: " + request.getDoctorId());
 
-                // Chuyển sang trang chi tiết
                 view.getContext().startActivity(intent);
-            });
-
-            holder.itemView.setOnClickListener(view -> {
-                // Tạo Intent để chuyển sang trang chi tiết
-                Intent i = new Intent(view.getContext(), SendRequireActivity.class);
-
-                // Đính kèm dữ liệu yêu cầu cụ thể
-                i.putExtra("doctorName", request.getDoctorName());
-                i.putExtra("appointmentType", request.getAppointmentType());
-                i.putExtra("appointmentDate", request.getAppointmentDate());
-                i.putExtra("userName", request.getUserName());
-                i.putExtra("userPhone", request.getUserPhone());
-                i.putExtra("note", request.getNote());
-                i.putExtra("UserId", request.getUserId());
-                i.putExtra("doctorId", request.getDoctorId());// Lấy userId từ RequestModel
-                Log.d("SendRequireActivity", "Userdđ ID: " + request.getDoctorId());
-
-                // Chuyển sang trang chi tiết
-                view.getContext().startActivity(i);
             });
         }
     }

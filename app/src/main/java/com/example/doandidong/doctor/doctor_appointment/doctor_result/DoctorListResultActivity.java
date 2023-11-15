@@ -21,6 +21,8 @@ public class DoctorListResultActivity extends AppCompatActivity {
     private CollectionReference resultsCollection;
     private RecyclerView recyclerView;
     private ResultAdapter resultAdapter;
+    private String UserId;
+    private String doctorId;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -32,7 +34,7 @@ public class DoctorListResultActivity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        resultAdapter = new ResultAdapter(this);
+        resultAdapter = new ResultAdapter(this, UserId, doctorId);
         recyclerView.setAdapter(resultAdapter);
         loadResults();
     }

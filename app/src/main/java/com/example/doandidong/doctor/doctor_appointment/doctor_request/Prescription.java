@@ -2,6 +2,8 @@ package com.example.doandidong.doctor.doctor_appointment.doctor_request;
 public class Prescription {
     private String stt;
     private String UserId;
+    private String doctorId;
+
     private String medicineName;
     private String dosage;
     private String usage;
@@ -59,6 +61,14 @@ public class Prescription {
         this.appointmentType = appointmentType;
         this.currentTime = currentTime;
         this.UserId = userId;
+    }
+
+    public String getDoctorId() {
+        return doctorId;
+    }
+
+    public void setDoctorId(String doctorId) {
+        this.doctorId = doctorId;
     }
 
     public String getUserId() {

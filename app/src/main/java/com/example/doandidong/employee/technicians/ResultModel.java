@@ -19,8 +19,9 @@ public class ResultModel {
         // Required empty public constructor for Firebase
     }
 
-    public ResultModel(String doctorName,String doctorId, String userName, String appointmentDate, String appointmentType, String currentTime, String bloodGroup, String quantification, String index, String totalAnalysis, String userId) {
+    public ResultModel(String doctorName, String doctorId, String userName, String appointmentDate, String appointmentType, String currentTime, String bloodGroup, String quantification, String index, String totalAnalysis, String userId) {
         this.doctorName = doctorName;
+        this.doctorId = doctorId;
         this.userName = userName;
         this.appointmentDate = appointmentDate;
         this.appointmentType = appointmentType;
@@ -30,7 +31,10 @@ public class ResultModel {
         this.index = index;
         this.totalAnalysis = totalAnalysis;
         this.userId = userId;
-        this.doctorId = doctorId;
+    }
+
+    public String getDoctorName() {
+        return doctorName;
     }
 
     public void setDoctorName(String doctorName) {
@@ -45,47 +49,75 @@ public class ResultModel {
         this.doctorId = doctorId;
     }
 
-    public String getUserId() {
-        return userId;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
-
-    public String getDoctorName() {
-        return doctorName;
-    }
-
     public String getUserName() {
         return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getAppointmentDate() {
         return appointmentDate;
     }
 
+    public void setAppointmentDate(String appointmentDate) {
+        this.appointmentDate = appointmentDate;
+    }
+
     public String getAppointmentType() {
         return appointmentType;
+    }
+
+    public void setAppointmentType(String appointmentType) {
+        this.appointmentType = appointmentType;
     }
 
     public String getCurrentTime() {
         return currentTime;
     }
 
+    public void setCurrentTime(String currentTime) {
+        this.currentTime = currentTime;
+    }
+
     public String getBloodGroup() {
         return bloodGroup;
+    }
+
+    public void setBloodGroup(String bloodGroup) {
+        this.bloodGroup = bloodGroup;
     }
 
     public String getQuantification() {
         return quantification;
     }
 
+    public void setQuantification(String quantification) {
+        this.quantification = quantification;
+    }
+
     public String getIndex() {
         return index;
     }
 
+    public void setIndex(String index) {
+        this.index = index;
+    }
+
     public String getTotalAnalysis() {
         return totalAnalysis;
+    }
+
+    public void setTotalAnalysis(String totalAnalysis) {
+        this.totalAnalysis = totalAnalysis;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 }
