@@ -25,6 +25,7 @@ import java.util.Map;
 public class PrescriptionsActivity extends AppCompatActivity {
     private String doctorName;
     private String userName;
+    private String doctorId;
     private String appointmentDate;
     private String appointmentType;
     private String currentTime;
@@ -41,7 +42,9 @@ public class PrescriptionsActivity extends AppCompatActivity {
         appointmentType = intent.getStringExtra("appointmentType");
         currentTime = intent.getStringExtra("currentTime");
         userId = intent.getStringExtra("userId");
+        doctorId = intent.getStringExtra("doctorId");
         Log.d("Pre", "userId: " + userId);
+        Log.d("Pre", "sssss: " + doctorId);
         // Tham chiếu đến các TextView trong layout XML
         TextView doctorNameTextView = findViewById(R.id.doctorNameTextView);
         TextView userNameTextView = findViewById(R.id.userNameTextView);
@@ -170,6 +173,8 @@ public class PrescriptionsActivity extends AppCompatActivity {
                 prescriptionData.put("appointmentType", appointmentType);
                 prescriptionData.put("currentTime", currentTime);
                 prescriptionData.put("userId", userId);
+                prescriptionData.put("doctorId", doctorId);
+
                 prescriptionCollection.add(prescriptionData)
                         .addOnSuccessListener(documentReference -> {
                             // Đã lưu đơn thuốc thành công

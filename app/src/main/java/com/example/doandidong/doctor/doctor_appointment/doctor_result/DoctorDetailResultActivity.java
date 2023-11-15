@@ -35,7 +35,10 @@ public class DoctorDetailResultActivity extends AppCompatActivity {
         String index = intent.getStringExtra("index");
         String totalAnalysis = intent.getStringExtra("totalAnalysis");
         String userId = intent.getStringExtra("userId");
+        String doctorId = intent.getStringExtra("doctorId");
         Log.d("DoctorDetailResult", "userId: " + userId);
+        Log.d("DoctorDetailResult", "usessdrId: " + doctorId);
+
 
         // Hiển thị thông tin trên giao diện của DoctorDetailResultActivity
         TextView doctorNameTextView = findViewById(R.id.doctorNameTextView);
@@ -73,6 +76,8 @@ public class DoctorDetailResultActivity extends AppCompatActivity {
                 intent.putExtra("appointmentType", appointmentType);
                 intent.putExtra("currentTime", currentTime);
                 intent.putExtra("userId", userId);
+                intent.putExtra("doctorId", doctorId);
+
 
 
                 startActivity(intent);

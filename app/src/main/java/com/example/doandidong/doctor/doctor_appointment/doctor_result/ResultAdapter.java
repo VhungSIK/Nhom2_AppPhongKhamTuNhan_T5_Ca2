@@ -17,9 +17,13 @@ import java.util.List;
 public class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.ResultViewHolder> {
 
     private final Context context;
+    private String UserId;
+    private String doctorId;
     private List<ResultModel> results;
 
-    public ResultAdapter(Context context) {
+    public ResultAdapter(Context context, String UserId, String doctorId) {
+        this.UserId = UserId;
+        this.doctorId = doctorId;
         this.context = context;
     }
 
@@ -42,7 +46,6 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.ResultView
             holder.bind(result);
         }
     }
-
     @Override
     public int getItemCount() {
         return results != null ? results.size() : 0;
@@ -87,6 +90,8 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.ResultView
                         intent.putExtra("index", result.getIndex());
                         intent.putExtra("totalAnalysis", result.getTotalAnalysis());
                         intent.putExtra("userId", result.getUserId());
+                        intent.putExtra("doctorId", result.getDoctorId());
+
                         context.startActivity(intent);
                     }
                 }
