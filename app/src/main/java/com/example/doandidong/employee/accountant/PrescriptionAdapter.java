@@ -11,16 +11,21 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.doandidong.R;
+import com.example.doandidong.doctor.doctor_appointment.DoctorAppointment;
+import com.example.doandidong.doctor.doctor_appointment.DoctorAppointmentAdapter;
 import com.example.doandidong.doctor.doctor_appointment.doctor_request.Prescription;
 
 import java.util.List;
 
 public class PrescriptionAdapter extends RecyclerView.Adapter<PrescriptionAdapter.PrescriptionViewHolder> {
     private List<Prescription> prescriptionList;
-    private String userId;
-
-    public PrescriptionAdapter(List<Prescription> prescriptionList, String userId) {
+    private String UserId;
+    private String doctorId;
+    private OnItemClickListener listener;
+    public PrescriptionAdapter(List<Prescription> prescriptionList, String UserId, String doctorId) {
         this.prescriptionList = prescriptionList;
+        this.UserId = UserId;
+        this.doctorId = doctorId;
     }
 
     @NonNull
@@ -29,12 +34,11 @@ public class PrescriptionAdapter extends RecyclerView.Adapter<PrescriptionAdapte
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.prescription_item, parent, false);
         return new PrescriptionViewHolder(view);
     }
-
-    @Override
-    public void onBindViewHolder(@NonNull PrescriptionViewHolder holder, int position) {
-        Prescription prescription = prescriptionList.get(position);
-        // Populate data into views in the layout
-        holder.bind(prescription);
+    public interface OnItemClickListener {
+        void onItemClick(String prescriptionId);
+    }
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        this.listener = listener;
     }
 
     @Override
@@ -42,8 +46,8 @@ public class PrescriptionAdapter extends RecyclerView.Adapter<PrescriptionAdapte
         return prescriptionList.size();
     }
 
-    public static class PrescriptionViewHolder extends RecyclerView.ViewHolder {
-        TextView userName, doctorName, appointmentType, currentTime, userid;
+    public class PrescriptionViewHolder extends RecyclerView.ViewHolder {
+        TextView userName, doctorName, appointmentType, currentTime, userid,doctorid;
 
         public PrescriptionViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -52,8 +56,9 @@ public class PrescriptionAdapter extends RecyclerView.Adapter<PrescriptionAdapte
             appointmentType = itemView.findViewById(R.id.appointmentType);
             currentTime = itemView.findViewById(R.id.currentTime);
             userid = itemView.findViewById(R.id.userid);
-
+            doctorid = itemView.findViewById(R.id.doctorid);
         }
+
         public void bind(Prescription prescription) {
             // Bind prescription data to respective TextViews
             userName.setText(prescription.getUserName());
@@ -61,6 +66,21 @@ public class PrescriptionAdapter extends RecyclerView.Adapter<PrescriptionAdapte
             appointmentType.setText(prescription.getAppointmentType());
             currentTime.setText(prescription.getCurrentTime());
             userid.setText(prescription.getUserId());
+            doctorid.setText(prescription.getDoctorId());
         }
+    }
+    @Override
+    public void onBindViewHolder(@NonNull PrescriptionViewHolder holder, int position) {
+        Prescription prescription = prescriptionList.get(position);
+        holder.bind(prescription);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (listener != null) {
+                    listener.onItemClick(prescription.getPrescriptionId());
+                }
+            }
+        });
     }
 }

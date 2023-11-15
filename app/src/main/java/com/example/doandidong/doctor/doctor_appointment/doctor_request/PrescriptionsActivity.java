@@ -30,6 +30,7 @@ public class PrescriptionsActivity extends AppCompatActivity {
     private String appointmentType;
     private String currentTime;
     private String userId;
+    private String prescriptionId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,9 +43,7 @@ public class PrescriptionsActivity extends AppCompatActivity {
         appointmentType = intent.getStringExtra("appointmentType");
         currentTime = intent.getStringExtra("currentTime");
         userId = intent.getStringExtra("userId");
-        doctorId = intent.getStringExtra("doctorId");
         Log.d("Pre", "userId: " + userId);
-        Log.d("Pre", "sssss: " + doctorId);
         // Tham chiếu đến các TextView trong layout XML
         TextView doctorNameTextView = findViewById(R.id.doctorNameTextView);
         TextView userNameTextView = findViewById(R.id.userNameTextView);
@@ -173,30 +172,37 @@ public class PrescriptionsActivity extends AppCompatActivity {
                 prescriptionData.put("appointmentType", appointmentType);
                 prescriptionData.put("currentTime", currentTime);
                 prescriptionData.put("userId", userId);
-                prescriptionData.put("doctorId", doctorId);
+                prescriptionData.put("prescriptionId", prescriptionId);
 
                 prescriptionCollection.add(prescriptionData)
                         .addOnSuccessListener(documentReference -> {
-                            // Đã lưu đơn thuốc thành công
-                            Toast.makeText(PrescriptionsActivity.this, "Đơn thuốc đã được lưu thành công.", Toast.LENGTH_SHORT).show();
-                            Intent receiveIntent = new Intent(PrescriptionsActivity.this, DoctorListResultActivity.class);
-                            receiveIntent.putExtra("userId", userId);
-                            if (intent != null) {
-                                String userId = intent.getStringExtra("userId");
-                                if (userId != null) {
-                                    Intent listPrescriptionIntent = new Intent(PrescriptionsActivity.this, ListPrescriptionUserActivity.class);
-                                    listPrescriptionIntent.putExtra("userId", userId);
-                                    startActivity(listPrescriptionIntent);
-                                }
-                            }
-                            startActivity(receiveIntent);
+                            String prescriptionId = documentReference.getId(); // Lưu ID tạm thời
+                            prescriptionData.put("prescriptionId", prescriptionId);
+                            Log.d("Prescription", "Đã lưu đơn thuốc, ID: " + prescriptionId);
+
+                            // Hiển thị thông báo thành công
+                            prescriptionCollection.document(documentReference.getId()) // Tài liệu mới được tạo
+                                    .update("prescriptionId", prescriptionId) // Cập nhật tempId với ID chính xác từ Firebase
+                                    .addOnSuccessListener(aVoid -> {
+                                        Log.d("Prescription", "Đã cập nhật tempId với ID thực sự.");
+                                        Toast.makeText(PrescriptionsActivity.this, "Đơn thuốc đã được lưu thành công.", Toast.LENGTH_SHORT).show();
+
+                                        // Chuyển đến màn hình DoctorListResultActivity
+                                        Intent receiveIntent = new Intent(PrescriptionsActivity.this, DoctorListResultActivity.class);
+                                        receiveIntent.putExtra("userId", userId);
+                                        startActivity(receiveIntent);
+
+                                        // Xác nhận việc lưu đơn thuốc thành công
+                                        Log.d("Prescription", "Đã lưu đơn thuốc, ID: " + prescriptionId);
+                                    });
                         })
                         .addOnFailureListener(e -> {
                             // Xảy ra lỗi khi lưu đơn thuốc
                             Toast.makeText(PrescriptionsActivity.this, "Lỗi khi lưu đơn thuốc: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                            Log.e("Prescription", "Lỗi khi lưu đơn thuốc: " + e.getMessage());
                         });
             }
-        });
+            });
 
 
         // Đặt thông tin vào TextView
