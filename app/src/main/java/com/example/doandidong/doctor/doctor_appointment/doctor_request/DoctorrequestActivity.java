@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -29,6 +30,7 @@ public class DoctorrequestActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String userId = getIntent().getStringExtra("userId");
         String doctorappointmentId = intent.getStringExtra("doctorappointmentId");
+        String doctorId = intent.getStringExtra("doctorId");
         String doctorName = intent.getStringExtra("doctorName");
         String appointmentType = intent.getStringExtra("appointmentType");
         String appointmentDate = intent.getStringExtra("appointmentDate");
@@ -58,34 +60,37 @@ public class DoctorrequestActivity extends AppCompatActivity {
         TextView tvUserPhone = findViewById(R.id.tvUserPhone);
         tvUserPhone.setText(userPhone);
         TextView btnSave = findViewById(R.id.btnSavere);
+        Log.d("DoctorrequestActivity", "dddoctorId: " + doctorId);
 
         // Set a click listener for the "Save" button
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // Get the information from the views
-
                 String doctorName = tvDoctorName.getText().toString();
                 String appointmentType = tvAppointmentType.getText().toString();
                 String appointmentDate = tvAppointmentDate.getText().toString();
                 String userName = tvUserName.getText().toString();
                 String userPhone = tvUserPhone.getText().toString();
-
-
-
                 EditText etNote = findViewById(R.id.etNote);
                 String note = etNote.getText().toString();
+                String userId = getIntent().getStringExtra("userId");
+                Log.d("DoctorrequestActivity", "doctorId: " + doctorId);
 
+                // Firebase setup
                 FirebaseFirestore db = FirebaseFirestore.getInstance();
                 CollectionReference requestCollection = db.collection("Request");
 
+                // Prepare request data
                 Map<String, Object> requestData = new HashMap<>();
+                requestData.put("doctorappointmentId", doctorappointmentId);
                 requestData.put("doctorName", doctorName);
                 requestData.put("appointmentType", appointmentType);
                 requestData.put("appointmentDate", appointmentDate);
                 requestData.put("userName", userName);
                 requestData.put("userPhone", userPhone);
                 requestData.put("note", note);
+                requestData.put("doctorId", doctorId);
                 requestData.put("userId", userId);
                 requestCollection.add(requestData)
                         .addOnSuccessListener(documentReference -> {

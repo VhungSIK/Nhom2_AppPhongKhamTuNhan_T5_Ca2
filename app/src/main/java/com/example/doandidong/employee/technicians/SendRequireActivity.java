@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -59,6 +60,10 @@ public class SendRequireActivity extends AppCompatActivity {
         appointmentTypeTextView.setText(appointmentType);
         appointmentDateTextView.setText(appointmentDate);
         userNameTextView.setText(userName);
+        String UserId = i.getStringExtra("UserId");
+        String doctorId = i.getStringExtra("doctorId");
+        Log.d("SendRequireActivity", "User ID1: " + UserId);
+        Log.d("SendRequireActivity", "Usersssssdd ID1: " + doctorId);
 
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,17 +73,23 @@ public class SendRequireActivity extends AppCompatActivity {
                 String quantification = quantificationEditText.getText().toString();
                 String index = indexEditText.getText().toString();
                 String totalAnalysis = totalAnalysisEditText.getText().toString();
-
+                Intent i = new Intent(SendRequireActivity.this, SendRequireActivity.class);
+                i.putExtra("UserId", UserId);
+                i.putExtra("doctorId", doctorId);
+                Log.d("SendRequireActivity", "User ID2: " + UserId);
+                Log.d("SendRequireActivity", "User ID2dco: " + doctorId);
                 // Tạo đối tượng ResultModel và thêm thuộc tính "request"
-                ResultModel result = new ResultModel(doctorNameTextView.getText().toString(), // 1
-                        userNameTextView.getText().toString(), // 2
-                        appointmentDateTextView.getText().toString(), // 3
-                        appointmentTypeTextView.getText().toString(), // 4
-                        currentTime, // 5
-                        bloodGroup, // 6
-                        quantification, // 7
-                        index, // 8
-                        totalAnalysis); // 9
+                ResultModel result = new ResultModel(doctorNameTextView.getText().toString(),
+                        userNameTextView.getText().toString(),
+                        appointmentDateTextView.getText().toString(),
+                        appointmentTypeTextView.getText().toString(),
+                        currentTime,
+                        bloodGroup,
+                        quantification,
+                        index,
+                        totalAnalysis,
+                        doctorId, // Sử dụng doctorId lấy từ Intent thay vì UserId
+                        UserId);
 
 
                 // Thêm đối tượng dữ liệu vào Firebase Firestore

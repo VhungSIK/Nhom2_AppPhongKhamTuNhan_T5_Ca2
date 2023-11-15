@@ -2,6 +2,7 @@ package com.example.doandidong.doctor.doctor_appointment;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -64,11 +65,13 @@ public class DoctorListAppointmentActivity extends AppCompatActivity implements 
                             String UserPhone = document.get("UserPhone").toString();
                             String UserEmail = document.get("UserEmail").toString();
                             String Request = document.get("Request").toString();
-
                             if ("wait".equals(Request)) {
                                 String userId = document.get("UserId").toString();
                                 DoctorAppointment doctorAppointment = new DoctorAppointment(Id, DoctorName, Type, Date, Time, UserName, UserPhone, UserEmail, userId);
                                 doctorAppointments.add(doctorAppointment);
+                                Log.d("DoctorListActivity", "User ID: " + userId);
+                                Log.d("DoctorListAppointmentActivity", "doctorId: " + doctorId);
+
                             }
                         }
                         doctorAppointmentAdapter.notifyDataSetChanged();
@@ -86,7 +89,7 @@ public class DoctorListAppointmentActivity extends AppCompatActivity implements 
     public void onClickItemListener(DoctorAppointment doctorAppointment) {
         Intent intent = new Intent(this, DetailApointmentDTActivity.class);
         intent.putExtra("doctorappointmentId", doctorAppointment.getIdA());
-        intent.putExtra("userId", doctorAppointment.getUserId() );
+        intent.putExtra("userId", doctorAppointment.getUserId());
         startActivity(intent);
     }
 }

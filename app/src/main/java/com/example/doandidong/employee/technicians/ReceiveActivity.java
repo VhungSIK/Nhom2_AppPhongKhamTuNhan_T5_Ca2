@@ -14,6 +14,7 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 
 import java.util.ArrayList;
 import java.util.List;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
 
 public class ReceiveActivity extends AppCompatActivity {
     private FirebaseFirestore db;
@@ -30,25 +31,42 @@ public class ReceiveActivity extends AppCompatActivity {
         db = FirebaseFirestore.getInstance();
         requestCollection = db.collection("Request");
 
-        // Khởi tạo RecyclerView và Adapter
+        // Khởi tạo RecyclerView
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        requestAdapter = new RequestAdapter();
 
-        // Kết nối RecyclerView với Adapter
+        // Khởi tạo Adapter trống cho RecyclerView
+        requestAdapter = new RequestAdapter("", "");
+
+
+        // Gắn Adapter vào RecyclerView
         recyclerView.setAdapter(requestAdapter);
 
-        // Truy vấn dữ liệu từ Firebase và cập nhật Adapter
         requestCollection.get().addOnSuccessListener(queryDocumentSnapshots -> {
             List<RequestModel> requestList = new ArrayList<>();
             for (QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
                 RequestModel request = documentSnapshot.toObject(RequestModel.class);
+
+                // Assuming "userId" is the field in your Firestore document containing the User ID
+                String userId = documentSnapshot.getString("userId");
+                String doctorId = documentSnapshot.getString("doctorId");
+
+                // Set the userId for each request
+                request.setUserId(userId);
+                request.setDoctorId(doctorId);
+
                 requestList.add(request);
             }
+
+            // Initialize the adapter with an empty userId (""), as the userId will be set individually for each request
+            requestAdapter = new RequestAdapter("", "");
+
+            // Set the updated request list to the adapter
             requestAdapter.setRequests(requestList);
+
+            recyclerView.setAdapter(requestAdapter);
         }).addOnFailureListener(e -> {
-            // Xử lý lỗi nếu cần
-            Toast.makeText(ReceiveActivity.this, "Lỗi khi truy vấn dữ liệu: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+            // Handle the failure
         });
     }
 }

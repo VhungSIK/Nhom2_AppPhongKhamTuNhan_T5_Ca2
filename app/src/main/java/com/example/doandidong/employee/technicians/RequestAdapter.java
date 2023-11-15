@@ -1,5 +1,6 @@
 package com.example.doandidong.employee.technicians;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,8 +13,11 @@ import java.util.List;
 
 public class RequestAdapter extends RecyclerView.Adapter<RequestViewHolder> {
     private List<RequestModel> requests;
-
-    public RequestAdapter() {
+    private String UserId;
+    private String doctorId;
+    public RequestAdapter(String UserId, String doctorId) {
+        this.UserId = UserId;
+        this.doctorId = doctorId;
     }
 
     public void setRequests(List<RequestModel> requests) {
@@ -32,7 +36,7 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestViewHolder> {
     public void onBindViewHolder(@NonNull RequestViewHolder holder, int position) {
         if (requests != null) {
             RequestModel request = requests.get(position);
-            holder.bind(request);
+            holder.bind(request, UserId, doctorId);
 
             // Bắt sự kiện nhấp vào một mục
             holder.itemView.setOnClickListener(view -> {
@@ -46,10 +50,15 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestViewHolder> {
                 intent.putExtra("userName", request.getUserName());
                 intent.putExtra("userPhone", request.getUserPhone());
                 intent.putExtra("note", request.getNote());
+                intent.putExtra("UserId", request.getUserId());
+                intent.putExtra("doctorId", request.getDoctorId());// Lấy userId từ RequestModel
+                Log.d("DetailRequestActivity", "User ID: " + request.getUserId());
+                Log.d("DetailRequestActivity", "dddID: " + request.getDoctorId());
 
                 // Chuyển sang trang chi tiết
                 view.getContext().startActivity(intent);
             });
+
             holder.itemView.setOnClickListener(view -> {
                 // Tạo Intent để chuyển sang trang chi tiết
                 Intent i = new Intent(view.getContext(), SendRequireActivity.class);
@@ -61,6 +70,9 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestViewHolder> {
                 i.putExtra("userName", request.getUserName());
                 i.putExtra("userPhone", request.getUserPhone());
                 i.putExtra("note", request.getNote());
+                i.putExtra("UserId", request.getUserId());
+                i.putExtra("doctorId", request.getDoctorId());// Lấy userId từ RequestModel
+                Log.d("SendRequireActivity", "Userdđ ID: " + request.getDoctorId());
 
                 // Chuyển sang trang chi tiết
                 view.getContext().startActivity(i);
@@ -85,10 +97,13 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestViewHolder> {
             appointmentDateTextView = itemView.findViewById(R.id.appointmentDateTextView);
         }
 
-        public void bind(RequestModel request) {
+        public void bind(RequestModel request, String UserId, String doctorId) {
             doctorNameTextView.setText(request.getDoctorName());
             appointmentTypeTextView.setText(request.getAppointmentType());
             appointmentDateTextView.setText(request.getAppointmentDate());
+            Log.d("RequestViewHolder", "Userssss ID5: " + doctorId);
+
+            Log.d("RequestViewHolder", "User ID5: " + UserId);
         }
     }
 }

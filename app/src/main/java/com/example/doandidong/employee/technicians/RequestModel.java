@@ -2,15 +2,29 @@ package com.example.doandidong.employee.technicians;
 
 public class RequestModel {
     private String doctorName;
+    private String doctorId;
     private String appointmentType;
     private String appointmentDate;
     private String userName;
     private String userPhone;
     private String note;
+    private String UserId;
 
-    // Constructors (if needed)
+    public String getDoctorId() {
+        return doctorId;
+    }
 
-    // Getters and Setters
+    public void setDoctorId(String doctorId) {
+        this.doctorId = doctorId;
+    }
+
+    public String getUserId() {
+        return UserId;
+    }
+
+    public void setUserId(String userId) {
+        UserId = userId;
+    }
 
     public String getDoctorName() {
         return doctorName;

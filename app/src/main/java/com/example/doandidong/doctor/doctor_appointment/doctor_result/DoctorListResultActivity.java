@@ -1,5 +1,6 @@
 package com.example.doandidong.doctor.doctor_appointment.doctor_result;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -40,12 +41,20 @@ public class DoctorListResultActivity extends AppCompatActivity {
             List<ResultModel> resultsList = new ArrayList<>();
             for (QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
                 ResultModel result = documentSnapshot.toObject(ResultModel.class);
+
+                // Retrieve userId and set it in the ResultModel instance
+                String userId = documentSnapshot.getString("userId");
+                result.setUserId(userId);
+                Log.d("DoctorListResult", "userId: " + userId); // Log userId
+
                 resultsList.add(result);
             }
             resultAdapter.setResults(resultsList);
         }).addOnFailureListener(e -> {
-            // Xử lý lỗi nếu cần
-            Toast.makeText(DoctorListResultActivity.this, "Lỗi khi truy vấn dữ liệu: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+            // Handle errors
+            Toast.makeText(DoctorListResultActivity.this, "Error querying data: " + e.getMessage(), Toast.LENGTH_SHORT).show();
         });
     }
+
+
 }

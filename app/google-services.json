@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "139777778723",
+    "firebase_url": "https://datlichkham-bd64f-default-rtdb.firebaseio.com",
     "project_id": "datlichkham-bd64f",
     "storage_bucket": "datlichkham-bd64f.appspot.com"
   },
@@ -14,7 +15,7 @@
       },
       "oauth_client": [
         {
-          "client_id": "139777778723-ken10slnj8g638g0lts2vnh60d70mdc4.apps.googleusercontent.com",
+          "client_id": "139777778723-0jij6qvqicpnkhtieq08rcfnkfkeqtmr.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
@@ -27,7 +28,36 @@
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "139777778723-ken10slnj8g638g0lts2vnh60d70mdc4.apps.googleusercontent.com",
+              "client_id": "139777778723-0jij6qvqicpnkhtieq08rcfnkfkeqtmr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:139777778723:android:1b61b8bc700a4342387d96",
+        "android_client_info": {
+          "package_name": "com.example.laptrinhdidong"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "139777778723-0jij6qvqicpnkhtieq08rcfnkfkeqtmr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDUCC6Mfx5LzQMVf02CZmBv6NvuR4KhM6k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "139777778723-0jij6qvqicpnkhtieq08rcfnkfkeqtmr.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
