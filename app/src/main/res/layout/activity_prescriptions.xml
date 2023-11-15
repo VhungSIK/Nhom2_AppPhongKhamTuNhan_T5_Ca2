@@ -1,3 +1,9 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -6,6 +12,7 @@
     android:orientation="vertical"
     android:padding="16dp"
     >
+
     <TextView
         android:id="@+id/tv"
         android:layout_gravity="center"
@@ -16,56 +23,105 @@
         android:text="Thông tin đơn thuốc"
         android:textSize="25dp"
         android:layout_centerHorizontal="true"/>
-
     <TextView
-android:id="@+id/doctorNameTextView"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Tên bác sĩ: "
         android:layout_marginTop="30dp"
         android:layout_marginRight="120dp"
+        android:textSize="20sp"
+        android:textColor="#000"
+        android:textStyle="bold"/>
+    <TextView
+android:id="@+id/doctorNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tên bác sĩ"
+        android:layout_marginTop="-25dp"
+        android:layout_marginLeft="110dp"
         android:textSize="18sp"
         android:textColor="#000" />
-
     <TextView
-        android:id="@+id/userNameTextView"
+
         android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginRight="130dp"
         android:text="Tên bệnh nhân: "
+        android:textSize="20dp"
+        android:textColor="#000"
+        android:textStyle="bold"/>
+    <TextView
+        android:id="@+id/userNameTextView"
+        android:layout_marginTop="-25dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="150dp"
+        android:text="Tên bệnh nhân: "
         android:textSize="18sp"
         android:textColor="#000" />
-
     <TextView
-        android:id="@+id/appointmentDateTextView"
+
         android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginRight="100dp"
         android:text="Ngày khám: "
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:textColor="#000" />
+    <TextView
+        android:id="@+id/appointmentDateTextView"
+        android:layout_marginTop="-25dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="120dp"
+        android:text="Ngày khám "
         android:textSize="18sp"
         android:textColor="#000" />
 
     <TextView
-        android:id="@+id/appointmentTypeTextView"
+
         android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:layout_marginRight="100dp"
         android:layout_height="wrap_content"
         android:text="Loại khám: "
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="#000" />
+
+    <TextView
+        android:id="@+id/appointmentTypeTextView"
+        android:layout_marginTop="-25dp"
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="110dp"
+        android:layout_height="wrap_content"
+        android:text="Loại khám "
         android:textSize="18sp"
         android:textColor="#000" />
 
     <TextView
-        android:id="@+id/currentTimeTextView"
+
         android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Giờ khám: "
         android:layout_marginRight="120dp"
         android:textSize="18sp"
+        android:textStyle="bold"
         android:textColor="#000" />
+    <TextView
+        android:id="@+id/currentTimeTextView"
+        android:layout_marginTop="-24dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Giờ khám "
+        android:layout_marginLeft="90dp"
+        android:textSize="18sp"
+        android:textColor="#000" />
+
 
 
 
@@ -449,3 +505,4 @@ android:id="@+id/doctorNameTextView"
         android:text="Lưu" />
 
 </LinearLayout>
+</ScrollView>
