@@ -22,6 +22,7 @@
 ## Hướng phát triển trong tương lai
 🔎 Cho phép đăng nhập bằng google    
 🔎 Thêm vào CH Play  
+🔎 Liên kết ngân hàng để thanh toán
 ## Thành viên/ vai trò
 | Họ và tên | Avatar | Vai trò |
 |------------|------------|------------|
