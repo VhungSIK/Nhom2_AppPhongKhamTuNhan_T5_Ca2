@@ -4,141 +4,120 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="500dp"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
     android:gravity="start"
     tools:context=".doctor.doctor_appointment.doctor_result.DoctorDetailResultActivity">
-    <TextView
-        android:id="@+id/tv"
-        android:layout_marginLeft="80dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:textStyle="bold"
-        android:text="Kết quả xét nghiệm"
-        android:textSize="25dp"
-        android:layout_centerHorizontal="true"/>
 
     <TextView
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Bác sĩ: "
+        android:text="Doctor Name: "
         android:textSize="20sp"
         android:textStyle="bold"
-        android:layout_marginTop="50dp"
-        />
+        android:layout_marginBottom="8dp"/>
     <TextView
         android:id="@+id/doctorNameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Doctor Name"
-        android:layout_marginLeft="68dp"
-
         android:textSize="18sp"
 
-        android:layout_marginTop="-25dp"/>
+        android:layout_marginBottom="8dp"/>
 
     <TextView
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Bệnh nhân: "
+        android:text="User Name: "
         android:textSize="20sp"
         android:textStyle="bold"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginBottom="8dp"/>
     <TextView
         android:id="@+id/userNameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="User Name "
         android:textSize="18sp"
-        android:layout_marginTop="-25dp"
-        android:layout_marginLeft="110dp"/>
+        android:layout_marginBottom="8dp"/>
 
     <TextView
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ngày: "
+        android:text="Appointment Date: "
         android:textSize="20sp"
         android:textStyle="bold"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginBottom="8dp"/>
     <TextView
         android:id="@+id/appointmentDateTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Date"
+        android:text="Appointment Date"
         android:textSize="18sp"
-        android:layout_marginTop="-25dp"
-        android:layout_marginLeft="60dp"/>
+        android:layout_marginBottom="8dp"/>
 
     <TextView
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Loại: "
+        android:text="Appointment Type: "
         android:textSize="20sp"
         android:textStyle="bold"
-        android:layout_marginTop="-115dp"
-        android:layout_marginLeft="220dp"/>
+        android:layout_marginBottom="8dp"/>
     <TextView
         android:id="@+id/appointmentTypeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Type"
+        android:text="Appointment Type"
         android:textSize="18sp"
 
-        android:layout_marginTop="-25dp"
-        android:layout_marginLeft="270dp"/>
+        android:layout_marginBottom="8dp"/>
 
     <TextView
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Giờ: "
+        android:text="Current Time: "
         android:textSize="20sp"
         android:textStyle="bold"
-        android:layout_marginTop="65dp"
-        android:layout_marginLeft="220dp"/>
+        android:layout_marginBottom="8dp"/>
     <TextView
         android:id="@+id/currentTimeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Time"
+        android:text="Current Time"
         android:textSize="18sp"
-        android:layout_marginLeft="270dp"
 
-        android:layout_marginTop="-25dp"/>
+        android:layout_marginBottom="8dp"/>
     <TextView
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nhóm máu: "
+        android:text="Blood Group: "
         android:textSize="20sp"
         android:textStyle="bold"
-        android:layout_marginTop="20dp"
-        />
+        android:layout_marginBottom="8dp"/>
     <TextView
         android:id="@+id/bloodGroupTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="BloodGrp"
+        android:text="Blood Group "
         android:textSize="18sp"
-        android:layout_marginTop="-25dp"
-        android:layout_marginLeft="110dp"/>
+        android:layout_marginBottom="8dp"/>
 
 
     <TextView
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Định lượng: "
+        android:text="Quantification: "
         android:textSize="20sp"
         android:textStyle="bold"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginBottom="8dp"/>
     <TextView
         android:id="@+id/quantificationTextView"
         android:layout_width="wrap_content"
@@ -146,17 +125,16 @@
         android:text="Quantification "
         android:textSize="18sp"
 
-        android:layout_marginTop="-25dp"
-        android:layout_marginLeft="110dp"/>
+        android:layout_marginBottom="8dp"/>
 
     <TextView
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Chỉ số: "
+        android:text="Index: "
         android:textSize="20sp"
         android:textStyle="bold"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginBottom="8dp"/>
     <TextView
         android:id="@+id/indexTextView"
         android:layout_width="wrap_content"
@@ -164,35 +142,31 @@
         android:text="Index "
         android:textSize="18sp"
 
-        android:layout_marginTop="-25dp"
-        android:layout_marginLeft="70dp"/>
+        android:layout_marginBottom="8dp"/>
 
     <TextView
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Kết quả: "
+        android:text="Total Analysis: "
         android:textSize="20sp"
-        android:textStyle="bold" />
-
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp"/>
     <TextView
         android:id="@+id/totalAnalysisTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Kết quả tổng: "
+        android:text="Total Analysis "
         android:textSize="18sp"
-        android:layout_marginTop="-25dp"
-        android:layout_marginLeft="80dp"/>
+        android:layout_marginBottom="8dp"/>
     <Button
         android:id="@+id/viewPrescriptionsButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
+        android:layout_gravity="center"
         android:padding="15dp"
         android:textSize="15sp"
-        android:layout_marginTop="50dp"
-        android:text="Kê đơn thuốc"
-        android:layout_marginLeft="120dp"/>
+        android:layout_marginTop="10dp"
+        android:text="Prescriptions"/>
 
 </LinearLayout>

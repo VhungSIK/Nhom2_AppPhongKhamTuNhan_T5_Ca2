@@ -51,15 +51,15 @@ public class DoctorDetailResultActivity extends AppCompatActivity {
         TextView indexTextView = findViewById(R.id.indexTextView);
         TextView totalAnalysisTextView = findViewById(R.id.totalAnalysisTextView);
 
-        doctorNameTextView.setText( doctorName);
-        userNameTextView.setText( userName);
-        appointmentDateTextView.setText(appointmentDate);
-        appointmentTypeTextView.setText(appointmentType);
-        currentTimeTextView.setText( currentTime);
-        bloodGroupTextView.setText(bloodGroup);
-        quantificationTextView.setText( quantification);
-        indexTextView.setText( index);
-        totalAnalysisTextView.setText(totalAnalysis);
+        doctorNameTextView.setText("Doctor Name: " + doctorName);
+        userNameTextView.setText("User Name: " + userName);
+        appointmentDateTextView.setText("Appointment Date: " + appointmentDate);
+        appointmentTypeTextView.setText("Appointment Type: " + appointmentType);
+        currentTimeTextView.setText("Current Time: " + currentTime);
+        bloodGroupTextView.setText("Blood Group: " + bloodGroup);
+        quantificationTextView.setText("Quantification: " + quantification);
+        indexTextView.setText("Index: " + index);
+        totalAnalysisTextView.setText("Total Analysis: " + totalAnalysis);
         Button viewPrescriptionsButton = findViewById(R.id.viewPrescriptionsButton);
         viewPrescriptionsButton.setOnClickListener(new View.OnClickListener() {
             @Override
