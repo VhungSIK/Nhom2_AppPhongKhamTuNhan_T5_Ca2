@@ -20,7 +20,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 public class DetailApointmentDTActivity extends AppCompatActivity {
     ImageView ivApp1;
-    TextView tvIdA1, tvDoctorName1, tvType1, tvDate1, tvUserName1, tvUserPhone1, tvUserEmail1, btn_request , tvUserTime;
+    TextView tvIdA1, tvDoctorName1, tvType1, tvDate1, tvUserName1, tvUserPhone1, tvUserEmail1, btn_request ;
     String doctorappointmentId;
     String userId ;
     String doctorId;
@@ -42,8 +42,7 @@ public class DetailApointmentDTActivity extends AppCompatActivity {
         tvDate1=findViewById(R.id.tvDate1);
         tvUserName1=findViewById(R.id.tvUserName1);
         tvUserPhone1=findViewById(R.id.tvUserPhone1);
-        tvUserEmail1=findViewById(R.id.tvEmail1);
-        tvUserTime = findViewById(R.id.tvTime);
+        tvUserEmail1=findViewById(R.id.tvUserEmail1);
         btn_request=findViewById(R.id.btn_request);
         btn_request.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,8 +58,6 @@ public class DetailApointmentDTActivity extends AppCompatActivity {
                 intent.putExtra("userName", tvUserName1.getText().toString());
                 intent.putExtra("userPhone", tvUserPhone1.getText().toString());
                 intent.putExtra("userEmail", tvUserEmail1.getText().toString());
-                intent.putExtra("Time", tvUserTime.getText().toString());
-
                 userId = getIntent().getStringExtra("userId");
                 intent.putExtra("userId", userId); // Chắc chắn gán userId trước khi log
                 Log.d("DetailActivity", "User ID: " + userId);Log.d("DetailApointmentDTActivity", "doctorId: " + doctorId);
@@ -84,7 +81,6 @@ public class DetailApointmentDTActivity extends AppCompatActivity {
                     tvUserName1.setText(doctorAppointment.getUserName());
                     tvUserPhone1.setText(doctorAppointment.getUserPhone());
                     tvUserEmail1.setText(doctorAppointment.getUserEmail());
-                    tvUserTime.setText(doctorAppointment.getTime());
                 }
             }
         });

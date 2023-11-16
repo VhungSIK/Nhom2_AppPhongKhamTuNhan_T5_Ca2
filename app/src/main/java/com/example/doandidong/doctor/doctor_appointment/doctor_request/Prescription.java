@@ -1,6 +1,5 @@
 package com.example.doandidong.doctor.doctor_appointment.doctor_request;
 public class Prescription {
-    private String prescriptionId;
     private String stt;
     private String UserId;
     private String doctorId;
@@ -49,7 +48,7 @@ public class Prescription {
         // Cần có constructor mặc định để Firebase có thể đọc dữ liệu.
     }
 
-    public Prescription(String stt, String prescriptionId, String medicineName, String dosage, String usage, String route, String days, String doctorName, String userName, String appointmentDate, String appointmentType, String currentTime, String userId) {
+    public Prescription(String stt, String medicineName, String dosage, String usage, String route, String days, String doctorName, String userName, String appointmentDate, String appointmentType, String currentTime, String userId) {
         this.stt = stt;
         this.medicineName = medicineName;
         this.dosage = dosage;
@@ -62,15 +61,6 @@ public class Prescription {
         this.appointmentType = appointmentType;
         this.currentTime = currentTime;
         this.UserId = userId;
-        this.prescriptionId = prescriptionId;
-    }
-
-    public String getPrescriptionId() {
-        return prescriptionId;
-    }
-
-    public void setPrescriptionId(String prescriptionId) {
-        this.prescriptionId = prescriptionId;
     }
 
     public String getDoctorId() {
