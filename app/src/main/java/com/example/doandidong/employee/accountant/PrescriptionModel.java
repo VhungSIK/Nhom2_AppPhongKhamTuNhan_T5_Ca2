@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 public class PrescriptionModel implements Serializable {
     private String DoctorName;
+    private String total;
 
     private String prescriptionId;
     private String billId;
@@ -53,7 +54,7 @@ public class PrescriptionModel implements Serializable {
         // Default constructor required for Firestore
     }
 
-    public PrescriptionModel(String prescriptionId, String billId, String DoctorName, String userId, String userName, String appointmentType, String appointmentDate, String currentTime, String doctorId) {
+    public PrescriptionModel(String prescriptionId, String total,String billId, String DoctorName, String userId, String userName, String appointmentType, String appointmentDate, String currentTime, String doctorId) {
         this.prescriptionId = prescriptionId;
         this.userId = userId;
         this.userName = userName;
@@ -63,6 +64,15 @@ public class PrescriptionModel implements Serializable {
         this.doctorId = doctorId;
         this.DoctorName = DoctorName;
         this.billId = billId;
+        this.total = total;
+    }
+
+    public String getTotal() {
+        return total;
+    }
+
+    public void setTotal(String total) {
+        this.total = total;
     }
 
     public String getBillId() {
@@ -405,15 +415,10 @@ public class PrescriptionModel implements Serializable {
         return route5;
     }
 
-    public void setRoute5(String route5) {
-        this.route5 = route5;
-    }
 
     public String getDays5() {
         return days5;
     }
 
-    public void setDays5(String days5) {
-        this.days5 = days5;
-    }
+
 }

@@ -1,68 +1,20 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="16dp">
-
-    <TextView
-        android:id="@+id/textViewUserId"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="User ID:"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/textViewUserName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="User Name:" />
-
-    <TextView
-        android:id="@+id/textViewUserPhone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="User Phone:" />
-
-    <TextView
-        android:id="@+id/textViewDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Date:"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/textViewDoctorName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Doctor Name:" />
-
-    <TextView
-        android:id="@+id/textViewTime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Time:"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/textViewType"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Type:" />
-
-    <TextView
-        android:id="@+id/textViewDoctorId"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:text="Doctor ID:"
-        android:textStyle="bold" />
-    <TextView
-        android:id="@+id/textViewCall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Call"
-        android:gravity="end"
-        android:layout_gravity="end"
-        android:padding="8dp"
-        android:textStyle="bold" />
-</LinearLayout>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp">
+    <RelativeLayout android:layout_width="550dp" android:layout_height="200dp" android:background="@drawable/khung">
+        <TextView android:id="@+id/textViewUserId" android:layout_width="0dp" android:layout_height="0dp" android:text="User ID:" android:textStyle="bold"/>
+        <TextView android:id="@+id/textViewUserPhone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="120dp" android:layout_marginLeft="120dp" android:text="User Phone:"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="120dp" android:layout_marginLeft="20dp" android:text="Số điện thoại:" android:textStyle="bold"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="45dp" android:layout_marginLeft="20dp" android:text="Bệnh nhân:" android:textSize="17dp" android:textStyle="bold"/>
+        <TextView android:id="@+id/textViewUserName" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="120dp" android:layout_marginTop="46dp" android:text="User Name" android:textSize="15dp" android:textStyle="italic"/>
+        <TextView android:id="@+id/textViewDate" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@+id/textViewUserId" android:layout_marginTop="85dp" android:layout_marginLeft="70dp" android:text="Date:" android:textStyle="italic"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@+id/textViewUserId" android:layout_marginTop="85dp" android:layout_marginLeft="20dp" android:text="Ngày:" android:textStyle="bold"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@+id/textViewUserId" android:text="Bác sĩ:" android:layout_marginLeft="20dp" android:layout_marginTop="10dp" android:textSize="18dp" android:textStyle="bold"/>
+        <TextView android:id="@+id/textViewDoctorName" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@+id/textViewUserId" android:text="Doctor Name:" android:textSize="15dp" android:layout_marginLeft="80dp" android:layout_marginTop="12dp" android:textStyle="italic"/>
+        <TextView android:id="@+id/textViewTime" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="85dp" android:text="Time:" android:layout_marginLeft="200dp" android:textStyle="italic"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="85dp" android:layout_marginLeft="170dp" android:text="Giờ:" android:textStyle="bold"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:layout_marginLeft="210dp" android:text="Khoa:" android:textStyle="bold"/>
+        <TextView android:id="@+id/textViewType" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:layout_marginLeft="250dp" android:text="Khoa:" android:textStyle="italic"/>
+        <TextView android:id="@+id/textViewDoctorId" android:layout_width="0dp" android:layout_height="0dp" android:layout_below="@+id/textViewType" android:text="Doctor ID:" android:textStyle="bold"/>
+        <TextView android:id="@+id/textViewCall" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="112dp" android:layout_marginLeft="280dp" android:drawableStart="@drawable/baseline_phone_enabled_24" android:drawablePadding="8dp" android:padding="8dp" android:text="Call" android:textStyle="bold"/>
+        <Button android:id="@+id/btnConfirm" android:layout_width="100dp" android:layout_height="44dp" android:layout_centerHorizontal="true" android:layout_marginTop="150dp" android:background="@color/purple_700" android:gravity="center" android:text="Xác nhận" android:textSize="10dp" android:textColor="@color/white" android:onClick="confirmButtonClicked"/>
+    </RelativeLayout>
+</RelativeLayout>

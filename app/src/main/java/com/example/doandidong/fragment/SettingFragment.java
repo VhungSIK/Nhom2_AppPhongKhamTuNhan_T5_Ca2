@@ -1,5 +1,6 @@
 package com.example.doandidong.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -10,10 +11,14 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 
 import com.example.doandidong.R;
+import com.example.doandidong.user.billusser.BillUserActivity;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -75,6 +80,19 @@ public class SettingFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         aSwitch=view.findViewById(R.id.switch1);
+        Button btnBillUser = view.findViewById(R.id.btnBillUser);
+        btnBillUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String userId = getCurrentUserId();
+                if (userId != null) {
+                    Intent intent = new Intent(getActivity(), BillUserActivity.class);
+                    intent.putExtra("userId", userId);
+                    startActivity(intent);
+                }
+            }
+        });
+
         aSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
@@ -86,5 +104,14 @@ public class SettingFragment extends Fragment {
                 }
             }
         });
+    }
+    private String getCurrentUserId() {
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+        FirebaseUser user = auth.getCurrentUser();
+
+        if (user != null) {
+            return user.getUid();
+        }
+        return null;
     }
 }

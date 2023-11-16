@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -25,6 +27,7 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -43,47 +46,81 @@ public class DetailPrescriptionUserActivity extends AppCompatActivity {
 //start
 
         //kê đơn
-        EditText sttEditText1 = findViewById(R.id.sttEditText1);
-        EditText medicineNameEditText1 = findViewById(R.id.medicineNameEditText1);
-        EditText dosageEditText1 = findViewById(R.id.dosageEditText1);
-        EditText usageEditText1 = findViewById(R.id.usageEditText1);
-        EditText routeEditText1 = findViewById(R.id.routeEditText1);
-        EditText daysEditText1 = findViewById(R.id.daysEditText1);
+        TextView sttEditText1 = findViewById(R.id.sttEditText1);
+        TextView medicineNameEditText1 = findViewById(R.id.medicineNameEditText1);
+        TextView dosageEditText1 = findViewById(R.id.dosageEditText1);
+        TextView usageEditText1 = findViewById(R.id.usageEditText1);
+        TextView routeEditText1 = findViewById(R.id.routeEditText1);
+        TextView daysEditText1 = findViewById(R.id.daysEditText1);
         //2
-        EditText sttEditText2 = findViewById(R.id.sttEditText2);
-        EditText medicineNameEditText2 = findViewById(R.id.medicineNameEditText2);
-        EditText dosageEditText2 = findViewById(R.id.dosageEditText2);
-        EditText usageEditText2 = findViewById(R.id.usageEditText2);
-        EditText routeEditText2 = findViewById(R.id.routeEditText2);
-        EditText daysEditText2 = findViewById(R.id.daysEditText2);
+        TextView sttEditText2 = findViewById(R.id.sttEditText2);
+        TextView medicineNameEditText2 = findViewById(R.id.medicineNameEditText2);
+        TextView dosageEditText2 = findViewById(R.id.dosageEditText2);
+        TextView usageEditText2 = findViewById(R.id.usageEditText2);
+        TextView routeEditText2 = findViewById(R.id.routeEditText2);
+        TextView daysEditText2 = findViewById(R.id.daysEditText2);
         //3
-        EditText sttEditText3 = findViewById(R.id.sttEditText3);
-        EditText medicineNameEditText3 = findViewById(R.id.medicineNameEditText3);
-        EditText dosageEditText3 = findViewById(R.id.dosageEditText3);
-        EditText usageEditText3 = findViewById(R.id.usageEditText3);
-        EditText routeEditText3 = findViewById(R.id.routeEditText3);
-        EditText daysEditText3 = findViewById(R.id.daysEditText3);
+        TextView sttEditText3 = findViewById(R.id.sttEditText3);
+        TextView medicineNameEditText3 = findViewById(R.id.medicineNameEditText3);
+        TextView dosageEditText3 = findViewById(R.id.dosageEditText3);
+        TextView usageEditText3 = findViewById(R.id.usageEditText3);
+        TextView routeEditText3 = findViewById(R.id.routeEditText3);
+        TextView daysEditText3 = findViewById(R.id.daysEditText3);
         //4
-        EditText sttEditText4 = findViewById(R.id.sttEditText4);
-        EditText medicineNameEditText4 = findViewById(R.id.medicineNameEditText4);
-        EditText dosageEditText4 = findViewById(R.id.dosageEditText4);
-        EditText usageEditText4 = findViewById(R.id.usageEditText4);
-        EditText routeEditText4 = findViewById(R.id.routeEditText4);
-        EditText daysEditText4 = findViewById(R.id.daysEditText4);
+        TextView sttEditText4 = findViewById(R.id.sttEditText4);
+        TextView  medicineNameEditText4 = findViewById(R.id.medicineNameEditText4);
+        TextView dosageEditText4 = findViewById(R.id.dosageEditText4);
+        TextView usageEditText4 = findViewById(R.id.usageEditText4);
+        TextView routeEditText4 = findViewById(R.id.routeEditText4);
+        TextView daysEditText4 = findViewById(R.id.daysEditText4);
         //5
-        EditText sttEditText5 = findViewById(R.id.sttEditText5);
-        EditText medicineNameEditText5 = findViewById(R.id.medicineNameEditText5);
-        EditText dosageEditText5 = findViewById(R.id.dosageEditText5);
-        EditText usageEditText5 = findViewById(R.id.usageEditText5);
-        EditText routeEditText5 = findViewById(R.id.routeEditText5);
-        EditText daysEditText5 = findViewById(R.id.daysEditText5);
+        TextView sttEditText5 = findViewById(R.id.sttEditText5);
+        TextView medicineNameEditText5 = findViewById(R.id.medicineNameEditText5);
+        TextView dosageEditText5 = findViewById(R.id.dosageEditText5);
+        TextView usageEditText5 = findViewById(R.id.usageEditText5);
+        TextView routeEditText5 = findViewById(R.id.routeEditText5);
+        TextView daysEditText5 = findViewById(R.id.daysEditText5);
 // stop
         EditText price1 = findViewById(R.id.price1);
         EditText price2 = findViewById(R.id.price2);
         EditText price3 = findViewById(R.id.price3);
         EditText price4 = findViewById(R.id.price4);
         EditText price5 = findViewById(R.id.price5);
+        TextView totalTextView = findViewById(R.id.totalTextView);
         Button saveButtonbill = findViewById(R.id.saveButtonbill);
+        EditText[] priceEditTexts = new EditText[]{price1, price2, price3, price4, price5};
+        for (EditText editText : priceEditTexts) {
+            editText.addTextChangedListener(new TextWatcher() {
+                @Override
+                public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                    // Không cần làm gì ở đây
+                }
+
+                @Override
+                public void onTextChanged(CharSequence s, int start, int before, int count) {
+                    // Không cần làm gì ở đây
+                }
+
+                @Override
+                public void afterTextChanged(Editable s) {
+                    // Tính toán tổng mỗi khi giá trị thay đổi
+                    double totalValue = 0;
+                    for (EditText editText : priceEditTexts) {
+                        String price = editText.getText().toString();
+                        // Kiểm tra nếu EditText có giá trị thì tính vào tổng
+                        if (!price.isEmpty()) {
+                            totalValue += Double.parseDouble(price);
+                        }
+                    }
+                    // Hiển thị tổng số tiền trên TextView
+                    DecimalFormat formatter = new DecimalFormat("#,### VND");
+                    String totalString = "Total: " + formatter.format(totalValue);
+                    totalTextView.setText(totalString);
+
+                }
+            });
+        }
+
         saveButtonbill.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -136,6 +173,16 @@ public class DetailPrescriptionUserActivity extends AppCompatActivity {
                 String p3 = price3.getText().toString();
                 String p4 = price4.getText().toString();
                 String p5 = price5.getText().toString();
+                double totalValue = 0;
+                for (EditText editText : priceEditTexts) {
+                    String price = editText.getText().toString();
+                    if (!price.isEmpty()) {
+                        totalValue += Double.parseDouble(price);
+                    }
+                }
+                // Hiển thị tổng số tiền trên TextView
+                DecimalFormat formatter = new DecimalFormat("#,### VND");
+                totalTextView.setText("Total: " + formatter.format(totalValue));
                 FirebaseFirestore db = FirebaseFirestore.getInstance();
                 CollectionReference prescriptionCollection = db.collection("BillId");
 
@@ -187,6 +234,7 @@ public class DetailPrescriptionUserActivity extends AppCompatActivity {
                 prescriptionData.put("price3", p3);
                 prescriptionData.put("price4", p4);
                 prescriptionData.put("price5", p5);
+                prescriptionData.put("total", formatter.format(totalValue));
                 prescriptionCollection.add(prescriptionData)
                         .addOnSuccessListener(documentReference -> {
                             String billId = documentReference.getId(); // Lưu ID tạm thời
@@ -279,6 +327,7 @@ public class DetailPrescriptionUserActivity extends AppCompatActivity {
                                     routeEditText5.setText(prescription.getRoute5());
                                     daysEditText5.setText(prescription.getDays5());
                                     dosageEditText5.setText(prescription.getDosage5());
+
                                     // Hiển thị dữ liệu lên giao diện người dùng
                                 }
                             } else {

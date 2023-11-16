@@ -16,6 +16,15 @@
         android:theme="@style/Theme.DoAnDiDong"
         tools:targetApi="31">
         <activity
+            android:name=".user.billusser.UserPayActivity"
+            android:exported="false" />
+        <activity
+            android:name=".user.billusser.DetailsBillUserActivity"
+            android:exported="false" />
+        <activity
+            android:name=".user.billusser.BillUserActivity"
+            android:exported="false" />
+        <activity
             android:name=".employee.accountant.DetailPrescriptionUserActivity"
             android:exported="false" />
         <activity

@@ -67,5 +67,14 @@
             android:textSize="24sp"
             app:layout_constraintEnd_toStartOf="@+id/switch1"
             app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+        <Button
+            android:id="@+id/btnBillUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bill"
+            tools:layout_editor_absoluteX="108dp"
+            tools:layout_editor_absoluteY="305dp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </FrameLayout>
