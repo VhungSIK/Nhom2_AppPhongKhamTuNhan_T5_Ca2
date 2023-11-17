@@ -92,6 +92,7 @@ public class SendRequireActivity extends AppCompatActivity {
                         Toast.makeText(SendRequireActivity.this, "Kết quả xét nghiệm đã gửi thành công.", Toast.LENGTH_SHORT).show();
                         Intent receiveIntent = new Intent(SendRequireActivity.this, ReceiveActivity.class);
                         startActivity(receiveIntent);
+                        finish();
                     })
                     .addOnFailureListener(e -> {
                         Toast.makeText(SendRequireActivity.this, "Lỗi khi lưu kết quả xét nghiệm: " + e.getMessage(), Toast.LENGTH_SHORT).show();

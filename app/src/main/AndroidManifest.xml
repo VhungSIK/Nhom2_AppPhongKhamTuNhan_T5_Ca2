@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
 
+    <uses-permission android:name="android.permission.NOTIFICATION_POLICY" />
+
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
 
@@ -15,6 +19,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DoAnDiDong"
         tools:targetApi="31">
+        <activity
+            android:name=".employee.reception.details.NotificationActivity"
+            android:exported="false" />
         <activity
             android:name=".user.billusser.UserPayActivity"
             android:exported="false" />
@@ -35,9 +42,6 @@
             android:exported="false" />
         <activity
             android:name=".employee.reception.ListReceptionActivity"
-            android:exported="false" />
-        <activity
-            android:name=".reception.ReceptionActivity"
             android:exported="false" />
         <activity
             android:name=".employee.reception.ReceptionActivity"

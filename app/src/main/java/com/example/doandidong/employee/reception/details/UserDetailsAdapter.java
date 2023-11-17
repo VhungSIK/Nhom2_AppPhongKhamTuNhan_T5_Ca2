@@ -1,5 +1,6 @@
 package com.example.doandidong.employee.reception.details;
 
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.view.LayoutInflater;
@@ -17,10 +18,13 @@ import java.util.ArrayList;
 public class UserDetailsAdapter extends RecyclerView.Adapter<UserDetailsAdapter.UserDetailViewHolder> {
 
     private ArrayList<String> userDetailList;
+    private Context context;
 
-    public UserDetailsAdapter(ArrayList<String> userDetailList) {
+    public UserDetailsAdapter(DetailListUserActivity detailListUserActivity, ArrayList<String> userDetailList) {
+        this.context = detailListUserActivity; // Gán activity nhận được vào context
         this.userDetailList = userDetailList;
     }
+
 
     @NonNull
     @Override
@@ -50,6 +54,12 @@ public class UserDetailsAdapter extends RecyclerView.Adapter<UserDetailsAdapter.
                 v.getContext().startActivity(callIntent);
             }
         });
+        holder.tvConfirm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((DetailListUserActivity) context).confirmButtonClicked(view);
+            }
+        });
     }
 
     @Override
@@ -58,7 +68,7 @@ public class UserDetailsAdapter extends RecyclerView.Adapter<UserDetailsAdapter.
     }
 
     public static class UserDetailViewHolder extends RecyclerView.ViewHolder {
-        TextView textViewUserName, textViewUserPhone, textViewDate, textViewDoctorName, textViewTime, textViewType, textViewDoctorId,textViewCall;
+        TextView textViewUserName, textViewUserPhone, textViewDate, textViewDoctorName, textViewTime, textViewType, textViewDoctorId,textViewCall, tvConfirm;
 
         public UserDetailViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -70,6 +80,8 @@ public class UserDetailsAdapter extends RecyclerView.Adapter<UserDetailsAdapter.
             textViewType = itemView.findViewById(R.id.textViewType);
             textViewDoctorId = itemView.findViewById(R.id.textViewDoctorId);
             textViewCall = itemView.findViewById(R.id.textViewCall);
+            tvConfirm = itemView.findViewById(R.id.btnConfirm);
+
         }
     }
 }

@@ -185,7 +185,7 @@ public class PrescriptionsActivity extends AppCompatActivity {
                                     .update("prescriptionId", prescriptionId) // Cập nhật tempId với ID chính xác từ Firebase
                                     .addOnSuccessListener(aVoid -> {
                                         Log.d("Prescription", "Đã cập nhật tempId với ID thực sự.");
-                                        Toast.makeText(PrescriptionsActivity.this, "Đơn thuốc đã được lưu thành công.", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(PrescriptionsActivity.this, "Đơn thuốc đã được gửi thành công.", Toast.LENGTH_SHORT).show();
 
                                         // Chuyển đến màn hình DoctorListResultActivity
                                         Intent receiveIntent = new Intent(PrescriptionsActivity.this, DoctorListResultActivity.class);
@@ -201,6 +201,7 @@ public class PrescriptionsActivity extends AppCompatActivity {
                             Toast.makeText(PrescriptionsActivity.this, "Lỗi khi lưu đơn thuốc: " + e.getMessage(), Toast.LENGTH_SHORT).show();
                             Log.e("Prescription", "Lỗi khi lưu đơn thuốc: " + e.getMessage());
                         });
+                finish();
             }
             });
 

@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 
 import com.example.doandidong.R;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -20,6 +21,7 @@ import java.util.ArrayList;
 public class DetailListUserActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private UserDetailsAdapter adapter;
+    private PushNotification pushNotification;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +30,7 @@ public class DetailListUserActivity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.recyclerViewUserDetails);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
+        pushNotification = new PushNotification(DetailListUserActivity.this);
         displayUserDetails();
     }
 
@@ -65,11 +67,20 @@ public class DetailListUserActivity extends AppCompatActivity {
                                         doctorName + " - " + time + " - " + type + " - " + doctorId;
                                 userDetailsList.add(userDetails);
                             }
-                            adapter = new UserDetailsAdapter(userDetailsList);
+                            adapter = new UserDetailsAdapter(DetailListUserActivity.this, userDetailsList);
                             recyclerView.setAdapter(adapter);
+
+                            // Di chuyển makeNotification vào đây
+                            pushNotification.makeNotification();
                         }
                     });
-
         }
     }
+
+    // Thêm sự kiện click cho nút Xác nhận
+    public void confirmButtonClicked(View view) {
+        // Gọi phương thức makeNotification từ PushNotification khi cần
+        pushNotification.makeNotification();
+    }
 }
+

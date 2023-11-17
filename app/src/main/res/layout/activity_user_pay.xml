@@ -4,76 +4,164 @@
     android:layout_height="match_parent">
 
     <TextView
+
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="User ID:"
+        android:textStyle="bold"
+        android:textColor="#000"
+        android:textSize="20sp" />
+    <TextView
         android:id="@+id/userIdTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="18sp"
-        android:layout_margin="16dp"
+        android:layout_marginTop="16dp"
         android:textColor="#000"
+        android:layout_marginLeft="90dp"
         android:text="User ID:" />
 
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/userIdTextView"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="Bill ID:"
+        android:textColor="#000"
+        android:textStyle="bold"
+
+        android:textSize="20sp" />
     <TextView
         android:id="@+id/billIdTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="18sp"
         android:layout_below="@id/userIdTextView"
-        android:layout_margin="16dp"
-        android:textColor="#000"
-        android:text="Bill ID:" />
 
+        android:layout_marginTop="18dp"
+
+        android:layout_marginLeft="90dp"
+        android:layout_marginBottom="16dp"
+        android:text="Bill ID:"
+        android:textColor="#000"
+        android:textSize="18sp" />
+
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/billIdTextView"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="User Name:"
+        android:textColor="#000"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
     <TextView
         android:id="@+id/userNameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="18sp"
         android:layout_below="@id/billIdTextView"
-        android:layout_margin="16dp"
-        android:textColor="#000"
-        android:text="User Name:" />
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="16dp"
 
+        android:layout_marginBottom="16dp"
+        android:text="User Name:"
+        android:textColor="#000"
+        android:textSize="18sp" />
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/userNameTextView"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="Total:"
+        android:textColor="#000"
+        android:textStyle="bold"
+        android:textSize="20sp" />
     <TextView
         android:id="@+id/totalTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="18sp"
         android:layout_below="@id/userNameTextView"
-        android:layout_margin="16dp"
+
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginBottom="16dp"
+        android:text="Total:"
         android:textColor="#000"
-        android:text="Total:" />
+        android:textSize="18sp" />
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/totalTextView"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="IDPay:"
+        android:textColor="#000"
+        android:textStyle="bold"
+        android:textSize="20sp" />
     <TextView
         android:id="@+id/payIdTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="18sp"
         android:layout_below="@id/totalTextView"
-        android:layout_margin="16dp"
+
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginBottom="16dp"
+        android:text="IDPay:"
         android:textColor="#000"
-        android:text="IDPay:" />
+
+        android:textSize="18sp" />
+
+
     <EditText
         android:id="@+id/newInfoEditText1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/payIdTextView"
-        android:hint="New Info 1"
+        android:hint="Số thẻ / Số tài khoản"
         android:inputType="number"
-        android:layout_marginTop="8dp"/>
+        android:textStyle="bold"
+        android:layout_marginTop="50dp"/>
+
     <EditText
         android:id="@+id/newInfoEditText2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/newInfoEditText1"
-        android:hint="New Info 1"
+        android:hint="Số CVV/CVC"
+        android:textStyle="bold"
         android:inputType="number"
-        android:layout_marginTop="8dp"/>
+        android:layout_marginTop="30dp"/>
+
     <Button
         android:id="@+id/saveButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/newInfoEditText2"
         android:layout_centerHorizontal="true"
-        android:text="Save"
-        android:layout_marginTop="16dp"/>
+        android:text="Thanh toán"
+        android:layout_marginTop="30dp"
+        android:textSize="20dp"
+        />
 
 
 </RelativeLayout>

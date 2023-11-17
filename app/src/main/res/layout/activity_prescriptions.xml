@@ -501,8 +501,8 @@ android:id="@+id/doctorNameTextView"
         android:id="@+id/saveButton1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="140dp"
-        android:text="Lưu" />
+        android:layout_gravity="center_horizontal"
+        android:text="Gửi đơn thuốc" />
 
 </LinearLayout>
 </ScrollView>

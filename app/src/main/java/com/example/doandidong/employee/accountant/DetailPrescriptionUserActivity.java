@@ -246,7 +246,7 @@ public class DetailPrescriptionUserActivity extends AppCompatActivity {
                                     .update("billId", billId) // Cập nhật tempId với ID chính xác từ Firebase
                                     .addOnSuccessListener(aVoid -> {
                                         Log.d("Prescription", "Đã cập nhật tempId với ID thực sự.");
-                                        Toast.makeText(DetailPrescriptionUserActivity.this, "Đơn thuốc đã được lưu thành công.", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(DetailPrescriptionUserActivity.this, "Đơn thuốc đã được gửi thành công.", Toast.LENGTH_SHORT).show();
 
                                         // Chuyển đến màn hình ListPrescriptionUserActivity
                                         Intent receiveIntent = new Intent(DetailPrescriptionUserActivity.this, ListPrescriptionUserActivity.class);
@@ -261,6 +261,7 @@ public class DetailPrescriptionUserActivity extends AppCompatActivity {
                             Toast.makeText(DetailPrescriptionUserActivity.this, "Lỗi khi lưu đơn thuốc: " + e.getMessage(), Toast.LENGTH_SHORT).show();
                             Log.e("Prescription", "Lỗi khi lưu đơn thuốc: " + e.getMessage());
                         });
+                finish();
             }
         });
 
